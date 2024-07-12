@@ -146,21 +146,30 @@
     }
 
     @media only screen and (max-width: 700px) {
-      .modal-content {
-        width: 100%;
-        height: auto;
-        max-width: 90%; /* Adjust for smaller screens */
+      .modal {
+        /* Other styles remain unchanged */
       }
 
-      .close {
-        font-size: 30px;
-      }
-
-      /* Zoom controls */
       .zoom-controls {
         position: absolute;
         bottom: 15px;
         left: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .zoom-controls button {
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .close {
+        color: white; /* White color for close button in mobile */
       }
     }
   </style>
@@ -220,7 +229,7 @@
   <div id="myModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="zoom-controls">
-      <button class="btn btn-primary" onclick="zoomOut()">X</button>
+      
     </div>
     <img class="modal-content" id="img01">
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -309,6 +318,12 @@
       modal.style.display = "none";
     }
 
+    // Function to close the modal in mobile view
+    function closeZoomModal() {
+      const modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+    }
+
     // Function to filter photos based on selected year
     function filterPhotos() {
       const selectedYear = document.getElementById('yearSelector').value;
@@ -332,7 +347,7 @@
     function zoomOut() {
       const modalImg = document.getElementById('img01');
       modalImg.style.width = 'auto';
-      modalImg.style.height = '80%';
+      modalImg.style.height = 'auto';
     }
 
     // Function to change image in modal
@@ -356,3 +371,5 @@
   </script>
 </body>
 </html>
+
+   
