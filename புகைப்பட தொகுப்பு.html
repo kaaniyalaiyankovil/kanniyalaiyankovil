@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -98,18 +98,9 @@
     .modal-content {
       margin: auto;
       display: block;
-      width: 80%;
-      max-width: 700px;
-    }
-
-    .modal-content, .close {
-      animation-name: zoom;
-      animation-duration: 0.6s;
-    }
-
-    @keyframes zoom {
-      from {transform: scale(0)}
-      to {transform: scale(1)}
+      width: auto;
+      max-width: 80%;
+      max-height: 80%;
     }
 
     .close {
@@ -129,10 +120,48 @@
       cursor: pointer;
     }
 
+    /* Next and previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
     @media only screen and (max-width: 700px) {
       .modal-content {
         width: 100%;
+        height: auto;
+        max-width: 90%; /* Adjust for smaller screens */
       }
+
+      .close {
+        font-size: 30px;
+      }
+    }
+
+    /* Zoom controls */
+    .zoom-controls {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
     }
   </style>
 </head>
@@ -141,7 +170,6 @@
   <header>
     <div class="container">
       <h1>காணியாளய்யன்(பைரவர் கூட்டம்) சமுதாயம்</h1>
-    
     </div>
   </header>
 
@@ -190,14 +218,28 @@
 
   <!-- The Modal for Image Zoom -->
   <div id="myModal" class="modal">
-    <span class="close">&times;</span>
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="zoom-controls">
+      <button class="btn btn-primary" onclick="zoomOut()">Zoom Out</button>
+    </div>
     <img class="modal-content" id="img01">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
 
-  <!-- Include Hammer.js -->
-  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>2024 </p>
+  </footer>
+
+  <!-- Bootstrap and jQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom Script -->
   <script>
-    // Example data structure for images
+    // Sample images data
     const images = [
       { src: '24k1.jpg', year: '2024' },
       { src: '24k2.jpg', year: '2024' },
@@ -261,6 +303,12 @@
       modalImg.src = images[currentIndex].src;
     }
 
+    // Function to close the modal
+    function closeModal() {
+      const modal = document.getElementById('myModal');
+      modal.style.display = "none";
+    }
+
     // Function to filter photos based on selected year
     function filterPhotos() {
       const selectedYear = document.getElementById('yearSelector').value;
@@ -280,27 +328,33 @@
       filterPhotos();
     }
 
-    // Close the modal
-    document.querySelector('.close').onclick = function() { 
-      document.getElementById('myModal').style.display = "none";
+    // Function to zoom out the image in modal
+    function zoomOut() {
+      const modalImg = document.getElementById('img01');
+      modalImg.style.width = 'auto';
+      modalImg.style.height = '80%';
     }
+
+    // Function to change image in modal
+   // Function to change image in modal
+function plusSlides(n) {
+  // Determine the next index in the correct year order
+  let nextIndex = currentIndex;
+  const currentYear = images[currentIndex].year;
+  
+  // Find the next image in the selected year
+  do {
+    nextIndex = (nextIndex + n + images.length) % images.length;
+  } while (images[nextIndex].year !== currentYear && nextIndex !== currentIndex);
+
+  currentIndex = nextIndex;
+  const modalImg = document.getElementById('img01');
+  modalImg.src = images[currentIndex].src;
+}
+
 
     // Initialize the photo grid on page load
     document.addEventListener('DOMContentLoaded', initializePhotoGrid);
-
-    // Hammer.js swipe functionality
-    const modalImg = document.getElementById('img01');
-    const hammer = new Hammer(modalImg);
-
-    hammer.on('swipeleft', function() {
-      currentIndex = (currentIndex + 1) % images.length;
-      modalImg.src = images[currentIndex].src;
-    });
-
-    hammer.on('swiperight', function() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      modalImg.src = images[currentIndex].src;
-    });
   </script>
 </body>
 </html>
