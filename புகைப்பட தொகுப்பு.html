@@ -148,21 +148,23 @@
     .prev:hover, .next:hover {
       background-color: rgba(0,0,0,0.8);
     }
-
-   @media only screen and (max-width: 767px) {
-  .modal-content {
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    margin: 0;
-  }
-  .zoom-controls {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-}
+ @media only screen and (max-width: 700px) {
+      .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    
+    .zoom-controls {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  
 
     .zoom-controls button {
       background-color: white;
