@@ -82,7 +82,7 @@
       cursor: pointer; /* Pointer cursor for clickable images */
     }
 
-    /* Zoom Modal Styles */
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -96,11 +96,13 @@
     }
 
     .modal-content {
+      padding-top: 40px; /* Adjust padding as needed */
       margin: auto;
       display: block;
-      width: auto;
-      max-width: 80%;
-      max-height: 80%;
+      width: 80%; /* Adjust width as needed */
+      max-width: 600px; /* Example maximum width */
+      height: auto; /* Ensures aspect ratio is maintained */
+      background-color: transparent; /* Ensures the background is transparent */
     }
 
     .close {
@@ -110,15 +112,8 @@
       color: #f1f1f1;
       font-size: 40px;
       font-weight: bold;
+      z-index: 1001; /* Ensure it's above modal content */
       transition: 0.3s;
-      z-index: 1001; /* Ensure the close button is above modal content */
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
     }
 
     /* Next and previous buttons */
@@ -126,16 +121,15 @@
       cursor: pointer;
       position: absolute;
       top: 50%;
+      transform: translateY(-50%);
       width: auto;
       padding: 16px;
-      margin-top: -22px;
       color: white;
       font-weight: bold;
       font-size: 20px;
       transition: 0.6s ease;
       border-radius: 0 3px 3px 0;
       user-select: none;
-      z-index: 1001; /* Ensure buttons are above modal content */
     }
 
     .next {
@@ -148,31 +142,32 @@
     }
 
     @media only screen and (max-width: 700px) {
-      .modal {
-        /* Other styles remain unchanged */
+      .modal-content {
+        max-width: 100%;
+        max-height: 100%;
       }
+    }
+    
+    .zoom-controls {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
 
-      .zoom-controls {
-        position: absolute;
-        bottom: 15px;
-        left: 15px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px;
-        border-radius: 5px;
-      }
+    .zoom-controls button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
 
-      .zoom-controls button {
-        background-color: white;
-        color: black;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        border-radius: 50%;
-      }
-
-      .close {
-        color: white; /* White color for close button in mobile */
-      }
+    .close {
+      color: white; /* White color for close button in mobile */
     }
   </style>
 </head>
@@ -348,6 +343,8 @@
       modalImg.style.width = 'auto';
       modalImg.style.height = 'auto';
     }
+// Function to change image in modal
+
 
     // Function to change image in modal
     function plusSlides(n) {
