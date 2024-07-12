@@ -94,9 +94,17 @@
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.9);
     }
-
+    #img01 {
+  /* Center the image horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Add some margin to avoid zoomed image touching edges */
+  margin: 20px;
+}
     .modal-content {
-      padding-top: 40px; /* Adjust padding as needed */
+       /* Adjust padding as needed */
       margin: auto;
       display: block;
       width: 80%; /* Adjust width as needed */
@@ -348,19 +356,24 @@
 
     // Function to change image in modal
     function plusSlides(n) {
-      // Determine the next index in the correct year order
-      let nextIndex = currentIndex;
-      const currentYear = images[currentIndex].year;
-      
-      // Find the next image in the selected year
-      do {
-        nextIndex = (nextIndex + n + images.length) % images.length;
-      } while (images[nextIndex].year !== currentYear && nextIndex !== currentIndex);
+  let nextIndex = currentIndex;
+  const currentYear = images[currentIndex].year;
+  const selectedYear = document.getElementById('yearSelector').value;
 
-      currentIndex = nextIndex;
-      const modalImg = document.getElementById('img01');
-      modalImg.src = images[currentIndex].src;
-    }
+  if (selectedYear === "") {
+    // Show all images when "-- வருடம் --" is selected
+    nextIndex = (nextIndex + n + images.length) % images.length;
+  } else {
+    // Find the next image in the selected year
+    do {
+      nextIndex = (nextIndex + n + images.length) % images.length;
+    } while (images[nextIndex].year !== currentYear && nextIndex !== currentIndex);
+  }
+
+  currentIndex = nextIndex;
+  const modalImg = document.getElementById('img01');
+  modalImg.src = images[currentIndex].src;
+}
 
     // Initialize the photo grid on page load
     document.addEventListener('DOMContentLoaded', initializePhotoGrid);
