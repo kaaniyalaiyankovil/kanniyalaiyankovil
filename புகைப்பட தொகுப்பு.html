@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -155,13 +155,13 @@
       .close {
         font-size: 30px;
       }
-    }
 
-    /* Zoom controls */
-    .zoom-controls {
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
+      /* Zoom controls */
+      .zoom-controls {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+      }
     }
   </style>
 </head>
@@ -220,7 +220,7 @@
   <div id="myModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="zoom-controls">
-      <button class="btn btn-primary" onclick="zoomOut()">Zoom Out</button>
+      <button class="btn btn-primary" onclick="zoomOut()">X</button>
     </div>
     <img class="modal-content" id="img01">
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -336,22 +336,20 @@
     }
 
     // Function to change image in modal
-   // Function to change image in modal
-function plusSlides(n) {
-  // Determine the next index in the correct year order
-  let nextIndex = currentIndex;
-  const currentYear = images[currentIndex].year;
-  
-  // Find the next image in the selected year
-  do {
-    nextIndex = (nextIndex + n + images.length) % images.length;
-  } while (images[nextIndex].year !== currentYear && nextIndex !== currentIndex);
+    function plusSlides(n) {
+      // Determine the next index in the correct year order
+      let nextIndex = currentIndex;
+      const currentYear = images[currentIndex].year;
+      
+      // Find the next image in the selected year
+      do {
+        nextIndex = (nextIndex + n + images.length) % images.length;
+      } while (images[nextIndex].year !== currentYear && nextIndex !== currentIndex);
 
-  currentIndex = nextIndex;
-  const modalImg = document.getElementById('img01');
-  modalImg.src = images[currentIndex].src;
-}
-
+      currentIndex = nextIndex;
+      const modalImg = document.getElementById('img01');
+      modalImg.src = images[currentIndex].src;
+    }
 
     // Initialize the photo grid on page load
     document.addEventListener('DOMContentLoaded', initializePhotoGrid);
