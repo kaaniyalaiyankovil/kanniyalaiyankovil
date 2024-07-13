@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>காணியாளய்யன்(பைரவர் கூட்டம்) சமுதாயம் - Home</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    header {
+      background-color: #ffc107;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+    }
+    
+    header img {
+      max-width: 60%;
+      height: auto;
+    }
+    
+    .circle-image {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      color: #333;
+      margin-top: 30px;
+      word-wrap: break-word; /* Ensure long words break and wrap */
+    }
+
+    @media (min-width: 576px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .circle-image {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+    
+    .carousel-item img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      cursor: pointer; /* Pointer cursor for clickable images */
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  
+    #img01 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      max-width: 100%;
+      max-height: 100vh;
+      width: auto;
+      height: auto;
+    }
+
+    .modal-content {
+      /* Adjust padding as needed */
+      margin: auto;
+      display: block;
+      width: 80%; /* Adjust width as needed */
+      max-width: 600px; /* Example maximum width */
+      height: auto; /* Ensures aspect ratio is maintained */
+      background-color: transparent; /* Ensures the background is transparent */
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      z-index: 1001; /* Ensure it's above modal content */
+      transition: 0.3s;
+    }
+
+    /* Next and previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    
+    .zoom-controls {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .zoom-controls button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .close {
+      color: white; /* White color for close button in mobile */
+    }
+
+    .god-card {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .god-card img {
+      width: 100%;
+      height: auto; /* Ensure the full image is displayed */
+      border-radius: 10px;
+    }
+
+    .god-card h3 {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .god-card p {
+      font-size: 16px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Include the common header -->
+  <header>
+    <div class="container">
+      <h1>காணியாளய்யன்(பைரவர் கூட்டம்) சமுதாயம்</h1>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
+          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
+          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="நிலம் கொடுத்தவர்கள்.html">நிலம் கொடுத்தவர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="அமாவாசை நாட்கள் நேரம் .html">அமாவாசை நாட்கள் நேரம் </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k1.jpg" alt="God Image 1" onclick="openModal('24k1.jpg')">
+          <h3>God Name 1</h3>
+          <p>Description of God 1</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k2.jpg" alt="God Image 2" onclick="openModal('24k2.jpg')">
+          <h3>God Name 2</h3>
+          <p>Description of God 2</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k3.jpg" alt="God Image 3" onclick="openModal('24k3.jpg')">
+          <h3>God Name 3</h3>
+          <p>Description of God 3</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k10.jpg" alt="God Image 1" onclick="openModal('24k10.jpg')">
+          <h3>God Name 1</h3>
+          <p>Description of God 1</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k11.jpg" alt="God Image 2" onclick="openModal('24k11.jpg')">
+          <h3>God Name 2</h3>
+          <p>Description of God 2</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k12.jpg" alt="God Image 3" onclick="openModal('24k12.jpg')">
+          <h3>God Name 3</h3>
+          <p>Description of God 3</p>
+        </div>
+      </div> <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k1.jpg" alt="God Image 1" onclick="openModal('24k1.jpg')">
+          <h3>God Name 1</h3>
+          <p>Description of God 1</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k2.jpg" alt="God Image 2" onclick="openModal('24k2.jpg')">
+          <h3>God Name 2</h3>
+          <p>Description of God 2</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="god-card">
+          <img src="24k3.jpg" alt="God Image 3" onclick="openModal('24k3.jpg')">
+          <h3>God Name 3</h3>
+          <p>Description of God 3</p>
+        </div>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </div>
+
+  <!-- The Modal for Image Zoom -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <!-- Include the common footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 காணியாளய்யன்(பைரவர் கூட்டம்) சமுதாயம். All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function openModal(src) {
+      var modal = document.getElementById('myModal');
+      var modalImg = document.getElementById('img01');
+      modal.style.display = 'block';
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+    }
+
+    var slideIndex = 0;
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      var modalImg = document.getElementById('img01');
+      var images = document.querySelectorAll('.god-card img');
+
+      if (n >= images.length) { slideIndex = 0; }
+      if (n < 0) { slideIndex = images.length - 1; }
+
+      modalImg.src = images[slideIndex].src;
+    }
+  </script>
+</body>
+</html>
