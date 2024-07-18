@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்) - Home</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    header {
+      background-color: #ffc107;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    header img {
+      max-width: 60%;
+      height: auto;
+    }
+
+    .circle-image {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      color: #333;
+      margin-top: 30px;
+      word-wrap: break-word; /* Ensure long words break and wrap */
+    }
+
+    @media (min-width: 576px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .circle-image {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .head1 {
+      font-size: 1.5rem;
+      color: #000;
+      font-family: 'Times New Roman', serif;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    /* Styling for name cards */
+    .name-card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 2px 2px 5px rgb(245, 169, 71);
+    }
+
+    .name-card h5 {
+      font-size: 0.90rem;
+      color: #000;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Include the common header -->
+  <header>
+    <div class="container">
+      <div class="head1">
+        காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
+          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
+          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
+          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள்</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dropdown for Tamil months -->
+  <div class="container mt-4">
+    <div class="form-group">
+      <label for="tamilMonth">Select Month:</label>
+      <select id="tamilMonth" class="form-control" >
+        <option value="chithirai">சித்திரை</option>
+        <option value="vaikasi">வைகாசி</option>
+        <option value="aani">ஆனி</option>
+        <option value="aadi">ஆடி</option>
+        <option value="aavani">ஆவணி</option>
+        <option value="purattasi">புரட்டாசி</option>
+        <option value="aipasi">ஐப்பசி</option>
+        <option value="karthigai">கார்த்திகை</option>
+        <option value="margazhi">மார்கழி</option>
+        <option value="thai">தை</option>
+        <option value="maasi">மாசி</option>
+        <option value="panguni">பங்குனி</option>
+      </select>
+    </div>
+    <div id="monthContent" class="mt-4">
+      <!-- Content for selected month will be displayed here -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 காணியாளய்யன் திருக்கோவில். All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript to handle Tamil month selection -->
+  <script>
+    const monthNames = {
+      chithirai: ['1. N.ஆறுமுகம்- A.சம்பூரணம் 7639115558', '2. N.துரைசாமி-D. சரோஜா 9486774936', '3. D.சசிகுமார்-S.செல்வி 9976044069', '4. K.மோகன்ராஜ்- M.நர்மதா 9942389567', '5. K.நரசிம்மன்-N.சுசிலா 6374652711', '6. A.முருகேசன்-M. கலைச்செல்வி 9003590926', '7. D.ராஜ்குமார்- R.உமாவள்ளி 9524095340', '8. A.நாராயணமூர்த்தி- N.மகேஸ்வரி 9789289935', '9. கருணாகரன்', '10. ஈஸ்வரமூர்த்தி', '11. பூபதி', '12. மாணிக்கம்', '13. செல்வம்', '14. ஐயப்பன் ‌', '15. துரைசாமி'], // Replace with actual names for சித்திரை
+      vaikasi: ['1. T. மாரிமுத்து - M.ருக்மணி பெருமாநல்லூர் 9443567530',
+'2. T. சிவராஜ் - S சத்யா பெருமாநல்லூர் 9443937902',
+'3. R. மாரிமுத்து - M.தனபாக்கியம் கருப்பட்டி கடை கோவை 9894047387',
+'4. R. முத்துச்சாமி - M.கல்பனா தேவி கருப்பட்டி கடை கோவை 9994147756',
+'5. K.C. பிரபு - M.தங்கமணி துடியலூர் 9976158517',
+'6. C. விக்னேஸ்வரன் - G. ஸ்ரீமதி நஞ்சுண்டாபுரம் 9843417757',
+'7. D. அர்ஜுன் (உமாதேவி) நஞ்சுண்டாபுரம் 8668057616',
+'8. P. நந்தகோபால் - N.கௌசல்யா பெருமாநல்லூர் 7708265143',
+'9. N. ராமலிங்கம் - R.செல்வி பெரிய கருக்கு பாளையம் 8870584797',
+'10. R. தனராஜ் - D.காயத்ரி பெரிய கருக்கு பாளையம் 8056390290',
+'11. R. வரதராஜ் - V.நந்தினி பெரிய கருக்குபாளையம் 900 3550175',
+'12. M. மோகன் - R.ராதா KMG புதூர் பிரிவு 9443505987',
+'13. M. அத்தியண்ணன் - A. மணி குள்ளம்பட்டி 900 3977456',
+'14. P. தங்கராஜ் - T.இந்திராணி குமாரபாளையம் 9442394808',
+'15. S.A மாணிக்கம் - M.சுதந்திரம் சாமக்குத்து 7708151844',
+'16. M. அய்யப்பன் - A.மேகலா சாமக்குத்து 7708151844',
+'17. K. குகநாதன் - G.பூங்கொடி வைராபாளையம் 9865827906',
+'18. K. கோவிந்தராஜ் - G.கௌரி வைராபாளையம் 9715746081',
+'19. K. செந்தில்குமார் - S.ராஜேஸ்வரி சூளை',
+'20. G.சதிஸ்குமார் - கவிப்பிரியா அயோதியாபட்ணம் 9865153310','21. M. மோகன்',
+'22. R. வளர்மதி',
+'23. M. ஸ்ரீ சரண்',
+'24. A. சினேகா',
+'25. KNG புதூர், கோவை',
+'26. M. அத்தியண்ணண்',
+'27. மணி',
+'28. A. மணிகண்டன்',
+'29. M. ஜனணி (தங்கராஜ் - ராணி) குமாரபாளையம்',
+'30. சௌ. மேகநாதன் - மே. ஜோதி 31.',
+'31. அயோதியபட்டனம் சேலம் 9791726338',
+'32. எஸ்.கார்த்திகேயன் - தேவகி அயோதியபட்டணம் சேலம்)9942696824',
+'33. G.சதிஸ்குமார் - கவிப்பிரியா'], // Replace with actual names for வைகாசி
+      aani: ['1. V. தண்டயுதபாணி/சுதா', '2. Dr. கைலாஷ்நாத் /Dr ஜனனி', '3. V. சாண்முகசுந்தம்/மோகனசுந்தரி', '4. S. கோவிந்தராஜ் /சரசு', '5. S. Murugesh/சகுந்தலா', '6. ஜி. S. ஸ்ரீதர் /கார்த்தியாயினி', '7. R. S. வேணுகோபால் /நிர்மலா', '8. செல்லம். பாஸ்கர் /சுகவனேஸ்வரி', '9. V. மோகன் சதிஷ் /ராஜேஸ்வரி', '10. டி.ஜெயராமன் /கல்பனா', '11. டி. Kaliyappan/ பேபி'], // Replace with actual names for ஆனி
+      aadi: ['1.நாராயணசாமி நாடார் குடும்பத்தினர். ராமர் கோவில் தோட்டம். சேலம்',
+'2.P. கெளதம் - G. பிரியங்கா மேட்டுப்பட்டி காலனி. சேலம்',
+'3.கி. தனசேகரன் - சுமதி சீனிவாசன் நகர் மேட்டுப்பட்டி. சேலம்',
+'4.காமராஜ் - ஆனந்தி செம்மாண்டபட்டி, சேலம்',
+'5.அத்தியண்ணண் - குள்ளம்பட்டி',
+'6.மோகன் - ராதா கோவை'], // Replace with actual names for ஆடி
+      aavani: ['1. மணிகண்டன் - கனிமொழி பொள்ளாச்சி',
+'2. தங்கராஜ் - குளித்தலை 9092177516, 9788373098',
+'3. ரவீந்திரன் - பல்லடம் 9965412513',
+'4. கணேஷ் - பரம்பி க்குளம் சக்தி பரம்பிக்குளம் 9489179714',
+'5. கலா ஜெயபிரகாஷ் - பரம்பிக்குளம் 9486425614',
+'6. பாஸ் கரன் - பொள்ளாச்சி 9842368098',
+'7. சுரேஷ் - பொள்ளாச்சி 9976102074',
+'8. ராஜேஷ் - பொள்ளாச்சி 9976102075',
+'9. கணேஷ் - பரம்பிக்குளம் 9487374571',
+'10. அமராவதி - கருப்புசாமி. பொள்ளாச்சி',
+'11. பழனிவேல் - மோகனா மேட்டுப்பட்டி. சேலம்',
+'12. சந்தோஷ் - சரண்யா மேட்டுப்பட்டி. சேலம்'], // Replace with actual names for ஆவணி
+      purattasi: ['1. P.K மணி - சுசீலா அனுப்பூர் பாளையம்',
+'2. வரதராஜ் - தமிழரசி வண்ணங்காடு சேலம்',
+'3. வயகாடு தங்கராஜ் - பாரதி தாளப்பதி',
+'4. நந்தகுமார் - திவ்யபாரதி அ.பாளையம்',
+'5. கி. தனசேகரன் - சுமதி சீனிவாசன் நகர் மேட்டுப்பட்டி சேலம்',
+'6. மணி - சாந்தாமணி அ.பாளையம்',
+'7. முருகேஷ் - குன்னத்தூர் சிட்டி மேன்',
+'8. கணேசன் - குன்னத்தூர் சிட்டி மேன்',
+'9. சண்முகம் - ரேவதி அ.பாளையம்',
+'10. ராஜ் - அ.பாளையம்',
+'11. கார்த்திகேயன் - ராஜலட்சுமி அ.பாளையம்',
+'12. வடிவேல் - ரமேஷ் ஜங்கநாயக்கன் பாளையம்',
+'13. கனகராஜ் - கவிதா வண்ணாங்காடு சேலம்',
+'14. காளியப்பன் - தட்டாங்கோட்டை',
+'15. கணேஷ் - கோமதி அ.பாளையம்',
+'16. துரைசாமி - லட்சுமி கருக்குப்பாளையம்',
+'17. மாணிக்கம் - அ.பாளையம்',
+'18. காளிதாஸ் - மணியம் பாளையம்',
+'19. செந்தில்குமார் - சுதா அ.புதூர்',
+'20. வசந்தகுமார் - சித்ரா அணைப்புதூர்',
+'21. T. முருகன் - சுமதி. T. மூர்த்தி சித்ரா விநாயகாபுரம் தேங்கள் பாளையம் சேலம்',
+'22. செல்வராஜ் - காயத்ரி தட்டாங் குட்டை',
+'23. சங்கர் - புவனேஷ் தாளப்பதி',
+'24. ரவி (எ) - காளியப்பன் தாளப்பதி',
+'25. துரைசாமி - மஞ்சு அயோத்தியபட்டினம் சேலம்',
+'26. பிட்டர் - சந்தோஷ் கலையரசி கருப்பு பாளையம்',
+'27. வயக்காடு ராஜு - சுதா',
+'28. ராஜேந்திர குமார் - மகேஸ்வரி ஜங்கநாயக்கன் பாளையம்',
+'29. K. முருகேசன் - ஈஸ்வரி பவானி 9150288061',
+'30. லட்சுமணன் - ஜெயக்கொடி தட்டாங்குட்டை 9344363606','31.அய்யாசாமி நாடார்-சின்ன கருக்குப்பாளையம்','32.நித்தியானந்தம் திருப்பூர்'], // Replace with actual names for புரட்டாசி
+      aipasi: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for ஐப்பசி
+      karthigai: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for கார்த்திகை
+      margazhi: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for மார்கழி
+      thai: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for தை
+      maasi: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for மாசி
+      panguni: ['Name 1', 'Name 2', 'Name 3'] // Replace with actual names for பங்குனி
+    };
+
+    document.getElementById('tamilMonth').addEventListener('change', function() {
+      const selectedMonth = this.value;
+      const names = monthNames[selectedMonth];
+      const namesList = names.map(name => `
+        <div class="name-card">
+          <h5>${name}</h5>
+        </div>
+      `).join('');
+      document.getElementById('monthContent').innerHTML = namesList;
+    });
+
+    // Initialize the content for the first month
+    const initialMonth = 'chithirai';
+    const initialNames = monthNames[initialMonth];
+    const initialNamesList = initialNames.map(name => `
+      <div class="name-card">
+        <h5>${name}</h5>
+      </div>
+    `).join('');
+    document.getElementById('monthContent').innerHTML = initialNamesList;
+  </script>
+</body>
+</html>
