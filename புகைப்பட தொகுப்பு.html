@@ -3,394 +3,1957 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்) - Home</title>
+  <title>காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்) - புகைப்பட தொகுப்பு</title>
+  
+  <!-- Bootstrap 4 -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Tamil -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  
   <style>
-    /* Custom styles */
-    header {
-      background-color: #ffc107;
+    /* [KEEP ALL YOUR EXISTING CSS STYLES FROM CODE 2 - THEY ARE FINE] */
+    /* Custom Tamil Font */
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    
+    /* Header Styles */
+    .temple-header {
+      background: linear-gradient(135deg, #ff9933, #ffcc66);
+      padding: 25px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .temple-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.1)">ॐ</text></svg>');
+      background-size: 150px;
+      opacity: 0.3;
+    }
+    
+    .temple-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8B0000;
       text-align: center;
-      padding: 20px 0;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .temple-subtitle {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Navigation */
+    .temple-nav {
+      background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      padding: 15px 20px !important;
+      position: relative;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFD700 !important;
+    }
+    
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFD700 !important;
+    }
+    
+    /* Main Content */
+    .main-content {
+      padding: 30px 0;
+      background: #FFF8E7;
+      min-height: 70vh;
+    }
+    
+    /* Page Title Section */
+    .page-title-section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(255, 153, 51, 0.1));
+      border-radius: 15px;
+      border-left: 5px solid #8B0000;
+      border-right: 5px solid #FF9933;
+    }
+    
+    .page-title {
+      color: #8B0000;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .page-title i {
+      color: #FF9933;
+      font-size: 1.8rem;
+    }
+    
+    /* Secret Admin Login */
+    .secret-login {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .secret-btn {
+      background: linear-gradient(135deg, #8B0000, #A52A2A);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 auto;
+    }
+    
+    .secret-btn:hover {
+      background: linear-gradient(135deg, #A52A2A, #8B0000);
+      transform: translateY(-2px);
+    }
+    
+    .secret-input {
+      width: 200px;
+      padding: 8px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin: 0 10px;
+      text-align: center;
+    }
+    
+    .secret-input:focus {
+      border-color: #8B0000;
+      outline: none;
+    }
+    
+    /* Admin Panel */
+    .admin-panel {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 2px solid #8B0000;
+      display: none;
+    }
+    
+    .admin-title {
+      color: #8B0000;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .upload-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-label {
+      color: #8B0000;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-input:focus {
+      border-color: #8B0000;
+      outline: none;
+    }
+    
+    .file-upload-container {
+      border: 2px dashed #8B0000;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #FFF8E7;
+    }
+    
+    .file-upload-container:hover {
+      background: #FFEBCD;
+    }
+    
+    .file-upload-label {
+      display: block;
+      cursor: pointer;
+    }
+    
+    .upload-icon {
+      font-size: 2.5rem;
+      color: #8B0000;
+      margin-bottom: 10px;
+    }
+    
+    .file-input {
+      display: none;
+    }
+    
+    .preview-container {
+      margin-top: 15px;
+      text-align: center;
+    }
+    
+    .image-preview {
+      max-width: 200px;
+      max-height: 150px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+    
+    .upload-btn {
+      background: linear-gradient(135deg, #FF9933, #FFCC66);
+      color: #8B0000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 20px;
+    }
+    
+    .upload-btn:hover:not(:disabled) {
+      background: linear-gradient(135deg, #FFCC66, #FF9933);
+      transform: translateY(-2px);
+    }
+    
+    .upload-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .admin-controls {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .control-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #8B0000;
+      background: white;
+      color: #8B0000;
+    }
+    
+    .control-btn:hover {
+      background: #8B0000;
+      color: white;
+    }
+    
+    /* Gallery Controls */
+    .gallery-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .category-filter {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .category-btn {
+      background: white;
+      border: 2px solid #8B0000;
+      color: #8B0000;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .category-btn:hover {
+      background: #8B0000;
+      color: white;
+    }
+    
+    .category-btn.active {
+      background: #8B0000;
+      color: white;
+    }
+    
+    .sort-select {
+      padding: 8px 15px;
+      border: 2px solid #8B0000;
+      border-radius: 8px;
+      background: white;
+      color: #8B0000;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .sort-select:focus {
+      outline: none;
+    }
+    
+    /* Sync Status */
+    #syncStatus {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    /* Delete Button Overlay */
+    .delete-overlay {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: none;
+      z-index: 10;
+    }
+    
+    .delete-btn {
+      background: linear-gradient(135deg, #dc3545, #c82333);
+      color: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .delete-btn:hover {
+      background: linear-gradient(135deg, #c82333, #dc3545);
+      transform: scale(1.1);
+    }
+    
+    /* Photo Gallery */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .photo-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
       position: relative;
     }
     
-    header img {
-      max-width: 60%;
-      height: auto;
+    .photo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
     
-    .circle-image {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-    }
-
-    .top-left {
-      top: 10px;
-      left: 10px;
-    }
-
-    .top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    h1 {
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      color: #333;
-      margin-top: 30px;
-      word-wrap: break-word; /* Ensure long words break and wrap */
-    }
-
-    @media (min-width: 576px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .circle-image {
-        width: 100px;
-        height: 100px;
-      }
+    .photo-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
     
-    footer {
-      background-color: #343a40;
-      color: #fff;
+    .photo-info {
+      padding: 15px;
       text-align: center;
-      padding: 20px 0;
+    }
+    
+    .photo-title {
+      color: #8B0000;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .photo-date {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    
+    /* Pagination Controls */
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .page-btn {
+      background: white;
+      border: 2px solid #8B0000;
+      color: #8B0000;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+    }
+    
+    .page-btn:hover:not(:disabled) {
+      background: #8B0000;
+      color: white;
+    }
+    
+    .page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .page-info {
+      color: #8B0000;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    /* Quick Links */
+    .quick-links-section {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      margin-top: 30px;
+    }
+    
+    .links-title {
+      color: #8B0000;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    
+    .quick-link-item {
+      background: #F8F9FA;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #E9ECEF;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .quick-link-item:hover {
+      background: #E9ECEF;
+      transform: translateY(-3px);
+      border-color: #8B0000;
+      text-decoration: none;
+      color: #8B0000;
+    }
+    
+    .quick-link-item i {
+      color: #8B0000;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    /* Footer */
+    .temple-footer {
+      background: linear-gradient(135deg, #2F4F4F, #363636);
+      color: white;
+      padding: 40px 0 20px;
       margin-top: 40px;
     }
     
-    .carousel-item img {
-      max-width: 100%;
-      height: auto;
+    .footer-section {
+      margin-bottom: 25px;
     }
-
-    .hidden {
-      display: none;
+    
+    .footer-title {
+      color: #FFD700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
     }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
     }
-
-    .grid-item img {
-      width: 100%;
-      height: auto;
-      cursor: pointer; /* Pointer cursor for clickable images */
+    
+    .footer-links li {
+      margin-bottom: 10px;
     }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.9);
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-  
-  #img01 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    max-width: 100%;
-    max-height: 100vh;
-    width: auto;
-    height: auto;
-  }
-
-
-    .modal-content {
-       /* Adjust padding as needed */
-      margin: auto;
-      display: block;
-      width: 80%; /* Adjust width as needed */
-      max-width: 600px; /* Example maximum width */
-      height: auto; /* Ensures aspect ratio is maintained */
-      background-color: transparent; /* Ensures the background is transparent */
+    
+    .footer-links a:hover {
+      color: #FFD700;
     }
-.head1{
-  font-size: 1.5rem;
-  color: #000; /* Orange Red */
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-}
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      z-index: 1001; /* Ensure it's above modal content */
-      transition: 0.3s;
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
     }
-
-    /* Next and previous buttons */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: auto;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
- @media only screen and (max-width: 700px) {
-      .modal-content {
-        max-width: 100%;
-        max-height: 100%;
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-   
     
-    .zoom-controls {
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
-      right: 15px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      border-radius: 5px;
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .temple-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+      }
+      
+      .page-title {
+        font-size: 1.8rem;
+      }
+      
+      .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
     }
-  
-
-    .zoom-controls button {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
+    
+    @media (max-width: 768px) {
+      .temple-title {
+        font-size: 1.6rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 1rem;
+      }
+      
+      .page-title {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .gallery-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .category-filter {
+        justify-content: center;
+      }
+      
+      .quick-links-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pagination-controls {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
-
-    .close {
-      color: white; /* White color for close button in mobile */
+    
+    @media (max-width: 576px) {
+      .temple-header {
+        padding: 20px 0;
+      }
+      
+      .temple-title {
+        font-size: 1.4rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .page-title {
+        font-size: 1.4rem;
+      }
+      
+      .photo-gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .quick-links-section {
+        padding: 20px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <!-- Include the common header -->
-  <header>
+  <!-- Header -->
+  <header class="temple-header">
     <div class="container">
-      <div class="head1">காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)</div>
+      <div class="text-center">
+        <h1 class="temple-title tamil">காணியாளய்யன் திருக்கோவில்</h1>
+        <p class="temple-subtitle tamil">பைரவர் கூட்டம் • ஸ்ரீ காணியாளய்யன் ஆலயம்</p>
+      </div>
     </div>
   </header>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg temple-nav navbar-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTemple">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
-          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள் </a></li>
+      <div class="collapse navbar-collapse" id="navbarTemple">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link tamil" href="index.html">
+              <i class="fas fa-home me-2"></i>முகப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="history.html">
+              <i class="fas fa-history me-2"></i>கோவில் வரலாறு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="god_names.html">
+              <i class="fas fa-pray me-2"></i>கடவுள் பெயர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active tamil" href="புகைப்பட தொகுப்பு.html">
+              <i class="fas fa-images me-2"></i>புகைப்பட தொகுப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="நிர்வாகிகள்.html">
+              <i class="fas fa-users me-2"></i>நிர்வாகிகள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="நிலம் அன்பளிப்பாளர்கள்.html">
+              <i class="fas fa-hands-helping me-2"></i>நிலம் அன்பளிப்பாளர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="அமாவாசை கட்டளைதாரர்கள்.html">
+              <i class="fas fa-calendar me-2"></i>அமாவாசை கட்டளைதாரர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="விஷேசநாட்கள்.html">
+              <i class="fas fa-star me-2"></i>விஷேசநாட்கள்
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Content from image -->
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="yearSelector">வருடம் தேர்ந்தெடுக்க</label>
-          <select class="form-control" id="yearSelector">
-            <option value="">-- வருடம் --</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <!-- Add more years as needed -->
-          </select>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Page Title -->
+      <div class="page-title-section">
+        <h2 class="page-title tamil">
+          <i class="fas fa-camera"></i>
+          புகைப்பட தொகுப்பு
+          <i class="fas fa-images"></i>
+        </h2>
+        <p class="tamil">காணியாளய்யன் திருக்கோவிலின் நினைவுக் காட்சிகள். புகைப்படத்தை கிளிக் செய்து பெரிதாகப் பார்க்கவும்.</p>
+      </div>
+      
+      <!-- Secret Admin Login -->
+      <div class="secret-login" id="secretLogin">
+        <button class="secret-btn tamil" onclick="showSecretInput()">
+          <i class="fas fa-key"></i>
+          நிர்வாகிகள் புகைப்படம் சேர்க்க
+        </button>
+        <div id="secretInputContainer" style="display: none; margin-top: 15px;">
+          <input type="password" id="secretKey" class="secret-input" placeholder="சிறப்பு குறியை உள்ளிடுக">
+          <button class="secret-btn tamil" onclick="checkSecretKey()">
+            <i class="fas fa-lock-open"></i>
+            உள்ளிடு
+          </button>
         </div>
-        <button class="btn btn-primary" onclick="filterPhotos()">தேடு</button>
-        <button class="btn btn-primary" onclick="resetPhotos()">மீட்க</button>
+      </div>
+      
+      <!-- Admin Panel (Hidden by default) -->
+      <div class="admin-panel" id="adminPanel">
+        <h3 class="admin-title tamil">
+          <i class="fas fa-upload"></i>
+          புதிய புகைப்படம் சேர்க்க
+        </h3>
+        
+        <form class="upload-form" id="uploadForm">
+          <div class="form-group">
+            <label class="form-label tamil">புகைப்பட தலைப்பு *</label>
+            <input type="text" class="form-input" id="photoTitle" placeholder="எ.கா: மூலவர் சிலை" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label tamil">புகைப்பட வகை *</label>
+            <select class="form-input" id="photoCategory" required>
+              <option value="">தேர்வு செய்க</option>
+              <option value="மூலவர்">மூலவர்</option>
+              <option value="உற்சவம்">உற்சவம்</option>
+              <option value="பண்டிகை">பண்டிகை</option>
+              <option value="கட்டிடக்கலை">கட்டிடக்கலை</option>
+              <option value="சிறப்பு நிகழ்வுகள்">சிறப்பு நிகழ்வுகள்</option>
+              <option value="மற்றவை">மற்றவை</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label tamil">புகைப்படம் *</label>
+            <div class="file-upload-container">
+              <label class="file-upload-label">
+                <div class="upload-icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="tamil">புகைப்படத்தை இங்கே கிளிக் செய்து தேர்வு செய்க</div>
+                <div class="tamil" style="color: #666; margin-top: 5px; font-size: 0.9rem;">
+                  (JPG, PNG, GIF மட்டும், அதிகபட்ச அளவு: 10MB)
+                </div>
+                <input type="file" class="file-input" id="photoFile" accept="image/*" required>
+              </label>
+            </div>
+            <div class="preview-container">
+              <img id="imagePreview" class="image-preview" alt="Preview">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label tamil">விவரங்கள் (விரும்பினால்)</label>
+            <textarea class="form-input" id="photoDescription" rows="2" placeholder="புகைப்படத்தின் குறிப்பு..."></textarea>
+          </div>
+          
+          <button type="submit" class="upload-btn tamil" id="uploadButton" disabled>
+            <i class="fas fa-upload"></i>
+            புகைப்படம் சேர்க்க
+          </button>
+        </form>
+        
+        <div class="admin-controls">
+          <button class="control-btn tamil" onclick="closeAdminPanel()">
+            <i class="fas fa-times"></i>
+            மூடு
+          </button>
+        </div>
+      </div>
+      
+      <!-- Sync Status -->
+      <div id="syncStatus" style="text-align: center; margin-bottom: 15px; display: none;">
+        <small class="tamil" style="color: #8B0000; font-weight: 500;">
+          <i class="fas fa-sync-alt"></i>
+          <span id="syncStatusText">தரவு ஒத்திசைக்கப்படுகிறது...</span>
+        </small>
+      </div>
+      
+      <!-- Gallery Controls -->
+      <div class="gallery-controls">
+        <div class="category-filter" id="categoryFilter">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+        
+        <select class="sort-select tamil" id="sortSelect">
+          <option value="newest">புதியதிலிருந்து பழையது</option>
+          <option value="oldest">பழையதிலிருந்து புதியது</option>
+          <option value="name">பெயர் வரிசை</option>
+        </select>
+      </div>
+      
+      <!-- Pagination Controls -->
+      <div class="pagination-controls" id="paginationControls">
+        <button class="page-btn tamil" id="prevPage" disabled>
+          <i class="fas fa-chevron-left"></i>
+          முந்தையது
+        </button>
+        
+        <span class="page-info tamil" id="pageInfo">பக்கம் 1 / 1</span>
+        
+        <button class="page-btn tamil" id="nextPage" disabled>
+          அடுத்தது
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <!-- Photo Gallery Grid -->
+      <div class="photo-gallery" id="photoGallery">
+        <!-- Photos will be loaded here by JavaScript -->
+        <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+          <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">ஏற்றுகிறது...</span>
+          </div>
+          <p class="tamil mt-3">புகைப்படங்கள் ஏற்றப்படுகின்றன...</p>
+        </div>
+      </div>
+      
+      <!-- Pagination Controls (Bottom) -->
+      <div class="pagination-controls" id="paginationControlsBottom">
+        <button class="page-btn tamil" id="prevPageBottom" disabled>
+          <i class="fas fa-chevron-left"></i>
+          முந்தையது
+        </button>
+        
+        <span class="page-info tamil" id="pageInfoBottom">பக்கம் 1 / 1</span>
+        
+        <button class="page-btn tamil" id="nextPageBottom" disabled>
+          அடுத்தது
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="quick-links-section">
+        <h3 class="links-title tamil">தொடர்புடைய பக்கங்கள்</h3>
+        
+        <div class="quick-links-grid">
+          <a href="கோவில் வரலாறு.html" class="quick-link-item tamil">
+            <i class="fas fa-history"></i>
+            <div>கோவில் வரலாறு</div>
+          </a>
+          
+          <a href="கடவுள் பெயர்கள்.html" class="quick-link-item tamil">
+            <i class="fas fa-pray"></i>
+            <div>கடவுள் பெயர்கள்</div>
+          </a>
+          
+          <a href="விஷேசநாட்கள்.html" class="quick-link-item tamil">
+            <i class="fas fa-calendar-alt"></i>
+            <div>விஷேச நாட்கள்</div>
+          </a>
+          
+          <a href="index.html" class="quick-link-item tamil">
+            <i class="fas fa-home"></i>
+            <div>முகப்புப் பக்கம்</div>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="grid-container" id="photoGrid">
-      <!-- Images will be dynamically inserted here -->
-    </div>
-  </div>
-
-  <!-- The Modal for Image Zoom -->
-  <div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="img01">
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <p>2024 </p>
+  <footer class="temple-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title tamil">காணியாளய்யன் திருக்கோவில்</h4>
+          <p class="tamil">பல நூற்றாண்டுகளாக பக்தர்களுக்கு சேவை செய்து வரும் புனிதத் தலம்.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title tamil">விரைவு இணைப்புகள்</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="tamil"><i class="fas fa-home"></i> முகப்பு பக்கம்</a></li>
+            <li><a href="கோவில் வரலாறு.html" class="tamil"><i class="fas fa-history"></i> கோவில் வரலாறு</a></li>
+            <li><a href="புகைப்பட தொகுப்பு.html" class="tamil"><i class="fas fa-images"></i> புகைப்படங்கள்</a></li>
+            <li><a href="விஷேசநாட்கள்.html" class="tamil"><i class="fas fa-calendar-alt"></i> சிறப்பு நாட்கள்</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">திருக்கோவில் நேரங்கள்</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-sun"></i> <span class="tamil">காலை தரிசனம்: 6:30 - 12:30</span></li>
+            <li><i class="fas fa-moon"></i> <span class="tamil">மாலை தரிசனம்: 4:30 - 8:30</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">தொடர்புக்கு</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> <span class="tamil">பைரவர் கூட்டம், தமிழ்நாடு</span></li>
+            <li><i class="fas fa-phone"></i> <span>+91 45678 91234</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="tamil">© 2024 காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்).</p>
+        <p class="tamil" style="font-size: 0.8rem; color: #888;" id="syncInfo"></p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Bootstrap and jQuery JS -->
+  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <!-- Custom Script -->
+  <!-- Lightbox JS - MUST COME AFTER jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  
   <script>
-    // Sample images data
-    const images = [
-      { src: '24k1.jpg', year: '2024' },
-      { src: '24k2.jpg', year: '2024' },
-      { src: '24k3.jpg', year: '2024' },
-      { src: '24k4.jpg', year: '2024' },
-      { src: '24k5.jpg', year: '2024' },
-      { src: '24k6.jpg', year: '2024' },
-      { src: '24k7.jpg', year: '2024' },
-      { src: '24k8.jpg', year: '2024' },
-      { src: '24k9.jpg', year: '2024' },
-      { src: '24k10.jpg', year: '2024' },
-      { src: '24k11.jpg', year: '2024' },
-      { src: '24k12.jpg', year: '2024' },
-      { src: '24k13.jpg', year: '2024' },
-      { src: '24k14.jpg', year: '2024' },
-      { src: '24k15.jpg', year: '2024' },
-      { src: '24k16.jpg', year: '2024' },
-      { src: '24k17.jpg', year: '2024' },
-      { src: '24k18.jpg', year: '2024' },
-      { src: '24k19.jpg', year: '2024' },
-      { src: '24k20.jpg', year: '2024' },
-      { src: '24k21.jpg', year: '2024' },
-      { src: '24k22.jpg', year: '2024' },
-      { src: '24k23.jpg', year: '2024' },
-      { src: '24k24.jpg', year: '2024' },
-      { src: '24k25.jpg', year: '2024' },
-      { src: '24k26.jpg', year: '2024' },
-      { src: '24k27.jpg', year: '2024' },
-      { src: '24k28.jpg', year: '2024' },
-      { src: '24k29.jpg', year: '2024' },
-      { src: '24k30.jpg', year: '2024' },
-      // Add more images as needed
-    ];
+    // ==================== CONFIGURATION ====================
+    // Use the SAME configuration as code 1
+    const IMGBB_API_KEY = '439685381ce60be02c158383dbc164d6'; // Same as code 1
+    
+    // FIX: Use the CORRECT BIN ID - Get this from JSONBin.io (create a new bin for photos)
+    const JSONBIN_CONFIG = { 
+      BIN_ID: '694021f2d0ea881f402b1a93 ', // CHANGE THIS TO YOUR NEW BIN ID
+      API_KEY: '$2a$10$rLaXWymVyZOFAW5QpTu7hOF69Wcrr.qj5v0VaYduKKpDu9Cf6K9bi',
+      BIN_URL: 'https://api.jsonbin.io/v3/b'
+    };
+    
+    const SECRET_KEY = "2024"; // SAME SECRET KEY as code 1
+    const SYNC_INTERVAL = 30000; // Sync every 30 seconds
+    
+    // ==================== GLOBAL VARIABLES ====================
+    let isAdmin = false;
+    let currentPage = 1;
+    const itemsPerPage = 9; // 9 photos per page for gallery
+    let currentCategory = "all";
+    let currentSort = "newest";
+    let galleryData = [];
+    let lastSyncTime = null;
+    let isOnline = navigator.onLine;
+    let lightboxInitialized = false;
+    
+    // ==================== INITIALIZATION ====================
+    document.addEventListener('DOMContentLoaded', function() {
+      setupEventListeners();
+      checkOnlineStatus();
+      loadGallery();
+      startAutoSync();
+      
+      // Update sync info in footer
+      updateSyncInfo();
+    });
+    
+    // ==================== SETUP EVENT LISTENERS ====================
+    function setupEventListeners() {
+      // File upload preview
+      document.getElementById('photoFile').addEventListener('change', handleFileSelect);
+      
+      // Upload form
+      document.getElementById('uploadForm').addEventListener('submit', handleUpload);
+      
+      // Category filter
+      document.getElementById('sortSelect').addEventListener('change', function() {
+        currentSort = this.value;
+        currentPage = 1;
+        loadGallery();
+        updatePagination();
+      });
+      
+      // Pagination buttons
+      document.getElementById('prevPage').addEventListener('click', () => changePage(-1));
+      document.getElementById('nextPage').addEventListener('click', () => changePage(1));
+      document.getElementById('prevPageBottom').addEventListener('click', () => changePage(-1));
+      document.getElementById('nextPageBottom').addEventListener('click', () => changePage(1));
+      
+      // Online/offline detection
+      window.addEventListener('online', handleOnline);
+      window.addEventListener('offline', handleOffline);
+    }
+    
+    // ==================== ONLINE/OFFLINE HANDLING ====================
+    function checkOnlineStatus() {
+      isOnline = navigator.onLine;
+      const statusText = isOnline ? 
+        '<i class="fas fa-wifi"></i> ஆன்லைனில்' : 
+        '<i class="fas fa-exclamation-triangle"></i> ஆஃப்லைனில்';
+      
+      document.getElementById('syncInfo').innerHTML = statusText;
+    }
+    
+    function handleOnline() {
+      isOnline = true;
+      document.getElementById('syncInfo').innerHTML = '<i class="fas fa-wifi"></i> ஆன்லைனில் - தரவு ஒத்திசைக்கப்படுகிறது';
+      
+      // Sync when coming back online
+      setTimeout(syncWithCloud, 2000);
+    }
+    
+    function handleOffline() {
+      isOnline = false;
+      document.getElementById('syncInfo').innerHTML = '<i class="fas fa-exclamation-triangle"></i> ஆஃப்லைனில் - உள்ளூர் தரவு காட்டப்படுகிறது';
+    }
+    
+    // ==================== LOAD GALLERY ====================
+    async function loadGallery() {
+      showSyncStatus('தரவு ஏற்றப்படுகிறது...');
+      
+      try {
+        // Try to load from cloud first
+        if (isOnline) {
+          const cloudData = await loadFromCloud();
+          
+          if (cloudData && cloudData.length > 0) {
+            galleryData = cloudData;
+            // Save to localStorage for offline use
+            localStorage.setItem('templeGallery', JSON.stringify(galleryData));
+            lastSyncTime = new Date();
+            showSyncStatus('தரவு ஒத்திசைக்கப்பட்டது', 'success');
+          } else {
+            // Fallback to localStorage if cloud is empty
+            galleryData = JSON.parse(localStorage.getItem('templeGallery')) || [];
+            showSyncStatus('உள்ளூர் தரவு பயன்படுத்தப்படுகிறது', 'warning');
+          }
+        } else {
+          // Offline: Use localStorage
+          galleryData = JSON.parse(localStorage.getItem('templeGallery')) || [];
+          showSyncStatus('ஆஃப்லைனில் - உள்ளூர் தரவு', 'warning');
+        }
+      } catch (error) {
+        console.error('Error loading data:', error);
+        galleryData = JSON.parse(localStorage.getItem('templeGallery')) || [];
+        showSyncStatus('பிழை - உள்ளூர் தரவு', 'error');
+      }
+      
+      // Load default data if empty
+      if (galleryData.length === 0) {
+        galleryData = getDefaultPhotos();
+        localStorage.setItem('templeGallery', JSON.stringify(galleryData));
+      }
+      
+      renderGallery();
+      updateCategories();
+      updatePagination();
+      updateSyncInfo();
+      
+      // Hide status after 3 seconds
+      setTimeout(() => {
+        hideSyncStatus();
+      }, 3000);
+    }
+    
+    function getDefaultPhotos() {
+      return [
+        {
+          id: 1,
+          title: "மூலவர் காணியாளய்யன்",
+          category: "மூலவர்",
+          image: "24k1.jpg",
+          description: "திருக்கோவிலின் முக்கிய விநாயகர் சிலை",
+          date: "2024-01-15",
+          timestamp: 1705276800000,
+          added: "2024-01-15T00:00:00.000Z"
+        },
+        {
+          id: 2,
+          title: "விமானம் & கோபுரம்",
+          category: "கட்டிடக்கலை",
+          image: "24k2.jpg",
+          description: "தொன்மையான திராவிட கட்டிடக்கலை",
+          date: "2024-01-20",
+          timestamp: 1705708800000,
+          added: "2024-01-20T00:00:00.000Z"
+        },
+        {
+          id: 3,
+          title: "உற்சவ மூர்த்தி",
+          category: "உற்சவம்",
+          image: "24k3.jpg",
+          description: "பண்டிகை நாட்களில் சப்பரம் ஊர்வலம்",
+          date: "2024-02-10",
+          timestamp: 1707523200000,
+          added: "2024-02-10T00:00:00.000Z"
+        }
+      ];
+    }
+    
+    // ==================== RENDER GALLERY (SAFER VERSION) ====================
+function renderGallery() {
+  const gallery = document.getElementById('photoGallery');
+  const filteredPhotos = filterAndSortPhotos();
+  const totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
+  
+  // Adjust current page if needed
+  if (currentPage > totalPages && totalPages > 0) {
+    currentPage = totalPages;
+  } else if (totalPages === 0) {
+    currentPage = 1;
+  }
+  
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentPhotos = filteredPhotos.slice(startIndex, endIndex);
+  
+  gallery.innerHTML = '';
+  
+  if (currentPhotos.length === 0) {
+    const emptyDiv = document.createElement('div');
+    emptyDiv.style.gridColumn = '1/-1';
+    emptyDiv.style.textAlign = 'center';
+    emptyDiv.style.padding = '40px';
+    
+    emptyDiv.innerHTML = `
+      <i class="fas fa-images" style="font-size: 3rem; color: #8B0000; margin-bottom: 15px;"></i>
+      <h3 class="tamil" style="color: #8B0000;">புகைப்படங்கள் இல்லை</h3>
+      <p class="tamil" style="color: #666;">இந்த வகைக்கு புகைப்படங்கள் இன்னும் சேர்க்கப்படவில்லை.</p>
+      ${isAdmin ? '<button class="info-btn tamil mt-3" onclick="showSecretInput()">முதல் புகைப்படம் சேர்க்க</button>' : ''}
+    `;
+    
+    gallery.appendChild(emptyDiv);
+    return;
+  }
+  
+  currentPhotos.forEach(photo => {
+    const photoCard = document.createElement('div');
+    photoCard.className = 'photo-card';
+    
+    // Escape all text content
+    const safeTitle = escapeHtml(photo.title);
+    const safeDescription = escapeHtml(photo.description || '');
+    const imageSource = getImageSource(photo.image);
+    const lightboxId = 'gallery-' + Date.now();
+    
+    // Create elements manually (safer than innerHTML)
+    const deleteOverlay = document.createElement('div');
+    deleteOverlay.className = 'delete-overlay';
+    deleteOverlay.style.display = isAdmin ? 'block' : 'none';
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+    deleteBtn.onclick = (e) => {
+      e.stopPropagation();
+      deletePhoto(photo.id);
+    };
+    
+    deleteOverlay.appendChild(deleteBtn);
+    
+    // Create lightbox link
+    const lightboxLink = document.createElement('a');
+    lightboxLink.href = imageSource;
+    lightboxLink.setAttribute('data-lightbox', lightboxId);
+    lightboxLink.setAttribute('data-title', `${safeTitle} - ${safeDescription}`);
+    
+    const photoImage = document.createElement('img');
+    photoImage.src = imageSource;
+    photoImage.alt = safeTitle;
+    photoImage.className = 'photo-image';
+    photoImage.onerror = function() {
+      this.onerror = null;
+      this.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect width="100%" height="100%" fill="#f8f9fa"/><text x="50%" y="50%" font-family="Noto Sans Tamil, sans-serif" font-size="14" fill="#666" text-anchor="middle" dy=".3em">${safeTitle}</text></svg>`;
+    };
+    
+    lightboxLink.appendChild(photoImage);
+    
+    // Create photo info
+    const photoInfo = document.createElement('div');
+    photoInfo.className = 'photo-info';
+    
+    const photoTitle = document.createElement('h4');
+    photoTitle.className = 'photo-title tamil';
+    photoTitle.textContent = safeTitle;
+    
+    const photoDate = document.createElement('div');
+    photoDate.className = 'photo-date tamil';
+    photoDate.textContent = `${photo.date} • ${photo.category}`;
+    
+    photoInfo.appendChild(photoTitle);
+    photoInfo.appendChild(photoDate);
+    
+    // Add description if exists
+    if (safeDescription) {
+      const photoDesc = document.createElement('p');
+      photoDesc.className = 'tamil';
+      photoDesc.style.fontSize = '0.85rem';
+      photoDesc.style.color = '#666';
+      photoDesc.style.marginTop = '5px';
+      photoDesc.textContent = safeDescription;
+      photoInfo.appendChild(photoDesc);
+    }
+    
+    // Assemble the card
+    photoCard.appendChild(deleteOverlay);
+    photoCard.appendChild(lightboxLink);
+    photoCard.appendChild(photoInfo);
+    
+    gallery.appendChild(photoCard);
+  });
+  
+  // Initialize Lightbox
+  initLightbox();
+}
+// ==================== IMPROVED HTML ESCAPE FUNCTION ====================
+function escapeHtml(text) {
+  if (!text) return '';
+  
+  // Create a temporary div element
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
 
-    let currentIndex = 0;
-
-    // Function to initialize the photo grid
-    function initializePhotoGrid() {
-      const photoGrid = document.getElementById('photoGrid');
-      images.forEach((image, index) => {
-        const gridItem = document.createElement('div');
-        gridItem.className = 'grid-item';
-        gridItem.setAttribute('data-year', image.year);
-
-        const img = document.createElement('img');
-        img.src = image.src;
-        img.alt = 'Event Image';
-        img.onclick = () => showModal(index);
-
-        gridItem.appendChild(img);
-        photoGrid.appendChild(gridItem);
+// OR use this simpler version:
+function escapeHtml(text) {
+  if (!text) return '';
+  
+  return text.toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+    
+    // Helper function for image source (SAME as code 1)
+    function getImageSource(imageData) {
+      // If it's already a URL
+      if (imageData.startsWith('http://') || imageData.startsWith('https://')) {
+        return imageData;
+      }
+      
+      // If it's base64
+      if (imageData.startsWith('data:image')) {
+        return imageData;
+      }
+      
+      // If it's a local filename
+      return imageData;
+    }
+    
+    // ==================== LIGHTBOX INITIALIZATION ====================
+    function initLightbox() {
+      if (typeof lightbox !== 'undefined' && !lightboxInitialized) {
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'albumLabel': "புகைப்படம் %1 / %2",
+          'disableScrolling': false,
+          'fadeDuration': 200
+        });
+        lightboxInitialized = true;
+      }
+    }
+    
+    // ==================== FILTER AND SORT ====================
+    function filterAndSortPhotos() {
+      let filtered = [...galleryData];
+      
+      // Filter by category
+      if (currentCategory !== 'all') {
+        filtered = filtered.filter(photo => photo.category === currentCategory);
+      }
+      
+      // Sort
+      filtered.sort((a, b) => {
+        switch (currentSort) {
+          case 'newest':
+            return b.timestamp - a.timestamp;
+          case 'oldest':
+            return a.timestamp - b.timestamp;
+          case 'name':
+            return a.title.localeCompare(b.title);
+          default:
+            return b.timestamp - a.timestamp;
+        }
+      });
+      
+      return filtered;
+    }
+    
+    // ==================== ADMIN FUNCTIONS (SAME as code 1) ====================
+    function showSecretInput() {
+      document.getElementById('secretInputContainer').style.display = 'block';
+    }
+    
+    function checkSecretKey() {
+      const input = document.getElementById('secretKey').value;
+      
+      if (input === SECRET_KEY) {
+        isAdmin = true;
+        document.getElementById('adminPanel').style.display = 'block';
+        document.getElementById('secretLogin').style.display = 'none';
+        renderGallery(); // Reload to show delete buttons
+      } else {
+        alert('தவறான குறி! தயவு செய்து சரியான குறியை உள்ளிடுக.');
+      }
+    }
+    
+    function closeAdminPanel() {
+      isAdmin = false;
+      document.getElementById('adminPanel').style.display = 'none';
+      document.getElementById('secretLogin').style.display = 'block';
+      document.getElementById('secretInputContainer').style.display = 'none';
+      document.getElementById('secretKey').value = '';
+      renderGallery(); // Reload to hide delete buttons
+    }
+    
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      const preview = document.getElementById('imagePreview');
+      const uploadBtn = document.getElementById('uploadButton');
+      
+      if (!file) {
+        if (preview) preview.style.display = 'none';
+        if (uploadBtn) uploadBtn.disabled = true;
+        return;
+      }
+      
+      // Check file type
+      if (!file.type.match('image.*')) {
+        alert('படங்கள் மட்டுமே (JPG, PNG, GIF) அனுமதிக்கப்படுகின்றன!');
+        event.target.value = '';
+        if (preview) preview.style.display = 'none';
+        if (uploadBtn) uploadBtn.disabled = true;
+        return;
+      }
+      
+      // Check file size (10MB limit)
+      if (file.size > 10 * 1024 * 1024) {
+        alert('படம் மிகப் பெரியது! அதிகபட்ச அளவு: 10MB');
+        event.target.value = '';
+        if (preview) preview.style.display = 'none';
+        if (uploadBtn) uploadBtn.disabled = true;
+        return;
+      }
+      
+      // Create preview
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        if (preview) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        }
+      };
+      
+      reader.onerror = function() {
+        alert('படத்தை படிக்க முடியவில்லை!');
+        if (preview) preview.style.display = 'none';
+        if (uploadBtn) uploadBtn.disabled = true;
+      };
+      
+      reader.readAsDataURL(file);
+      
+      if (uploadBtn) uploadBtn.disabled = false;
+    }
+    
+    async function handleUpload(e) {
+      e.preventDefault();
+      
+      const title = document.getElementById('photoTitle').value.trim();
+      const category = document.getElementById('photoCategory').value;
+      const description = document.getElementById('photoDescription').value.trim();
+      const fileInput = document.getElementById('photoFile');
+      const file = fileInput.files[0];
+      
+      if (!title || !category || !file) {
+        alert('தயவு செய்து அனைத்து தேவையான விவரங்களையும் பூர்த்தி செய்யவும்.');
+        return;
+      }
+      
+      const uploadBtn = document.getElementById('uploadButton');
+      const originalBtnText = uploadBtn.innerHTML;
+      uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> படம் பதிவேற்றப்படுகிறது...';
+      uploadBtn.disabled = true;
+      
+      try {
+        // STEP 1: Upload image to imgbb.com (SAME as code 1)
+        const imageUrl = await uploadToImgBB(file);
+        
+        if (!imageUrl) {
+          throw new Error('படம் பதிவேற்ற தோல்வியடைந்தது');
+        }
+        
+        console.log('✅ Image uploaded to imgbb:', imageUrl);
+        
+        // STEP 2: Create new photo with IMAGE URL
+        const newPhoto = {
+          id: galleryData.length > 0 ? Math.max(...galleryData.map(p => p.id)) + 1 : 1,
+          title: title,
+          category: category,
+          image: imageUrl,  // URL from imgbb
+          description: description || 'புகைப்பட விவரம்',
+          date: new Date().toISOString().split('T')[0],
+          timestamp: Date.now(),
+          added: new Date().toISOString(),
+          source: 'imgbb'
+        };
+        
+        // STEP 3: Save to localStorage
+        galleryData.push(newPhoto);
+        localStorage.setItem('templeGallery', JSON.stringify(galleryData));
+        
+        // STEP 4: Try to save to cloud (now only URLs, very small)
+        let cloudSaved = false;
+        if (isOnline) {
+          try {
+            const response = await saveToCloud(galleryData);
+            if (response) {
+              cloudSaved = true;
+              console.log('✅ Gallery data saved to JSONBin');
+            }
+          } catch (error) {
+            console.error('Cloud save failed:', error);
+          }
+        }
+        
+        // STEP 5: Reset form
+        document.getElementById('uploadForm').reset();
+        document.getElementById('imagePreview').style.display = 'none';
+        document.getElementById('uploadButton').disabled = true;
+        
+        // STEP 6: Update categories and reload
+        updateCategories();
+        const filteredPhotos = filterAndSortPhotos();
+        const totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
+        currentPage = totalPages;
+        renderGallery();
+        updatePagination();
+        
+        // STEP 7: Show success
+        if (cloudSaved) {
+          alert(`✅ "${title}" புகைப்படம் வெற்றிகரமாக சேர்க்கப்பட்டது!`);
+        } else {
+          alert(`✅ "${title}" சேர்க்கப்பட்டது!\n\n(உள்ளூர் சேமிப்பு - படம்: imgbb.com)`);
+        }
+        
+      } catch (error) {
+        console.error('Upload error:', error);
+        alert('பிழை: ' + error.message);
+      } finally {
+        uploadBtn.innerHTML = originalBtnText;
+        uploadBtn.disabled = false;
+      }
+    }
+    
+    // ==================== IMGBB UPLOAD FUNCTION (SAME as code 1) ====================
+    async function uploadToImgBB(file) {
+      // Validate file
+      if (!file || !file.type.match('image.*')) {
+        throw new Error('செல்லுபடியாகாத படம். JPG, PNG, GIF மட்டும்.');
+      }
+      
+      // Check file size (imgbb limit is 32MB)
+      if (file.size > 32 * 1024 * 1024) {
+        throw new Error('படம் மிகப் பெரியது! அதிகபட்ச அளவு: 32MB');
+      }
+      
+      // Get API key from user or use default
+      let apiKey = IMGBB_API_KEY;
+      
+      // If no API key set, prompt user
+      if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
+        apiKey = prompt(
+          'imgbb.com API key தேவை:\n\n' +
+          '1. https://imgbb.com க்கு செல்லவும்\n' +
+          '2. "API" என்பதை கிளிக் செய்யவும்\n' +
+          '3. உங்கள் API keyஐ பெறவும்\n' +
+          '4. அதை இங்கே உள்ளிடவும்:',
+          ''
+        );
+        
+        if (!apiKey) {
+          throw new Error('API key தேவை. மீண்டும் முயற்சிக்கவும்.');
+        }
+        
+        // Save for this session
+        IMGBB_API_KEY = apiKey;
+      }
+      
+      // Create form data
+      const formData = new FormData();
+      formData.append('image', file);
+      
+      // Show upload progress
+      const status = document.getElementById('syncStatus');
+      if (status) {
+        status.style.display = 'block';
+        document.getElementById('syncStatusText').innerHTML = 
+          '<i class="fas fa-cloud-upload-alt"></i> படம் imgbb.com க்கு பதிவேற்றப்படுகிறது...';
+      }
+      
+      try {
+        // Upload to imgbb.com
+        const response = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`imgbb பிழை: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (!result.success) {
+          throw new Error('imgbb பதிவேற்றம் தோல்வியடைந்தது: ' + (result.error?.message || 'தெரியவில்லை'));
+        }
+        
+        // Return the direct image URL
+        return result.data.url;
+        
+      } catch (error) {
+        console.error('imgbb upload error:', error);
+        
+        // Fallback: Use compressed base64 if imgbb fails
+        console.log('imgbb failed, using compressed base64 fallback...');
+        return await compressToBase64Fallback(file);
+      } finally {
+        if (status) {
+          status.style.display = 'none';
+        }
+      }
+    }
+    
+    // Fallback function if imgbb fails (SAME as code 1)
+    async function compressToBase64Fallback(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            
+            // Small size for fallback
+            let width = img.width;
+            let height = img.height;
+            const maxSize = 400;
+            
+            if (width > maxSize || height > maxSize) {
+              if (width > height) {
+                height = (height * maxSize) / width;
+                width = maxSize;
+              } else {
+                width = (width * maxSize) / height;
+                height = maxSize;
+              }
+            }
+            
+            canvas.width = width;
+            canvas.height = height;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            
+            // High compression for fallback
+            const base64 = canvas.toDataURL('image/jpeg', 0.5);
+            resolve(base64);
+          };
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
       });
     }
-
-    // Function to show the zoom modal
-    function showModal(index) {
-      currentIndex = index;
-      const modal = document.getElementById('myModal');
-      const modalImg = document.getElementById('img01');
-      modal.style.display = "block";
-      modalImg.src = images[currentIndex].src;
+    
+    // ==================== DELETE PHOTO ====================
+    async function deletePhoto(photoId) {
+      if (!confirm('இந்த புகைப்படத்தை நீக்க விரும்புகிறீர்களா?')) {
+        return;
+      }
+      
+      // Remove from array
+      galleryData = galleryData.filter(photo => photo.id !== photoId);
+      
+      // Save to localStorage
+      localStorage.setItem('templeGallery', JSON.stringify(galleryData));
+      
+      // Try to save to cloud
+      if (isOnline) {
+        try {
+          await saveToCloud(galleryData);
+        } catch (error) {
+          console.error('Cloud delete failed:', error);
+        }
+      }
+      
+      // Update categories and reload
+      updateCategories();
+      const filteredPhotos = filterAndSortPhotos();
+      const totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
+      
+      if (currentPage > totalPages && totalPages > 0) {
+        currentPage = totalPages;
+      } else if (totalPages === 0) {
+        currentPage = 1;
+      }
+      
+      renderGallery();
+      updatePagination();
+      
+      alert('புகைப்படம் நீக்கப்பட்டது!');
     }
-
-    // Function to close the modal
-    function closeModal() {
-      const modal = document.getElementById('myModal');
-      modal.style.display = "none";
-    }
-
-    // Function to close the modal in mobile view
-    function closeZoomModal() {
-      const modal = document.getElementById('myModal');
-      modal.style.display = 'none';
-    }
-
-    // Function to filter photos based on selected year
-    function filterPhotos() {
-      const selectedYear = document.getElementById('yearSelector').value;
-      const gridItems = document.querySelectorAll('.grid-item');
-      gridItems.forEach(item => {
-        if (selectedYear === "" || item.getAttribute('data-year') === selectedYear) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
+    
+    // ==================== CATEGORY FUNCTIONS ====================
+    function filterCategory(category) {
+      currentCategory = category;
+      currentPage = 1;
+      renderGallery();
+      updatePagination();
+      
+      // Update active category button
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.category === category) {
+          btn.classList.add('active');
         }
       });
     }
-
-    // Function to reset the photo grid
-    function resetPhotos() {
-      document.getElementById('yearSelector').value = "";
-      filterPhotos();
+    
+    function updateCategories() {
+      const filterContainer = document.getElementById('categoryFilter');
+      const categories = ['all', ...new Set(galleryData.map(photo => photo.category))];
+      
+      filterContainer.innerHTML = '';
+      
+      categories.forEach(category => {
+        const categoryName = category === 'all' ? 'அனைத்தும்' : category;
+        const button = document.createElement('button');
+        button.className = `category-btn tamil ${currentCategory === category ? 'active' : ''}`;
+        button.textContent = categoryName;
+        button.dataset.category = category;
+        button.onclick = () => filterCategory(category);
+        
+        filterContainer.appendChild(button);
+      });
     }
-
-    // Function to zoom out the image in modal
-    function zoomOut() {
-      const modalImg = document.getElementById('img01');
-      modalImg.style.width = 'auto';
-      modalImg.style.height = 'auto';
+    
+    // ==================== JSONBIN.IO FUNCTIONS (FIXED) ====================
+    async function loadFromCloud() {
+      try {
+        // FIX: Ensure BIN_ID is correct and URL encoded
+        const binId = JSONBIN_CONFIG.BIN_ID.trim();
+        const url = `${JSONBIN_CONFIG.BIN_URL}/${binId}/latest`;
+        
+        console.log('Loading from:', url);
+        
+        const response = await fetch(url, {
+          headers: {
+            'X-Master-Key': JSONBIN_CONFIG.API_KEY.trim()
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        return data.record || [];
+      } catch (error) {
+        console.error('Error loading from cloud:', error.message);
+        return null;
+      }
     }
-// Function to change image in modal
-
-
-    // Function to change image in modal
-    function plusSlides(n) {
-  let nextIndex = currentIndex;
-  const currentYear = images[currentIndex].year;
-  const selectedYear = document.getElementById('yearSelector').value;
-
-  if (selectedYear === "") {
-    // Show all images when "-- வருடம் --" is selected
-    nextIndex = (nextIndex + n + images.length) % images.length;
-  } else {
-    // Find the next image in the selected year
-    do {
-      nextIndex = (nextIndex + n + images.length) % images.length;
-    } while (images[nextIndex].year !== currentYear && nextIndex !== currentIndex);
-  }
-
-  currentIndex = nextIndex;
-  const modalImg = document.getElementById('img01');
-  modalImg.src = images[currentIndex].src;
-}
-
-    // Initialize the photo grid on page load
-    document.addEventListener('DOMContentLoaded', initializePhotoGrid);
+    
+    async function saveToCloud(data) {
+      try {
+        // FIX: Ensure BIN_ID is correct
+        const binId = JSONBIN_CONFIG.BIN_ID.trim();
+        const url = `${JSONBIN_CONFIG.BIN_URL}/${binId}`;
+        
+        console.log('Saving to:', url);
+        
+        const response = await fetch(url, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': JSONBIN_CONFIG.API_KEY.trim()
+          },
+          body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        lastSyncTime = new Date();
+        return true;
+      } catch (error) {
+        console.error('Error saving to cloud:', error.message);
+        return false;
+      }
+    }
+    
+    // ==================== SYNC FUNCTIONS ====================
+    async function syncWithCloud() {
+      if (!isOnline) return;
+      
+      showSyncStatus('தரவு ஒத்திசைக்கப்படுகிறது...');
+      
+      try {
+        const cloudData = await loadFromCloud();
+        const localData = JSON.parse(localStorage.getItem('templeGallery')) || [];
+        
+        if (!cloudData) {
+          // Cloud might be empty or error - upload our data
+          if (localData.length > 0) {
+            await saveToCloud(localData);
+            showSyncStatus('தரவு பதிவேற்றப்பட்டது', 'success');
+          }
+          return;
+        }
+        
+        // If cloud is empty array, use our local data
+        if (cloudData.length === 0 && localData.length > 0) {
+          await saveToCloud(localData);
+          showSyncStatus('தரவு பதிவேற்றப்பட்டது', 'success');
+          return;
+        }
+        
+        // Merge cloud and local data
+        const merged = [...localData, ...cloudData];
+        
+        // Remove duplicates based on ID
+        const uniqueMap = new Map();
+        merged.forEach(item => {
+          if (!uniqueMap.has(item.id) || 
+              (item.added && uniqueMap.get(item.id).added && 
+               new Date(item.added) > new Date(uniqueMap.get(item.id).added))) {
+            uniqueMap.set(item.id, item);
+          }
+        });
+        
+        const uniqueData = Array.from(uniqueMap.values());
+        
+        // Update if different
+        if (JSON.stringify(uniqueData) !== JSON.stringify(galleryData)) {
+          galleryData = uniqueData;
+          localStorage.setItem('templeGallery', JSON.stringify(galleryData));
+          
+          // Save merged data back to cloud
+          await saveToCloud(uniqueData);
+          
+          renderGallery();
+          updateCategories();
+          updatePagination();
+          showSyncStatus('தரவு ஒத்திசைக்கப்பட்டது', 'success');
+        } else {
+          showSyncStatus('தரவு மேம்படுத்தப்பட்டது', 'info');
+        }
+        
+        lastSyncTime = new Date();
+      } catch (error) {
+        console.error('Sync error:', error);
+        showSyncStatus('ஒத்திசைவு தோல்வி', 'error');
+      }
+      
+      updateSyncInfo();
+      
+      // Hide status after 3 seconds
+      setTimeout(() => {
+        hideSyncStatus();
+      }, 3000);
+    }
+    
+    function startAutoSync() {
+      // Sync immediately on load
+      setTimeout(syncWithCloud, 2000);
+      
+      // Then sync every 30 seconds
+      setInterval(syncWithCloud, SYNC_INTERVAL);
+    }
+    
+    function showSyncStatus(message, type = 'info') {
+      const statusEl = document.getElementById('syncStatus');
+      const textEl = document.getElementById('syncStatusText');
+      
+      if (!statusEl || !textEl) return;
+      
+      textEl.innerHTML = message;
+      statusEl.style.display = 'block';
+      
+      // Set color based on type
+      if (type === 'success') {
+        textEl.style.color = '#28a745';
+      } else if (type === 'warning') {
+        textEl.style.color = '#ffc107';
+      } else if (type === 'error') {
+        textEl.style.color = '#dc3545';
+      } else {
+        textEl.style.color = '#8B0000';
+      }
+    }
+    
+    function hideSyncStatus() {
+      const statusEl = document.getElementById('syncStatus');
+      if (statusEl) {
+        statusEl.style.display = 'none';
+      }
+    }
+    
+    function updateSyncInfo() {
+      const syncInfoEl = document.getElementById('syncInfo');
+      if (!syncInfoEl) return;
+      
+      let statusText = '';
+      
+      if (!isOnline) {
+        statusText = '<i class="fas fa-exclamation-triangle"></i> ஆஃப்லைனில்';
+      } else if (lastSyncTime) {
+        const timeAgo = Math.floor((new Date() - lastSyncTime) / 1000);
+        const minutes = Math.floor(timeAgo / 60);
+        
+        if (minutes < 1) {
+          statusText = `<i class="fas fa-check-circle"></i> இணைப்பு செய்யப்பட்டது`;
+        } else if (minutes < 60) {
+          statusText = `<i class="fas fa-sync-alt"></i> ${minutes} நிமிடங்களுக்கு முன் ஒத்திசைக்கப்பட்டது`;
+        } else {
+          const hours = Math.floor(minutes / 60);
+          statusText = `<i class="fas fa-sync-alt"></i> ${hours} மணி நேரத்திற்கு முன் ஒத்திசைக்கப்பட்டது`;
+        }
+      } else {
+        statusText = `<i class="fas fa-sync-alt"></i> ஒத்திசைக்கப்படுகிறது...`;
+      }
+      
+      syncInfoEl.innerHTML = `${statusText} • ${galleryData.length} புகைப்படங்கள்`;
+    }
+    
+    // ==================== PAGINATION FUNCTIONS ====================
+    function changePage(direction) {
+      const filteredPhotos = filterAndSortPhotos();
+      const totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
+      currentPage += direction;
+      
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      
+      renderGallery();
+      updatePagination();
+      
+      // Scroll to top of gallery
+      document.getElementById('photoGallery').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function updatePagination() {
+      const filteredPhotos = filterAndSortPhotos();
+      const totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
+      
+      // Update page info
+      document.getElementById('pageInfo').textContent = `பக்கம் ${currentPage} / ${totalPages}`;
+      document.getElementById('pageInfoBottom').textContent = `பக்கம் ${currentPage} / ${totalPages}`;
+      
+      // Update button states
+      document.getElementById('prevPage').disabled = currentPage === 1;
+      document.getElementById('nextPage').disabled = currentPage === totalPages || totalPages === 0;
+      document.getElementById('prevPageBottom').disabled = currentPage === 1;
+      document.getElementById('nextPageBottom').disabled = currentPage === totalPages || totalPages === 0;
+      
+      // Show/hide pagination if only one page
+      const showPagination = totalPages > 1;
+      document.getElementById('paginationControls').style.display = showPagination ? 'flex' : 'none';
+      document.getElementById('paginationControlsBottom').style.display = showPagination ? 'flex' : 'none';
+    }
+    
+    // ==================== MANUAL SYNC FUNCTION ====================
+    // You can call this from browser console if needed
+    window.manualSync = syncWithCloud;
+    
+    // ==================== RESET FUNCTION ====================
+    // Use carefully - resets to default data
+    window.resetGalleryData = function() {
+      if (confirm('இது அனைத்து புகைப்படங்களையும் நீக்கி தொடக்க தரவுகளுக்கு மீட்டமைக்கும். தொடர விரும்புகிறீர்களா?')) {
+        galleryData = getDefaultPhotos();
+        localStorage.setItem('templeGallery', JSON.stringify(galleryData));
+        
+        if (isOnline) {
+          saveToCloud(galleryData);
+        }
+        
+        currentPage = 1;
+        currentCategory = "all";
+        renderGallery();
+        updateCategories();
+        updatePagination();
+        alert('புகைப்படத் தரவு மீட்டமைக்கப்பட்டது!');
+      }
+    };
+    
+    // ==================== TEST JSONBIN CONNECTION ====================
+    // Run this in console to test
+    window.testJsonBinConnection = async function() {
+      console.log('Testing JSONBin connection...');
+      console.log('BIN_ID:', JSONBIN_CONFIG.BIN_ID);
+      console.log('API_KEY length:', JSONBIN_CONFIG.API_KEY.length);
+      
+      try {
+        const result = await loadFromCloud();
+        console.log('Test result:', result);
+        if (result) {
+          alert('✅ JSONBin connection successful!');
+        } else {
+          alert('⚠️ JSONBin connection failed - using local data');
+        }
+      } catch (error) {
+        console.error('Test failed:', error);
+        alert('❌ JSONBin connection failed: ' + error.message);
+      }
+    };
   </script>
 </body>
 </html>
