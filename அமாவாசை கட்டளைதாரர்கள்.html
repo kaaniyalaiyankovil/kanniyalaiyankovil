@@ -3,152 +3,768 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்) - Home</title>
+  <title>காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்) - அமாவாசை கட்டளைதாரர்கள்</title>
+  
+  <!-- Bootstrap 4 -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Tamil -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* Custom styles */
-    header {
-      background-color: #ffc107;
+    /* Custom Tamil Font */
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    
+    /* Header Styles - MATCHING HOME PAGE */
+    .temple-header {
+      background: linear-gradient(135deg, #ff9933, #ffcc66);
+      padding: 25px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .temple-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.1)">ॐ</text></svg>');
+      background-size: 150px;
+      opacity: 0.3;
+    }
+    
+    .temple-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8B0000;
       text-align: center;
-      padding: 20px 0;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .temple-subtitle {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Navigation - MATCHING HOME PAGE */
+    .temple-nav {
+      background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      padding: 15px 20px !important;
+      position: relative;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFD700 !important;
+    }
+    
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFD700 !important;
+    }
+    
+    /* Footer - MATCHING HOME PAGE */
+    .temple-footer {
+      background: linear-gradient(135deg, #2F4F4F, #363636);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+    }
+    
+    .footer-section {
+      margin-bottom: 25px;
+    }
+    
+    .footer-title {
+      color: #FFD700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD700;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 40px 0;
+      min-height: 70vh;
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
       position: relative;
     }
-
-    header img {
-      max-width: 60%;
-      height: auto;
-    }
-
-    .circle-image {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-    }
-
-    .top-left {
-      top: 10px;
-      left: 10px;
-    }
-
-    .top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    h1 {
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      color: #333;
-      margin-top: 30px;
-      word-wrap: break-word; /* Ensure long words break and wrap */
-    }
-
-    @media (min-width: 576px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .circle-image {
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    footer {
-      background-color: #343a40;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-
-    .carousel-item img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .head1 {
-      font-size: 1.5rem;
-      color: #000;
-      font-family: 'Times New Roman', serif;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    /* Styling for name cards */
-    .name-card {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
+    
+    .page-title {
+      color: #8B0000;
+      font-size: 2.2rem;
+      font-weight: 700;
       margin-bottom: 15px;
-      box-shadow: 2px 2px 5px rgb(245, 169, 71);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, #ff9933, #FFD700);
+      border-radius: 2px;
+    }
+    
+    .page-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    .name-card h5 {
-      font-size: 0.90rem;
-      color: #000;
-      font-weight: bold;
-      margin-bottom: 0;
+    /* Month Selector - FIXED DROPDOWN TEXT */
+    .month-selector-container {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid #FFD700;
+      max-width: 800px;
+    }
+    
+    .month-selector-label {
+      color: #8B0000;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .month-selector-label i {
+      color: #ff9933;
+    }
+    
+    .month-select {
+      border: 2px solid #8B0000;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      background: white;
+      transition: all 0.3s ease;
+      width: 100%;
+      font-family: 'Noto Sans Tamil', sans-serif;
+      height: auto;
+      min-height: 50px;
+      line-height: 1.5;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238B0000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 16px 12px;
+      padding-right: 45px;
+    }
+    
+    .month-select:focus {
+      border-color: #ff9933;
+      box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+      outline: none;
+    }
+    
+    /* FIXED: Dropdown Options Styling */
+    .month-select option {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-size: 1rem;
+      padding: 12px 15px;
+      color: #333;
+      background: white;
+      border-bottom: 1px solid #f0f0f0;
+      min-height: 45px;
+      line-height: 1.4;
+      white-space: normal;
+      word-wrap: break-word;
+      text-overflow: clip;
+    }
+    
+    .month-select option:hover {
+      background: #FFF8DC;
+    }
+    
+    .month-select option:checked {
+      background: #8B0000;
+      color: white;
+    }
+    
+    /* Tamil month text styling */
+    .tamil-month {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #8B0000;
+      margin-right: 8px;
+    }
+    
+    .english-month {
+      font-size: 0.95rem;
+      color: #666;
+      font-weight: 500;
+      font-style: italic;
+    }
+    
+    .month-period {
+      font-size: 0.9rem;
+      color: #888;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+
+    /* Month Info Card */
+    .month-info-card {
+      background: linear-gradient(135deg, #8B0000, #A52A2A);
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(139, 0, 0, 0.2);
+    }
+    
+    .current-month {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #FFD700;
+    }
+    
+    .month-description {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+    
+    .names-count {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    /* Names Container */
+    .names-container {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      max-width: 800px;
+    }
+    
+    .names-title {
+      color: #8B0000;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #FFD700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .names-title i {
+      color: #ff9933;
+    }
+
+    /* Enhanced Name Cards */
+    .name-card {
+      background: #FFF8DC;
+      border: 1px solid #FFD700;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 10px rgba(255, 153, 51, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .name-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255, 153, 51, 0.2);
+      border-color: #ff9933;
+    }
+    
+    .name-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: linear-gradient(to bottom, #ff9933, #8B0000);
+    }
+    
+    .name-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .name-text {
+      font-size: 1.05rem;
+      color: #333;
+      font-weight: 500;
+      line-height: 1.5;
+      flex: 1;
+    }
+    
+    .name-number {
+      background: #8B0000;
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .phone-number {
+      color: #8B0000;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(255, 153, 51, 0.1);
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-top: 8px;
+      display: inline-block;
+    }
+    
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+    }
+    
+    .empty-state i {
+      font-size: 3rem;
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+    
+    .empty-state h4 {
+      color: #8B0000;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .temple-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+      }
+      
+      .page-title {
+        font-size: 1.8rem;
+      }
+      
+      .month-select {
+        font-size: 1rem;
+        padding: 10px 15px;
+        padding-right: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .temple-title {
+        font-size: 1.6rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 1rem;
+      }
+      
+      .page-title {
+        font-size: 1.6rem;
+      }
+      
+      .page-subtitle {
+        font-size: 1rem;
+      }
+      
+      .month-selector-container,
+      .names-container {
+        padding: 20px;
+        margin: 20px 15px;
+      }
+      
+      .current-month {
+        font-size: 1.6rem;
+      }
+      
+      .name-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .name-number {
+        margin-bottom: 10px;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+        font-size: 0.9rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Adjust dropdown for mobile */
+      .month-select option {
+        font-size: 0.95rem;
+        padding: 10px;
+      }
+      
+      .tamil-month {
+        font-size: 1rem;
+      }
+      
+      .english-month {
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .temple-header {
+        padding: 20px 0;
+      }
+      
+      .temple-title {
+        font-size: 1.4rem;
+      }
+      
+      .page-title {
+        font-size: 1.4rem;
+      }
+      
+      .month-selector-label {
+        font-size: 1.1rem;
+      }
+      
+      .names-title {
+        font-size: 1.3rem;
+      }
+      
+      .name-card {
+        padding: 15px;
+      }
+      
+      .name-text {
+        font-size: 1rem;
+      }
+      
+      .month-select {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        padding-right: 35px;
+      }
+      
+      .month-select option {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      .temple-nav,
+      .month-selector-container,
+      .month-info-card {
+        display: none;
+      }
+      
+      .names-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .name-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Include the common header -->
-  <header>
+  <!-- Header - MATCHING HOME PAGE -->
+  <header class="temple-header">
     <div class="container">
-      <div class="head1">
-        காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)
+      <div class="text-center">
+        <h1 class="temple-title tamil">காணியாளய்யன் திருக்கோவில்</h1>
+        <p class="temple-subtitle tamil">பைரவர் கூட்டம் • ஸ்ரீ காணியாளய்யன் ஆலயம்</p>
       </div>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Navigation - MATCHING HOME PAGE -->
+  <nav class="navbar navbar-expand-lg temple-nav navbar-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTemple">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
-          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள்</a></li>
+      <div class="collapse navbar-collapse" id="navbarTemple">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-2"></i>முகப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="history.html">
+              <i class="fas fa-history me-2"></i>கோவில் வரலாறு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="god_names.html">
+              <i class="fas fa-pray me-2"></i>கடவுள் பெயர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="புகைப்பட தொகுப்பு.html">
+              <i class="fas fa-images me-2"></i>புகைப்பட தொகுப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="நிர்வாகிகள்.html">
+              <i class="fas fa-users me-2"></i>நிர்வாகிகள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">
+              <i class="fas fa-hands-helping me-2"></i>நிலம் அன்பளிப்பாளர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="அமாவாசை கட்டளைதாரர்கள்.html">
+              <i class="fas fa-calendar me-2"></i>அமாவாசை கட்டளைதாரர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="விஷேசநாட்கள்.html">
+              <i class="fas fa-star me-2"></i>விஷேச நாட்கள்
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Dropdown for Tamil months -->
-  <div class="container mt-4">
-    <div class="form-group">
-      <label for="tamilMonth">Select Month:</label>
-      <select id="tamilMonth" class="form-control" >
-        <option value="chithirai">சித்திரை</option>
-        <option value="vaikasi">வைகாசி</option>
-        <option value="aani">ஆனி</option>
-        <option value="aadi">ஆடி</option>
-        <option value="aavani">ஆவணி</option>
-        <option value="purattasi">புரட்டாசி</option>
-        <option value="aipasi">ஐப்பசி</option>
-        <option value="karthigai">கார்த்திகை</option>
-        <option value="margazhi">மார்கழி</option>
-        <option value="thai">தை</option>
-        <option value="maasi">மாசி</option>
-        <option value="panguni">பங்குனி</option>
-      </select>
-    </div>
-    <div id="monthContent" class="mt-4">
-      <!-- Content for selected month will be displayed here -->
-    </div>
-  </div>
-
-  <footer>
+  <!-- Main Content -->
+  <main class="main-content">
     <div class="container">
-      <p>&copy; 2024 காணியாளய்யன் திருக்கோவில். All rights reserved.</p>
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">அமாவாசை கட்டளைதாரர்கள்</h1>
+        <p class="page-subtitle">மாதாந்திர அமாவாசை நாட்களில் காணியாளய்யன் பெருமானுக்கு கட்டளை செய்யும் பக்தர்களின் பெயர்கள்</p>
+      </div>
+
+      <!-- Month Selector with FIXED DROPDOWN -->
+      <div class="month-selector-container">
+        <div class="month-selector-label">
+          <i class="fas fa-calendar-alt"></i>
+          மாதத்தைத் தேர்ந்தெடுக்கவும்
+        </div>
+        <select id="tamilMonth" class="form-control month-select">
+          <option value="chithirai">
+            <span class="tamil-month">சித்திரை</span>
+            <span class="english-month">(Chithirai)</span>
+            <span class="month-period">- ஏப்ரல்-மே</span>
+          </option>
+          <option value="vaikasi">
+            <span class="tamil-month">வைகாசி</span>
+            <span class="english-month">(Vaikasi)</span>
+            <span class="month-period">- மே-ஜூன்</span>
+          </option>
+          <option value="aani">
+            <span class="tamil-month">ஆனி</span>
+            <span class="english-month">(Aani)</span>
+            <span class="month-period">- ஜூன்-ஜூலை</span>
+          </option>
+          <option value="aadi">
+            <span class="tamil-month">ஆடி</span>
+            <span class="english-month">(Aadi)</span>
+            <span class="month-period">- ஜூலை-ஆகஸ்ட்</span>
+          </option>
+          <option value="aavani">
+            <span class="tamil-month">ஆவணி</span>
+            <span class="english-month">(Aavani)</span>
+            <span class="month-period">- ஆகஸ்ட்-செப்டம்பர்</span>
+          </option>
+          <option value="purattasi">
+            <span class="tamil-month">புரட்டாசி</span>
+            <span class="english-month">(Purattasi)</span>
+            <span class="month-period">- செப்டம்பர்-அக்டோபர்</span>
+          </option>
+          <option value="aipasi">
+            <span class="tamil-month">ஐப்பசி</span>
+            <span class="english-month">(Aipasi)</span>
+            <span class="month-period">- அக்டோபர்-நவம்பர்</span>
+          </option>
+          <option value="karthigai">
+            <span class="tamil-month">கார்த்திகை</span>
+            <span class="english-month">(Karthigai)</span>
+            <span class="month-period">- நவம்பர்-டிசம்பர்</span>
+          </option>
+          <option value="margazhi">
+            <span class="tamil-month">மார்கழி</span>
+            <span class="english-month">(Margazhi)</span>
+            <span class="month-period">- டிசம்பர்-ஜனவரி</span>
+          </option>
+          <option value="thai">
+            <span class="tamil-month">தை</span>
+            <span class="english-month">(Thai)</span>
+            <span class="month-period">- ஜனவரி-பிப்ரவரி</span>
+          </option>
+          <option value="maasi">
+            <span class="tamil-month">மாசி</span>
+            <span class="english-month">(Maasi)</span>
+            <span class="month-period">- பிப்ரவரி-மார்ச்</span>
+          </option>
+          <option value="panguni">
+            <span class="tamil-month">பங்குனி</span>
+            <span class="english-month">(Panguni)</span>
+            <span class="month-period">- மார்ச்-ஏப்ரல்</span>
+          </option>
+        </select>
+      </div>
+
+      <!-- Month Info Card -->
+      <div id="monthInfoCard" class="month-info-card">
+        <div class="current-month" id="currentMonthDisplay">சித்திரை</div>
+        <div class="month-description" id="monthDescription">தமிழ் புத்தாண்டு மாதம் - புது வருட ஆரம்பம்</div>
+        <div class="names-count" id="namesCount">15 கட்டளைதாரர்கள்</div>
+      </div>
+
+      <!-- Names Container -->
+      <div class="names-container">
+        <div class="names-title">
+          <i class="fas fa-users"></i>
+          <span id="namesTitle">சித்திரை மாத கட்டளைதாரர்கள்</span>
+        </div>
+        <div id="monthContent" class="mt-4">
+          <!-- Content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer - MATCHING HOME PAGE -->
+  <footer class="temple-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title tamil">காணியாளய்யன் திருக்கோவில்</h4>
+          <p class="tamil">பல நூற்றாண்டுகளாக பக்தர்களுக்கு சேவை செய்து வரும் புனிதத் தலம். காணியாளய்யன் பெருமாளின் கருணை பக்தர்களை காக்கிறது.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title tamil">விரைவு இணைப்புகள்</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="tamil"><i class="fas fa-home"></i> முகப்பு பக்கம்</a></li>
+            <li><a href="கோவில் வரலாறு.html" class="tamil"><i class="fas fa-history"></i> கோவில் வரலாறு</a></li>
+            <li><a href="புகைப்பட தொகுப்பு.html" class="tamil"><i class="fas fa-images"></i> புகைப்படங்கள்</a></li>
+            <li><a href="அமாவாசை கட்டளைதாரர்கள்.html" class="tamil"><i class="fas fa-calendar"></i> கட்டளைதாரர்கள்</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">திருக்கோவில் நேரங்கள்</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-sun"></i> <span class="tamil">காலை தரிசனம்: 6:30 - 12:30</span></li>
+            <li><i class="fas fa-moon"></i> <span class="tamil">மாலை தரிசனம்: 4:30 - 8:30</span></li>
+            <li><i class="fas fa-water"></i> <span class="tamil">அபிஷேகம்: காலை 8:00</span></li>
+            <li><i class="fas fa-praying-hands"></i> <span class="tamil">அர்ச்சனை: காலை 10:00</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">தொடர்புக்கு</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> <span class="tamil">பைரவர் கூட்டம், தமிழ்நாடு</span></li>
+            <li><i class="fas fa-phone"></i> <span>+91 45678 91234</span></li>
+            <li><i class="fas fa-envelope"></i> <span>kaaniyalaiyan.kovil@gmail.com</span></li>
+            <li><i class="fas fa-user-tie"></i> <span class="tamil">தலைமை பூசாரி: ஸ்ரீ முருகன்</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="tamil">© 2024 காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்). அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+      </div>
     </div>
   </footer>
 
@@ -159,117 +775,279 @@
 
   <!-- JavaScript to handle Tamil month selection -->
   <script>
-    const monthNames = {
-      chithirai: ['1. N.ஆறுமுகம்- A.சம்பூரணம் 7639115558', '2. N.துரைசாமி-D. சரோஜா 9486774936', '3. D.சசிகுமார்-S.செல்வி 9976044069', '4. K.மோகன்ராஜ்- M.நர்மதா 9942389567', '5. K.நரசிம்மன்-N.சுசிலா 6374652711', '6. A.முருகேசன்-M. கலைச்செல்வி 9003590926', '7. D.ராஜ்குமார்- R.உமாவள்ளி 9524095340', '8. A.நாராயணமூர்த்தி- N.மகேஸ்வரி 9789289935', '9. கருணாகரன்', '10. ஈஸ்வரமூர்த்தி', '11. பூபதி', '12. மாணிக்கம்', '13. செல்வம்', '14. ஐயப்பன் ‌', '15. துரைசாமி'], // Replace with actual names for சித்திரை
-      vaikasi: ['1. T. மாரிமுத்து - M.ருக்மணி பெருமாநல்லூர் 9443567530',
-'2. T. சிவராஜ் - S சத்யா பெருமாநல்லூர் 9443937902',
-'3. R. மாரிமுத்து - M.தனபாக்கியம் கருப்பட்டி கடை கோவை 9894047387',
-'4. R. முத்துச்சாமி - M.கல்பனா தேவி கருப்பட்டி கடை கோவை 9994147756',
-'5. K.C. பிரபு - M.தங்கமணி துடியலூர் 9976158517',
-'6. C. விக்னேஸ்வரன் - G. ஸ்ரீமதி நஞ்சுண்டாபுரம் 9843417757',
-'7. D. அர்ஜுன் (உமாதேவி) நஞ்சுண்டாபுரம் 8668057616',
-'8. P. நந்தகோபால் - N.கௌசல்யா பெருமாநல்லூர் 7708265143',
-'9. N. ராமலிங்கம் - R.செல்வி பெரிய கருக்கு பாளையம் 8870584797',
-'10. R. தனராஜ் - D.காயத்ரி பெரிய கருக்கு பாளையம் 8056390290',
-'11. R. வரதராஜ் - V.நந்தினி பெரிய கருக்குபாளையம் 900 3550175',
-'12. M. மோகன் - R.ராதா KMG புதூர் பிரிவு 9443505987',
-'13. M. அத்தியண்ணன் - A. மணி குள்ளம்பட்டி 900 3977456',
-'14. P. தங்கராஜ் - T.இந்திராணி குமாரபாளையம் 9442394808',
-'15. S.A மாணிக்கம் - M.சுதந்திரம் சாமக்குத்து 7708151844',
-'16. M. அய்யப்பன் - A.மேகலா சாமக்குத்து 7708151844',
-'17. K. குகநாதன் - G.பூங்கொடி வைராபாளையம் 9865827906',
-'18. K. கோவிந்தராஜ் - G.கௌரி வைராபாளையம் 9715746081',
-'19. K. செந்தில்குமார் - S.ராஜேஸ்வரி சூளை',
-'20. G.சதிஸ்குமார் - கவிப்பிரியா அயோதியாபட்ணம் 9865153310','21. M. மோகன்',
-'22. R. வளர்மதி',
-'23. M. ஸ்ரீ சரண்',
-'24. A. சினேகா',
-'25. KNG புதூர், கோவை',
-'26. M. அத்தியண்ணண்',
-'27. மணி',
-'28. A. மணிகண்டன்',
-'29. M. ஜனணி (தங்கராஜ் - ராணி) குமாரபாளையம்',
-'30. சௌ. மேகநாதன் - மே. ஜோதி 31.',
-'31. அயோதியபட்டனம் சேலம் 9791726338',
-'32. எஸ்.கார்த்திகேயன் - தேவகி அயோதியபட்டணம் சேலம்)9942696824',
-'33. G.சதிஸ்குமார் - கவிப்பிரியா'], // Replace with actual names for வைகாசி
-      aani: ['1. V. தண்டயுதபாணி/சுதா', '2. Dr. கைலாஷ்நாத் /Dr ஜனனி', '3. V. சாண்முகசுந்தம்/மோகனசுந்தரி', '4. S. கோவிந்தராஜ் /சரசு', '5. S. Murugesh/சகுந்தலா', '6. ஜி. S. ஸ்ரீதர் /கார்த்தியாயினி', '7. R. S. வேணுகோபால் /நிர்மலா', '8. செல்லம். பாஸ்கர் /சுகவனேஸ்வரி', '9. V. மோகன் சதிஷ் /ராஜேஸ்வரி', '10. டி.ஜெயராமன் /கல்பனா', '11. டி. Kaliyappan/ பேபி'], // Replace with actual names for ஆனி
-      aadi: ['1.நாராயணசாமி நாடார் குடும்பத்தினர். ராமர் கோவில் தோட்டம். சேலம்',
-'2.P. கெளதம் - G. பிரியங்கா மேட்டுப்பட்டி காலனி. சேலம்',
-'3.கி. தனசேகரன் - சுமதி சீனிவாசன் நகர் மேட்டுப்பட்டி. சேலம்',
-'4.காமராஜ் - ஆனந்தி செம்மாண்டபட்டி, சேலம்',
-'5.அத்தியண்ணண் - குள்ளம்பட்டி',
-'6.மோகன் - ராதா கோவை'], // Replace with actual names for ஆடி
-      aavani: ['1. மணிகண்டன் - கனிமொழி பொள்ளாச்சி',
-'2. தங்கராஜ் - குளித்தலை 9092177516, 9788373098',
-'3. ரவீந்திரன் - பல்லடம் 9965412513',
-'4. கணேஷ் - பரம்பி க்குளம் சக்தி பரம்பிக்குளம் 9489179714',
-'5. கலா ஜெயபிரகாஷ் - பரம்பிக்குளம் 9486425614',
-'6. பாஸ் கரன் - பொள்ளாச்சி 9842368098',
-'7. சுரேஷ் - பொள்ளாச்சி 9976102074',
-'8. ராஜேஷ் - பொள்ளாச்சி 9976102075',
-'9. கணேஷ் - பரம்பிக்குளம் 9487374571',
-'10. அமராவதி - கருப்புசாமி. பொள்ளாச்சி',
-'11. பழனிவேல் - மோகனா மேட்டுப்பட்டி. சேலம்',
-'12. சந்தோஷ் - சரண்யா மேட்டுப்பட்டி. சேலம்'], // Replace with actual names for ஆவணி
-      purattasi: ['1. P.K மணி - சுசீலா அனுப்பூர் பாளையம்',
-'2. வரதராஜ் - தமிழரசி வண்ணங்காடு சேலம்',
-'3. வயகாடு தங்கராஜ் - பாரதி தாளப்பதி',
-'4. நந்தகுமார் - திவ்யபாரதி அ.பாளையம்',
-'5. கி. தனசேகரன் - சுமதி சீனிவாசன் நகர் மேட்டுப்பட்டி சேலம்',
-'6. மணி - சாந்தாமணி அ.பாளையம்',
-'7. முருகேஷ் - குன்னத்தூர் சிட்டி மேன்',
-'8. கணேசன் - குன்னத்தூர் சிட்டி மேன்',
-'9. சண்முகம் - ரேவதி அ.பாளையம்',
-'10. ராஜ் - அ.பாளையம்',
-'11. கார்த்திகேயன் - ராஜலட்சுமி அ.பாளையம்',
-'12. வடிவேல் - ரமேஷ் ஜங்கநாயக்கன் பாளையம்',
-'13. கனகராஜ் - கவிதா வண்ணாங்காடு சேலம்',
-'14. காளியப்பன் - தட்டாங்கோட்டை',
-'15. கணேஷ் - கோமதி அ.பாளையம்',
-'16. துரைசாமி - லட்சுமி கருக்குப்பாளையம்',
-'17. மாணிக்கம் - அ.பாளையம்',
-'18. காளிதாஸ் - மணியம் பாளையம்',
-'19. செந்தில்குமார் - சுதா அ.புதூர்',
-'20. வசந்தகுமார் - சித்ரா அணைப்புதூர்',
-'21. T. முருகன் - சுமதி. T. மூர்த்தி சித்ரா விநாயகாபுரம் தேங்கள் பாளையம் சேலம்',
-'22. செல்வராஜ் - காயத்ரி தட்டாங் குட்டை',
-'23. சங்கர் - புவனேஷ் தாளப்பதி',
-'24. ரவி (எ) - காளியப்பன் தாளப்பதி',
-'25. துரைசாமி - மஞ்சு அயோத்தியபட்டினம் சேலம்',
-'26. பிட்டர் - சந்தோஷ் கலையரசி கருப்பு பாளையம்',
-'27. வயக்காடு ராஜு - சுதா',
-'28. ராஜேந்திர குமார் - மகேஸ்வரி ஜங்கநாயக்கன் பாளையம்',
-'29. K. முருகேசன் - ஈஸ்வரி பவானி 9150288061',
-'30. லட்சுமணன் - ஜெயக்கொடி தட்டாங்குட்டை 9344363606','31.அய்யாசாமி நாடார்-சின்ன கருக்குப்பாளையம்','32.நித்தியானந்தம் திருப்பூர்'], // Replace with actual names for புரட்டாசி
-      aipasi: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for ஐப்பசி
-      karthigai: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for கார்த்திகை
-      margazhi: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for மார்கழி
-      thai: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for தை
-      maasi: ['Name 1', 'Name 2', 'Name 3'], // Replace with actual names for மாசி
-      panguni: ['Name 1', 'Name 2', 'Name 3'] // Replace with actual names for பங்குனி
+    const monthData = {
+      chithirai: {
+        names: [
+          '1. N.ஆறுமுகம் - A.சம்பூரணம் 7639115558',
+          '2. N.துரைசாமி - D. சரோஜா 9486774936',
+          '3. D.சசிகுமார் - S.செல்வி 9976044069',
+          '4. K.மோகன்ராஜ் - M.நர்மதா 9942389567',
+          '5. K.நரசிம்மன் - N.சுசிலா 6374652711',
+          '6. A.முருகேசன் - M. கலைச்செல்வி 9003590926',
+          '7. D.ராஜ்குமார் - R.உமாவள்ளி 9524095340',
+          '8. A.நாராயணமூர்த்தி - N.மகேஸ்வரி 9789289935',
+          '9. கருணாகரன்',
+          '10. ஈஸ்வரமூர்த்தி',
+          '11. பூபதி',
+          '12. மாணிக்கம்',
+          '13. செல்வம்',
+          '14. ஐயப்பன்',
+          '15. துரைசாமி'
+        ],
+        description: 'தமிழ் புத்தாண்டு மாதம் - புது வருட ஆரம்பம்',
+        displayName: 'சித்திரை'
+      },
+      vaikasi: {
+        names: [
+          '1. T. மாரிமுத்து - M.ருக்மணி பெருமாநல்லூர் 9443567530',
+          '2. T. சிவராஜ் - S சத்யா பெருமாநல்லூர் 9443937902',
+          '3. R. மாரிமுத்து - M.தனபாக்கியம் கருப்பட்டி கடை கோவை 9894047387',
+          '4. R. முத்துச்சாமி - M.கல்பனா தேவி கருப்பட்டி கடை கோவை 9994147756',
+          '5. K.C. பிரபு - M.தங்கமணி துடியலூர் 9976158517',
+          '6. C. விக்னேஸ்வரன் - G. ஸ்ரீமதி நஞ்சுண்டாபுரம் 9843417757',
+          '7. D. அர்ஜுன் (உமாதேவி) நஞ்சுண்டாபுரம் 8668057616',
+          '8. P. நந்தகோபால் - N.கௌசல்யா பெருமாநல்லூர் 7708265143',
+          '9. N. ராமலிங்கம் - R.செல்வி பெரிய கருக்கு பாளையம் 8870584797',
+          '10. R. தனராஜ் - D.காயத்ரி பெரிய கருக்கு பாளையம் 8056390290',
+          '11. R. வரதராஜ் - V.நந்தினி பெரிய கருக்குபாளையம் 900 3550175',
+          '12. M. மோகன் - R.ராதா KMG புதூர் பிரிவு 9443505987',
+          '13. M. அத்தியண்ணன் - A. மணி குள்ளம்பட்டி 900 3977456',
+          '14. P. தங்கராஜ் - T.இந்திராணி குமாரபாளையம் 9442394808',
+          '15. S.A மாணிக்கம் - M.சுதந்திரம் சாமக்குத்து 7708151844',
+          '16. M. அய்யப்பன் - A.மேகலா சாமக்குத்து 7708151844',
+          '17. K. குகநாதன் - G.பூங்கொடி வைராபாளையம் 9865827906',
+          '18. K. கோவிந்தராஜ் - G.கௌரி வைராபாளையம் 9715746081',
+          '19. K. செந்தில்குமார் - S.ராஜேஸ்வரி சூளை',
+          '20. G.சதிஸ்குமார் - கவிப்பிரியா அயோதியாபட்ணம் 9865153310',
+          '21. M. மோகன்',
+          '22. R. வளர்மதி',
+          '23. M. ஸ்ரீ சரண்',
+          '24. A. சினேகா',
+          '25. KNG புதூர், கோவை',
+          '26. M. அத்தியண்ணன்',
+          '27. மணி',
+          '28. A. மணிகண்டன்',
+          '29. M. ஜனணி (தங்கராஜ் - ராணி) குமாரபாளையம்',
+          '30. சௌ. மேகநாதன் - மே. ஜோதி',
+          '31. அயோதியபட்டனம் சேலம் 9791726338',
+          '32. எஸ்.கார்த்திகேயன் - தேவகி அயோதியபட்டணம் சேலம் 9942696824',
+          '33. G.சதிஸ்குமார் - கவிப்பிரியா'
+        ],
+        description: 'வைகாசி விசாகம் - முருகன் பிறந்த நாள்',
+        displayName: 'வைகாசி'
+      },
+      aani: {
+        names: [
+          '1. V. தண்டயுதபாணி/சுதா',
+          '2. Dr. கைலாஷ்நாத் /Dr ஜனனி',
+          '3. V. சாண்முகசுந்தம்/மோகனசுந்தரி',
+          '4. S. கோவிந்தராஜ் /சரசு',
+          '5. S. Murugesh/சகுந்தலா',
+          '6. ஜி. S. ஸ்ரீதர் /கார்த்தியாயினி',
+          '7. R. S. வேணுகோபால் /நிர்மலா',
+          '8. செல்லம். பாஸ்கர் /சுகவனேஸ்வரி',
+          '9. V. மோகன் சதிஷ் /ராஜேஸ்வரி',
+          '10. டி.ஜெயராமன் /கல்பனா',
+          '11. டி. Kaliyappan/ பேபி'
+        ],
+        description: 'ஆனி உத்தரம் - கோடை கால முடிவு',
+        displayName: 'ஆனி'
+      },
+      aadi: {
+        names: [
+          '1. நாராயணசாமி நாடார் குடும்பத்தினர். ராமர் கோவில் தோட்டம். சேலம்',
+          '2. P. கெளதம் - G. பிரியங்கா மேட்டுப்பட்டி காலனி. சேலம்',
+          '3. கி. தனசேகரன் - சுமதி சீனிவாசன் நகர் மேட்டுப்பட்டி. சேலம்',
+          '4. காமராஜ் - ஆனந்தி செம்மாண்டபட்டி, சேலம்',
+          '5. அத்தியண்ணன் - குள்ளம்பட்டி',
+          '6. மோகன் - ராதா கோவை'
+        ],
+        description: 'ஆடி பெருக்கு - மழைக்கால ஆரம்பம்',
+        displayName: 'ஆடி'
+      },
+      aavani: {
+        names: [
+          '1. மணிகண்டன் - கனிமொழி பொள்ளாச்சி',
+          '2. தங்கராஜ் - குளித்தலை 9092177516, 9788373098',
+          '3. ரவீந்திரன் - பல்லடம் 9965412513',
+          '4. கணேஷ் - பரம்பிக்குளம் சக்தி பரம்பிக்குளம் 9489179714',
+          '5. கலா ஜெயபிரகாஷ் - பரம்பிக்குளம் 9486425614',
+          '6. பாஸ் கரன் - பொள்ளாச்சி 9842368098',
+          '7. சுரேஷ் - பொள்ளாச்சி 9976102074',
+          '8. ராஜேஷ் - பொள்ளாச்சி 9976102075',
+          '9. கணேஷ் - பரம்பிக்குளம் 9487374571',
+          '10. அமராவதி - கருப்புசாமி. பொள்ளாச்சி',
+          '11. பழனிவேல் - மோகனா மேட்டுப்பட்டி. சேலம்',
+          '12. சந்தோஷ் - சரண்யா மேட்டுப்பட்டி. சேலம்'
+        ],
+        description: 'ஆவணி அவிட்டம் - விநாயகர் சதுர்த்தி',
+        displayName: 'ஆவணி'
+      },
+      purattasi: {
+        names: [
+          '1. P.K மணி - சுசீலா அனுப்பூர் பாளையம்',
+          '2. வரதராஜ் - தமிழரசி வண்ணங்காடு சேலம்',
+          '3. வயகாடு தங்கராஜ் - பாரதி தாளப்பதி',
+          '4. நந்தகுமார் - திவ்யபாரதி அ.பாளையம்',
+          '5. கி. தனசேகரன் - சுமதி சீனிவாசன் நகர் மேட்டுப்பட்டி சேலம்',
+          '6. மணி - சாந்தாமணி அ.பாளையம்',
+          '7. முருகேஷ் - குன்னத்தூர் சிட்டி மேன்',
+          '8. கணேசன் - குன்னத்தூர் சிட்டி மேன்',
+          '9. சண்முகம் - ரேவதி அ.பாளையம்',
+          '10. ராஜ் - அ.பாளையம்',
+          '11. கார்த்திகேயன் - ராஜலட்சுமி அ.பாளையம்',
+          '12. வடிவேல் - ரமேஷ் ஜங்கநாயக்கன் பாளையம்',
+          '13. கனகராஜ் - கவிதா வண்ணாங்காடு சேலம்',
+          '14. காளியப்பன் - தட்டாங்கோட்டை',
+          '15. கணேஷ் - கோமதி அ.பாளையம்',
+          '16. துரைசாமி - லட்சுமி கருக்குப்பாளையம்',
+          '17. மாணிக்கம் - அ.பாளையம்',
+          '18. காளிதாஸ் - மணியம் பாளையம்',
+          '19. செந்தில்குமார் - சுதா அ.புதூர்',
+          '20. வசந்தகுமார் - சித்ரா அணைப்புதூர்',
+          '21. T. முருகன் - சுமதி. T. மூர்த்தி சித்ரா விநாயகாபுரம் தேங்கள் பாளையம் சேலம்',
+          '22. செல்வராஜ் - காயத்ரி தட்டாங் குட்டை',
+          '23. சங்கர் - புவனேஷ் தாளப்பதி',
+          '24. ரவி (எ) - காளியப்பன் தாளப்பதி',
+          '25. துரைசாமி - மஞ்சு அயோத்தியபட்டினம் சேலம்',
+          '26. பிட்டர் - சந்தோஷ் கலையரசி கருப்பு பாளையம்',
+          '27. வயக்காடு ராஜு - சுதா',
+          '28. ராஜேந்திர குமார் - மகேஸ்வரி ஜங்கநாயக்கன் பாளையம்',
+          '29. K. முருகேசன் - ஈஸ்வரி பவானி 9150288061',
+          '30. லட்சுமணன் - ஜெயக்கொடி தட்டாங்குட்டை 9344363606',
+          '31. அய்யாசாமி நாடார் - சின்ன கருக்குப்பாளையம்',
+          '32. நித்தியானந்தம் திருப்பூர்'
+        ],
+        description: 'புரட்டாசி சனி - நவராத்திரி விழா',
+        displayName: 'புரட்டாசி'
+      },
+      aipasi: {
+        names: ['தகவல் வரவில்லை'],
+        description: 'ஐப்பசி தீபாவளி - வெளிச்சத்தின் திருவிழா',
+        displayName: 'ஐப்பசி'
+      },
+      karthigai: {
+        names: ['தகவல் வரவில்லை'],
+        description: 'கார்த்திகை தீபம் - விளக்கேற்றும் விழா',
+        displayName: 'கார்த்திகை'
+      },
+      margazhi: {
+        names: ['தகவல் வரவில்லை'],
+        description: 'மார்கழி பஜனை - தெய்வீக பாடல்களின் மாதம்',
+        displayName: 'மார்கழி'
+      },
+      thai: {
+        names: ['தகவல் வரவில்லை'],
+        description: 'தை பொங்கல் - அறுவடை திருவிழா',
+        displayName: 'தை'
+      },
+      maasi: {
+        names: ['தகவல் வரவில்லை'],
+        description: 'மாசி மகம் - நதி திருவிழா',
+        displayName: 'மாசி'
+      },
+      panguni: {
+        names: ['தகவல் வரவில்லை'],
+        description: 'பங்குனி உத்திரம் - வசந்த கால ஆரம்பம்',
+        displayName: 'பங்குனி'
+      }
     };
 
-    document.getElementById('tamilMonth').addEventListener('change', function() {
-      const selectedMonth = this.value;
-      const names = monthNames[selectedMonth];
-      const namesList = names.map(name => `
-        <div class="name-card">
-          <h5>${name}</h5>
-        </div>
-      `).join('');
+    function extractPhoneNumber(text) {
+      const phoneRegex = /\d{10}/g;
+      const matches = text.match(phoneRegex);
+      return matches ? matches[0] : null;
+    }
+
+    function renderNames(names) {
+      if (names.length === 0) {
+        return `
+          <div class="empty-state">
+            <i class="fas fa-user-slash"></i>
+            <h4>தகவல் இல்லை</h4>
+            <p>இந்த மாதத்திற்கான கட்டளைதாரர்களின் பெயர்கள் பதிவு செய்யப்படவில்லை.</p>
+          </div>
+        `;
+      }
+
+      return names.map((name, index) => {
+        const phoneNumber = extractPhoneNumber(name);
+        const nameWithoutNumber = phoneNumber ? name.replace(phoneNumber, '').trim() : name;
+        
+        return `
+          <div class="name-card">
+            <div class="name-content">
+              <div class="name-number">${index + 1}</div>
+              <div class="name-text">${nameWithoutNumber}</div>
+            </div>
+            ${phoneNumber ? `<div class="phone-number"><i class="fas fa-phone me-1"></i> ${phoneNumber}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateContent(monthKey) {
+      const month = monthData[monthKey];
+      const namesList = renderNames(month.names);
+      
+      // Update month info card
+      document.getElementById('currentMonthDisplay').textContent = month.displayName;
+      document.getElementById('monthDescription').textContent = month.description;
+      document.getElementById('namesCount').textContent = `${month.names.length} கட்டளைதாரர்கள்`;
+      
+      // Update names title
+      document.getElementById('namesTitle').textContent = `${month.displayName} மாத கட்டளைதாரர்கள்`;
+      
+      // Update names content
       document.getElementById('monthContent').innerHTML = namesList;
+      
+      // Update dropdown selection
+      document.getElementById('tamilMonth').value = monthKey;
+    }
+
+    // Event listener for month selection
+    document.getElementById('tamilMonth').addEventListener('change', function() {
+      updateContent(this.value);
     });
 
-    // Initialize the content for the first month
-    const initialMonth = 'chithirai';
-    const initialNames = monthNames[initialMonth];
-    const initialNamesList = initialNames.map(name => `
-      <div class="name-card">
-        <h5>${name}</h5>
-      </div>
-    `).join('');
-    document.getElementById('monthContent').innerHTML = initialNamesList;
+    // Initialize with first month
+    updateContent('chithirai');
+
+    // Auto-select current month based on actual date
+    function getCurrentTamilMonth() {
+      const now = new Date();
+      const month = now.getMonth() + 1; // JavaScript months are 0-indexed
+      
+      // Approximate mapping (this is simplified, actual Tamil calendar is more complex)
+      const monthMap = {
+        1: 'thai',      // January
+        2: 'maasi',     // February
+        3: 'panguni',   // March
+        4: 'chithirai', // April
+        5: 'vaikasi',   // May
+        6: 'aani',      // June
+        7: 'aadi',      // July
+        8: 'aavani',    // August
+        9: 'purattasi', // September
+        10: 'aipasi',   // October
+        11: 'karthigai', // November
+        12: 'margazhi'  // December
+      };
+      
+      return monthMap[month] || 'chithirai';
+    }
+
+    // Set current month on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentMonth = getCurrentTamilMonth();
+      updateContent(currentMonth);
+      
+      // Add navigation active class handling
+      $('.nav-link').on('click', function() {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
   </script>
 </body>
 </html>
