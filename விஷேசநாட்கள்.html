@@ -3,177 +3,1311 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)- Home</title>
+  <title>காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்) - விஷேச நாட்கள்</title>
+  
+  <!-- Bootstrap 4 -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Tamil -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     /* Custom styles */
-    header {
-      background-color: #ffc107;
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background-color: #FFF8E7;
+    }
+    
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    
+    /* Header Styles - MATCHING THE HOME PAGE */
+    .temple-header {
+      background: linear-gradient(135deg, #ff9933, #ffcc66);
+      padding: 25px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .temple-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.1)">ॐ</text></svg>');
+      background-size: 150px;
+      opacity: 0.3;
+    }
+    
+    .temple-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8B0000;
       text-align: center;
-      padding: 20px 0;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .temple-subtitle {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Navigation - MATCHING THE HOME PAGE */
+    .temple-nav {
+      background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      padding: 15px 20px !important;
+      position: relative;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFD700 !important;
+    }
+    
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFD700 !important;
+    }
+    
+    /* Footer - MATCHING THE HOME PAGE */
+    .temple-footer {
+      background: linear-gradient(135deg, #2F4F4F, #363636);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+    }
+    
+    .footer-section {
+      margin-bottom: 25px;
+    }
+    
+    .footer-title {
+      color: #FFD700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD700;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 40px 0;
+      min-height: 70vh;
+    }
+    
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
       position: relative;
     }
     
-    header img {
-      max-width: 60%;
-      height: auto;
+    .page-title {
+      color: #8B0000;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
     }
     
-    .circle-image {
+    .page-title::after {
+      content: '';
       position: absolute;
-      width: 50px;
-      height: 50px;
-    }
-
-    .top-left {
-      top: 10px;
-      left: 10px;
-    }
-
-    .top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    .head1 {
-      font-size: 1.5rem;
-      color: #000; /* Orange Red */
-      font-family: 'Times New Roman', serif;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #000;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, #ff9933, #FFD700);
+      border-radius: 2px;
     }
     
-    h1 {
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      color: #333;
-      margin-top: 30px;
-      word-wrap: break-word; /* Ensure long words break and wrap */
+    .page-subtitle {
+      color: #666;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    @media (min-width: 576px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .circle-image {
-        width: 100px;
-        height: 100px;
-      }
+    /* Festival Filter */
+    .festival-filter {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid #FFD700;
     }
     
-    footer {
-      background-color: #343a40;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
+    .filter-title {
+      color: #8B0000;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     
-    .carousel-item img {
-      max-width: 100%;
-      height: auto;
+    .filter-title i {
+      color: #ff9933;
     }
-
-    /* Table styles */
-    table {
+    
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .filter-btn {
+      background: #FFF8DC;
+      border: 2px solid #FFD700;
+      color: #8B0000;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, #ff9933, #FFD700);
+      color: white;
+      border-color: #ff9933;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
+    }
+    
+    .search-box {
+      position: relative;
+    }
+    
+    .search-input {
       width: 100%;
-      margin-top: 20px;
-      border-collapse: collapse;
-      border: 1px solid #ddd;
+      padding: 12px 20px 12px 45px;
+      border: 2px solid #FFD700;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .search-input:focus {
+      border-color: #ff9933;
+      box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+      outline: none;
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ff9933;
+      font-size: 1.2rem;
     }
 
-    th, td {
-      padding: 12px;
+    /* Festival Calendar */
+    .festival-calendar {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #FFF8DC;
+    }
+    
+    .calendar-title {
+      color: #8B0000;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .calendar-nav {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .nav-btn {
+      background: #FFF8DC;
+      border: 2px solid #FFD700;
+      color: #8B0000;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .nav-btn:hover {
+      background: linear-gradient(135deg, #ff9933, #FFD700);
+      color: white;
+      border-color: #ff9933;
+    }
+
+    /* Festival Table - Enhanced */
+    .festival-table-container {
+      overflow-x: auto;
+    }
+    
+    .festival-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .festival-table thead {
+      background: linear-gradient(135deg, #8B0000, #A52A2A);
+    }
+    
+    .festival-table th {
+      color: white;
+      padding: 20px;
       text-align: center;
-      border: 1px solid #e49b07;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
-
-    th {
-      background-color: #e48b06a6;
+    
+    .festival-table th:last-child {
+      border-right: none;
+    }
+    
+    .festival-table tbody tr {
+      transition: all 0.3s ease;
+    }
+    
+    .festival-table tbody tr:nth-child(even) {
+      background-color: #FFF8DC;
+    }
+    
+    .festival-table tbody tr:nth-child(odd) {
+      background-color: white;
+    }
+    
+    .festival-table tbody tr:hover {
+      background-color: #FFF3CD;
+      transform: scale(1.01);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .festival-table td {
+      padding: 20px;
+      text-align: center;
+      border-right: 1px solid #FFD700;
+      vertical-align: middle;
+    }
+    
+    .festival-table td:last-child {
+      border-right: none;
+    }
+    
+    .festival-name {
+      color: #8B0000;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    
+    .festival-name-tamil {
+      color: #333;
+      font-size: 1rem;
+      font-style: italic;
+    }
+    
+    .festival-date {
+      color: #2F4F4F;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    .festival-date-tamil {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    
+    .festival-type {
+      display: inline-block;
+      padding: 6px 15px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .type-major {
+      background: linear-gradient(135deg, #FFD700, #ff9933);
+      color: #8B0000;
+    }
+    
+    .type-minor {
+      background: linear-gradient(135deg, #4169E1, #6495ED);
       color: white;
     }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
+    
+    .type-special {
+      background: linear-gradient(135deg, #32CD32, #3CB371);
+      color: white;
+    }
+    
+    .type-monthly {
+      background: linear-gradient(135deg, #8A2BE2, #9370DB);
+      color: white;
+    }
+    
+    .festival-details {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
-    .container h2 {
-      padding-top: 20px;
-      font-size: 1.5rem;
-      color: #f48a09;
-      font-family: 'Times New Roman', serif;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #fce808;
+    /* Festival Cards for Mobile */
+    .festival-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
       margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #ff9933;
+      transition: all 0.3s ease;
+      display: none;
+    }
+    
+    .festival-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .festival-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .festival-card-title {
+      color: #8B0000;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .festival-card-date {
+      color: #2F4F4F;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: #FFF8DC;
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+    
+    .festival-card-body {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Upcoming Festivals */
+    .upcoming-festivals {
+      background: linear-gradient(135deg, #FFF8DC, #FFF3CD);
+      border-radius: 15px;
+      padding: 30px;
+      margin-top: 40px;
+      border: 2px solid #FFD700;
+    }
+    
+    .upcoming-title {
+      color: #8B0000;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    
+    .upcoming-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .upcoming-item {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid #ff9933;
+    }
+    
+    .upcoming-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .upcoming-item-title {
+      color: #8B0000;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    .upcoming-item-date {
+      color: #2F4F4F;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .upcoming-item-days {
+      color: #ff9933;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: rgba(255, 153, 51, 0.1);
+      padding: 3px 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .temple-title {
+        font-size: 1.8rem;
+      }
+      
+      .page-title {
+        font-size: 2rem;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+      }
+      
+      .festival-table {
+        display: none;
+      }
+      
+      .festival-card {
+        display: block;
+      }
+      
+      .upcoming-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .temple-title {
+        font-size: 1.6rem;
+      }
+      
+      .page-title {
+        font-size: 1.8rem;
+      }
+      
+      .page-subtitle {
+        font-size: 1rem;
+      }
+      
+      .filter-buttons {
+        justify-content: center;
+      }
+      
+      .festival-filter,
+      .festival-calendar,
+      .upcoming-festivals {
+        padding: 20px;
+      }
+      
+      .calendar-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+      
+      .nav-link {
+        padding: 15px !important;
+        font-size: 0.9rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .temple-header {
+        padding: 20px 0;
+      }
+      
+      .temple-title {
+        font-size: 1.4rem;
+      }
+      
+      .page-title {
+        font-size: 1.6rem;
+      }
+      
+      .filter-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .festival-card {
+        padding: 20px;
+      }
+      
+      .festival-card-title {
+        font-size: 1.1rem;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .festival-table tbody tr,
+    .festival-card,
+    .upcoming-item {
+      animation: fadeIn 0.6s ease-out;
     }
   </style>
 </head>
 <body>
-  <!-- Include the common header -->
-  <header>
+  <!-- Header - MATCHING THE HOME PAGE -->
+  <header class="temple-header">
     <div class="container">
-      <div class="head1">
-        காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)
+      <div class="text-center">
+        <h1 class="temple-title tamil">காணியாளய்யன் திருக்கோவில்</h1>
+        <p class="temple-subtitle tamil">பைரவர் கூட்டம் • ஸ்ரீ காணியாளய்யன் ஆலயம்</p>
       </div>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Navigation - MATCHING THE HOME PAGE -->
+  <nav class="navbar navbar-expand-lg temple-nav navbar-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTemple">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
-          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள் </a></li>
+      <div class="collapse navbar-collapse" id="navbarTemple">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-2"></i>முகப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="history.html">
+              <i class="fas fa-history me-2"></i>கோவில் வரலாறு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="god_names.html">
+              <i class="fas fa-pray me-2"></i>கடவுள் பெயர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="புகைப்பட தொகுப்பு.html">
+              <i class="fas fa-images me-2"></i>புகைப்பட தொகுப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="நிர்வாகிகள்.html">
+              <i class="fas fa-users me-2"></i>நிர்வாகிகள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">
+              <i class="fas fa-hands-helping me-2"></i>நிலம் அன்பளிப்பாளர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">
+              <i class="fas fa-calendar me-2"></i>அமாவாசை கட்டளைதாரர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="விஷேசநாட்கள்.html">
+              <i class="fas fa-star me-2"></i>விஷேச நாட்கள்
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Festival Days Section -->
-  <section>
+  <!-- Main Content -->
+  <main class="main-content">
     <div class="container">
-      <h2>விஷேசநாட்கள்</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Festival Name</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pongal</td>
-            <td>January 14</td>
-          </tr>
-          <tr>
-            <td>Diwali</td>
-            <td>October 27</td>
-          </tr>
-          <!-- Add more festival rows as needed -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">விஷேச நாட்கள்</h1>
+        <p class="page-subtitle">காணியாளய்யன் திருக்கோவிலில் கொண்டாடப்படும் சிறப்பு திருவிழா நாட்கள் மற்றும் சடங்குகள்</p>
+      </div>
 
-  <footer>
+      <!-- Festival Filter -->
+      <div class="festival-filter">
+        <div class="filter-title">
+          <i class="fas fa-filter"></i>
+          விழாக்களை வடிகட்டு
+        </div>
+        
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">அனைத்தும்</button>
+          <button class="filter-btn" data-filter="major">முக்கிய விழாக்கள்</button>
+          <button class="filter-btn" data-filter="minor">சிறு விழாக்கள்</button>
+          <button class="filter-btn" data-filter="monthly">மாதாந்திர நாட்கள்</button>
+          <button class="filter-btn" data-filter="upcoming">வரவிருக்கும் விழாக்கள்</button>
+        </div>
+        
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" class="search-input" placeholder="விழா பெயரைத் தேடு..." id="festivalSearch">
+        </div>
+      </div>
+
+      <!-- Festival Calendar -->
+      <div class="festival-calendar">
+        <div class="calendar-header">
+          <h3 class="calendar-title">2024 விழா நாட்காட்டி</h3>
+          <div class="calendar-nav">
+            <button class="nav-btn prev-year"><i class="fas fa-chevron-left"></i></button>
+            <span class="current-year" style="color: #8B0000; font-weight: 600;">2024</span>
+            <button class="nav-btn next-year"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        
+        <!-- Festival Table for Desktop -->
+        <div class="festival-table-container">
+          <table class="festival-table" id="festivalTable">
+            <thead>
+              <tr>
+                <th>விழா பெயர்</th>
+                <th>ஆங்கிலப் பெயர்</th>
+                <th>தேதி</th>
+                <th>தமிழ் தேதி</th>
+                <th>வகை</th>
+                <th>சிறப்புகள்</th>
+              </tr>
+            </thead>
+            <tbody id="festivalTableBody">
+              <!-- Festivals will be loaded here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Festival Cards for Mobile -->
+        <div id="festivalCards">
+          <!-- Festival cards will be loaded here by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Upcoming Festivals -->
+      <div class="upcoming-festivals">
+        <h3 class="upcoming-title">வரவிருக்கும் விழாக்கள்</h3>
+        <div class="upcoming-list" id="upcomingFestivals">
+          <!-- Upcoming festivals will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer - MATCHING THE HOME PAGE -->
+  <footer class="temple-footer">
     <div class="container">
-      <p>&copy; 2024 காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்). All rights reserved.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title tamil">காணியாளய்யன் திருக்கோவில்</h4>
+          <p class="tamil">பல நூற்றாண்டுகளாக பக்தர்களுக்கு சேவை செய்து வரும் புனிதத் தலம். காணியாளய்யன் பெருமாளின் கருணை பக்தர்களை காக்கிறது.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title tamil">விரைவு இணைப்புகள்</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="tamil"><i class="fas fa-home"></i> முகப்பு பக்கம்</a></li>
+            <li><a href="கோவில் வரலாறு.html" class="tamil"><i class="fas fa-history"></i> கோவில் வரலாறு</a></li>
+            <li><a href="புகைப்பட தொகுப்பு.html" class="tamil"><i class="fas fa-images"></i> புகைப்படங்கள்</a></li>
+            <li><a href="விஷேசநாட்கள்.html" class="tamil"><i class="fas fa-calendar-alt"></i> சிறப்பு நாட்கள்</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">திருக்கோவில் நேரங்கள்</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-sun"></i> <span class="tamil">காலை தரிசனம்: 6:30 - 12:30</span></li>
+            <li><i class="fas fa-moon"></i> <span class="tamil">மாலை தரிசனம்: 4:30 - 8:30</span></li>
+            <li><i class="fas fa-water"></i> <span class="tamil">அபிஷேகம்: காலை 8:00</span></li>
+            <li><i class="fas fa-praying-hands"></i> <span class="tamil">அர்ச்சனை: காலை 10:00</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">தொடர்புக்கு</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> <span class="tamil">பைரவர் கூட்டம், தமிழ்நாடு</span></li>
+            <li><i class="fas fa-phone"></i> <span>+91 45678 91234</span></li>
+            <li><i class="fas fa-envelope"></i> <span>kaaniyalaiyan.kovil@gmail.com</span></li>
+            <li><i class="fas fa-user-tie"></i> <span class="tamil">தலைமை பூசாரி: ஸ்ரீ முருகன்</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="tamil">© 2024 காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்). அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Include Bootstrap JS and its dependencies -->
+  <!-- Bootstrap Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Festival Data and Script -->
+  <script>
+    // Festival Data
+    const festivalData = [
+      {
+        id: 1,
+        name: "தமிழ் புத்தாண்டு",
+        englishName: "Tamil New Year",
+        date: "2024-04-14",
+        tamilDate: "சித்திரை 1",
+        type: "major",
+        description: "தமிழ் புது வருட ஆரம்பம், சிறப்பு பூஜைகள்",
+        upcoming: true,
+        daysLeft: 120
+      },
+      {
+        id: 2,
+        name: "சித்திரை திருவிழா",
+        englishName: "Chithirai Festival",
+        date: "2024-04-14",
+        tamilDate: "சித்திரை 1-10",
+        type: "major",
+        description: "10 நாள் சித்திரை திருவிழா, தேரோட்டம்",
+        upcoming: true,
+        daysLeft: 120
+      },
+      {
+        id: 3,
+        name: "அமாவாசை",
+        englishName: "Amavasai",
+        date: "2024-05-08",
+        tamilDate: "வைகாசி அமாவாசை",
+        type: "monthly",
+        description: "மாதாந்திர அமாவாசை சிறப்பு பூஜை",
+        upcoming: true,
+        daysLeft: 144
+      },
+      {
+        id: 4,
+        name: "வைகாசி விசாகம்",
+        englishName: "Vaikasi Visakam",
+        date: "2024-05-23",
+        tamilDate: "வைகாசி விசாகம்",
+        type: "minor",
+        description: "முருகப் பெருமான் பிறந்த நாள்",
+        upcoming: true,
+        daysLeft: 159
+      },
+      {
+        id: 5,
+        name: "ஆனி உத்தரம்",
+        englishName: "Aani Uthiram",
+        date: "2024-07-22",
+        tamilDate: "ஆனி உத்தரம்",
+        type: "minor",
+        description: "சிவன்-பார்வதி திருமணம் நினைவு",
+        upcoming: true,
+        daysLeft: 219
+      },
+      {
+        id: 6,
+        name: "ஆடி பெருக்கு",
+        englishName: "Aadi Perukku",
+        date: "2024-08-03",
+        tamilDate: "ஆடி 18",
+        type: "minor",
+        description: "நீர் வழிபாடு, ஆறு பூஜை",
+        upcoming: true,
+        daysLeft: 231
+      },
+      {
+        id: 7,
+        name: "ஆவணி அவிட்டம்",
+        englishName: "Aavani Avittam",
+        date: "2024-08-19",
+        tamilDate: "ஆவணி அவிட்டம்",
+        type: "major",
+        description: "உபாகர்மம், யஜ்ஞோபவீதம் மாற்றும் நாள்",
+        upcoming: true,
+        daysLeft: 247
+      },
+      {
+        id: 8,
+        name: "விநாயகர் சதுர்த்தி",
+        englishName: "Vinayaka Chaturthi",
+        date: "2024-09-07",
+        tamilDate: "ஆவணி சுக்கில பக்ஷம்",
+        type: "major",
+        description: "விநாயகர் பிறந்தநாள், 10 நாள் விழா",
+        upcoming: true,
+        daysLeft: 266
+      },
+      {
+        id: 9,
+        name: "புரட்டாசி சனி",
+        englishName: "Purattasi Saturday",
+        date: "2024-09-28",
+        tamilDate: "புரட்டாசி சனி",
+        type: "monthly",
+        description: "ஒவ்வொரு சனிக்கிழமை சிறப்பு பூஜை",
+        upcoming: true,
+        daysLeft: 287
+      },
+      {
+        id: 10,
+        name: "நவராத்திரி",
+        englishName: "Navaratri",
+        date: "2024-10-03",
+        tamilDate: "புரட்டாசி 1-9",
+        type: "major",
+        description: "9 நாள் தேவி வழிபாடு, கொலு",
+        upcoming: true,
+        daysLeft: 292
+      },
+      {
+        id: 11,
+        name: "விஜயதசமி",
+        englishName: "Vijayadasami",
+        date: "2024-10-12",
+        tamilDate: "புரட்டாசி 10",
+        type: "major",
+        description: "வெற்றி தசமி, வித்தியாரம்பம்",
+        upcoming: true,
+        daysLeft: 301
+      },
+      {
+        id: 12,
+        name: "தீபாவளி",
+        englishName: "Deepavali",
+        date: "2024-10-31",
+        tamilDate: "ஐப்பசி அமாவாசை",
+        type: "major",
+        description: "வெளிச்சத்தின் திருவிழா, லட்சுமி பூஜை",
+        upcoming: true,
+        daysLeft: 320
+      },
+      {
+        id: 13,
+        name: "கார்த்திகை தீபம்",
+        englishName: "Karthigai Deepam",
+        date: "2024-12-15",
+        tamilDate: "கார்த்திகை பூர்ணிமா",
+        type: "major",
+        description: "விளக்கேற்றும் விழா, மலை தீபம்",
+        upcoming: true,
+        daysLeft: 365
+      },
+      {
+        id: 14,
+        name: "மார்கழி பஜனை",
+        englishName: "Margazhi Bhajana",
+        date: "2024-12-16",
+        tamilDate: "மார்கழி 1-30",
+        type: "monthly",
+        description: "முழு மாதம் பஜனை, திருப்பாவை பாராயணம்",
+        upcoming: true,
+        daysLeft: 366
+      },
+      {
+        id: 15,
+        name: "தை பொங்கல்",
+        englishName: "Thai Pongal",
+        date: "2025-01-15",
+        tamilDate: "தை 1",
+        type: "major",
+        description: "அறுவடை திருவிழா, பொங்கல் படையல்",
+        upcoming: true,
+        daysLeft: 396
+      },
+      {
+        id: 16,
+        name: "தைப்பூசம்",
+        englishName: "Thai Poosam",
+        date: "2025-01-21",
+        tamilDate: "தை 7",
+        type: "major",
+        description: "முருகன் விழா, காவடி எடுத்தல்",
+        upcoming: true,
+        daysLeft: 402
+      },
+      {
+        id: 17,
+        name: "மாசி மகம்",
+        englishName: "Masi Magam",
+        date: "2025-02-12",
+        tamilDate: "மாசி மகம்",
+        type: "minor",
+        description: "நதி திருவிழா, கடல் பூஜை",
+        upcoming: true,
+        daysLeft: 424
+      },
+      {
+        id: 18,
+        name: "பங்குனி உத்திரம்",
+        englishName: "Panguni Uthiram",
+        date: "2025-03-24",
+        tamilDate: "பங்குனி உத்திரம்",
+        type: "major",
+        description: "திருமண விழா, முருகன் பிறந்தநாள்",
+        upcoming: true,
+        daysLeft: 464
+      },
+      {
+        id: 19,
+        name: "பௌர்ணமி",
+        englishName: "Pournami",
+        date: "2024-05-23",
+        tamilDate: "வைகாசி பௌர்ணமி",
+        type: "monthly",
+        description: "மாதாந்திர பௌர்ணமி சிறப்பு பூஜை",
+        upcoming: true,
+        daysLeft: 159
+      },
+      {
+        id: 20,
+        name: "சஷ்டி",
+        englishName: "Sashti",
+        date: "2024-06-12",
+        tamilDate: "ஆனி சஷ்டி",
+        type: "monthly",
+        description: "மாதாந்திர சஷ்டி விரதம்",
+        upcoming: true,
+        daysLeft: 179
+      }
+    ];
+
+    // Function to render festival table
+    function renderFestivalTable(festivals) {
+      const tableBody = document.getElementById('festivalTableBody');
+      const cardsContainer = document.getElementById('festivalCards');
+      
+      if (festivals.length === 0) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 40px; color: #666;">
+              <i class="fas fa-calendar-times" style="font-size: 3rem; color: #FFD700; margin-bottom: 15px; display: block;"></i>
+              <h4 style="color: #8B0000; margin-bottom: 10px;">விழாக்கள் இல்லை</h4>
+              <p>தேர்ந்தெடுத்த வகைக்கான விழாக்கள் காணப்படவில்லை.</p>
+            </td>
+          </tr>
+        `;
+        cardsContainer.innerHTML = `
+          <div style="text-align: center; padding: 40px; color: #666;">
+            <i class="fas fa-calendar-times" style="font-size: 3rem; color: #FFD700; margin-bottom: 15px; display: block;"></i>
+            <h4 style="color: #8B0000; margin-bottom: 10px;">விழாக்கள் இல்லை</h4>
+            <p>தேர்ந்தெடுத்த வகைக்கான விழாக்கள் காணப்படவில்லை.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Render table rows
+      let tableHTML = '';
+      let cardsHTML = '';
+      
+      festivals.forEach(festival => {
+        const typeClass = `type-${festival.type}`;
+        const typeText = festival.type === 'major' ? 'முக்கிய' : 
+                        festival.type === 'minor' ? 'சிறு' : 
+                        festival.type === 'monthly' ? 'மாதாந்திர' : 'சிறப்பு';
+        
+        tableHTML += `
+          <tr data-type="${festival.type}" data-upcoming="${festival.upcoming}">
+            <td>
+              <div class="festival-name">${festival.name}</div>
+            </td>
+            <td>${festival.englishName}</td>
+            <td>
+              <div class="festival-date">${formatDate(festival.date)}</div>
+            </td>
+            <td>
+              <div class="festival-date-tamil">${festival.tamilDate}</div>
+            </td>
+            <td><span class="festival-type ${typeClass}">${typeText}</span></td>
+            <td>
+              <div class="festival-details">${festival.description}</div>
+            </td>
+          </tr>
+        `;
+        
+        // Render cards for mobile
+        cardsHTML += `
+          <div class="festival-card" data-type="${festival.type}" data-upcoming="${festival.upcoming}">
+            <div class="festival-card-header">
+              <div class="festival-card-title">${festival.name}</div>
+              <div class="festival-card-date">${formatDate(festival.date)}</div>
+            </div>
+            <div class="festival-card-body">
+              <div style="margin-bottom: 10px;">
+                <span class="festival-type ${typeClass}">${typeText}</span>
+                <span style="color: #666; margin-left: 10px;">${festival.englishName}</span>
+              </div>
+              <div style="color: #8B0000; font-weight: 600; margin-bottom: 10px;">
+                ${festival.tamilDate}
+              </div>
+              <div>${festival.description}</div>
+            </div>
+          </div>
+        `;
+      });
+      
+      tableBody.innerHTML = tableHTML;
+      cardsContainer.innerHTML = cardsHTML;
+    }
+
+    // Function to render upcoming festivals
+    function renderUpcomingFestivals() {
+      const upcomingContainer = document.getElementById('upcomingFestivals');
+      const today = new Date();
+      
+      // Get upcoming festivals (next 3)
+      const upcoming = festivalData
+        .filter(f => {
+          const festivalDate = new Date(f.date);
+          return festivalDate >= today;
+        })
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .slice(0, 3);
+      
+      if (upcoming.length === 0) {
+        upcomingContainer.innerHTML = `
+          <div style="text-align: center; color: #666; grid-column: 1 / -1;">
+            <i class="fas fa-calendar-check" style="font-size: 2.5rem; color: #FFD700; margin-bottom: 15px; display: block;"></i>
+            <h4 style="color: #8B0000; margin-bottom: 10px;">வரவிருக்கும் விழாக்கள் இல்லை</h4>
+            <p>இந்த ஆண்டிற்கான அனைத்து விழாக்களும் நிறைவடைந்துவிட்டன.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      let upcomingHTML = '';
+      
+      upcoming.forEach(festival => {
+        const festivalDate = new Date(festival.date);
+        const timeDiff = festivalDate - today;
+        const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        
+        upcomingHTML += `
+          <div class="upcoming-item">
+            <div class="upcoming-item-header">
+              <div class="upcoming-item-title">${festival.name}</div>
+              <div class="upcoming-item-date">${formatDate(festival.date)}</div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px; font-size: 0.95rem;">
+              ${festival.tamilDate}
+            </div>
+            <div style="color: #666; font-size: 0.9rem;">
+              ${festival.description}
+            </div>
+            <div class="upcoming-item-days">
+              <i class="far fa-calendar-alt me-1"></i> ${daysLeft} நாட்கள் மட்டும்
+            </div>
+          </div>
+        `;
+      });
+      
+      upcomingContainer.innerHTML = upcomingHTML;
+    }
+
+    // Helper function to format date
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-IN', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+    }
+
+    // Function to filter festivals
+    function filterFestivals(filterType, searchText = '') {
+      let filtered = [...festivalData];
+      
+      // Apply type filter
+      if (filterType !== 'all') {
+        if (filterType === 'upcoming') {
+          const today = new Date();
+          filtered = filtered.filter(f => {
+            const festivalDate = new Date(f.date);
+            return festivalDate >= today;
+          });
+        } else {
+          filtered = filtered.filter(f => f.type === filterType);
+        }
+      }
+      
+      // Apply search filter
+      if (searchText) {
+        const searchLower = searchText.toLowerCase();
+        filtered = filtered.filter(f => 
+          f.name.toLowerCase().includes(searchLower) ||
+          f.englishName.toLowerCase().includes(searchLower) ||
+          f.tamilDate.toLowerCase().includes(searchLower) ||
+          f.description.toLowerCase().includes(searchLower)
+        );
+      }
+      
+      // Sort by date
+      filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      
+      return filtered;
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Render initial data
+      const initialFestivals = filterFestivals('all');
+      renderFestivalTable(initialFestivals);
+      renderUpcomingFestivals();
+      
+      // Filter button event listeners
+      document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Get filter type
+          const filterType = this.getAttribute('data-filter');
+          const searchText = document.getElementById('festivalSearch').value;
+          
+          // Filter and render festivals
+          const filtered = filterFestivals(filterType, searchText);
+          renderFestivalTable(filtered);
+        });
+      });
+      
+      // Search input event listener
+      document.getElementById('festivalSearch').addEventListener('input', function() {
+        const searchText = this.value;
+        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+        
+        const filtered = filterFestivals(activeFilter, searchText);
+        renderFestivalTable(filtered);
+      });
+      
+      // Year navigation
+      document.querySelector('.prev-year').addEventListener('click', function() {
+        const yearElement = document.querySelector('.current-year');
+        let currentYear = parseInt(yearElement.textContent);
+        yearElement.textContent = currentYear - 1;
+      });
+      
+      document.querySelector('.next-year').addEventListener('click', function() {
+        const yearElement = document.querySelector('.current-year');
+        let currentYear = parseInt(yearElement.textContent);
+        yearElement.textContent = currentYear + 1;
+      });
+      
+      // Add hover effect to festival cards
+      $(document).on('mouseenter', '.festival-card', function() {
+        $(this).css('transform', 'translateY(-5px)');
+        $(this).css('box-shadow', '0 10px 25px rgba(0, 0, 0, 0.15)');
+      });
+      
+      $(document).on('mouseleave', '.festival-card', function() {
+        $(this).css('transform', 'translateY(0)');
+        $(this).css('box-shadow', '0 5px 15px rgba(0, 0, 0, 0.08)');
+      });
+      
+      // Add active class to navigation
+      $('.nav-link').on('click', function() {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>
 </body>
 </html>
