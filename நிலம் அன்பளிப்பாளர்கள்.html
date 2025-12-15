@@ -3,180 +3,1042 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்) - Land Donators</title>
+  <title>காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்) - நிலம் அன்பளிப்பாளர்கள்</title>
+  
+  <!-- Bootstrap 4 -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Tamil -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* Custom styles */
-    header {
-      background-color: #ffc107;
-      text-align: center;
-      padding: 20px 0;
+    /* Custom Tamil Font */
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    
+    /* Header Styles */
+    .temple-header {
+      background: linear-gradient(135deg, #ff9933, #ffcc66);
+      padding: 25px 0;
       position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    header img {
-      max-width: 60%;
-      height: auto;
-    }
-
-    .circle-image {
+    
+    .temple-header::before {
+      content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.1)">ॐ</text></svg>');
+      background-size: 150px;
+      opacity: 0.3;
     }
-
-    .top-left {
-      top: 10px;
-      left: 10px;
-    }
-
-    .top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    h1 {
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      color: #333;
-      margin-top: 30px;
-      word-wrap: break-word; /* Ensure long words break and wrap */
-    }
-
-    @media (min-width: 576px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .circle-image {
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    footer {
-      background-color: #343a40;
-      color: #fff;
+    
+    .temple-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8B0000;
       text-align: center;
-      padding: 20px 0;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .temple-subtitle {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Navigation */
+    .temple-nav {
+      background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      padding: 15px 20px !important;
+      position: relative;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFD700 !important;
+    }
+    
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFD700 !important;
+    }
+    
+    /* Main Content */
+    .main-content {
+      padding: 40px 0;
+      background: #FFF8E7;
+      min-height: 70vh;
+    }
+    
+    /* Page Title */
+    .page-title {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    
+    .page-title h1 {
+      font-size: 2.5rem;
+      color: #8B0000;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff9933, #ffcc66);
+      border-radius: 2px;
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(165, 42, 42, 0.9)), 
+                  url('https://images.unsplash.com/photo-1580137189272-c9379f8864fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .hero-text {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+    }
+    
+    /* Donors Stats */
+    .donors-stats {
+      background: linear-gradient(135deg, #2E8B57, #3CB371);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(46, 139, 87, 0.2);
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #fff;
+      opacity: 0.9;
+    }
+    
+    /* FIXED DONOR CARDS - Equal Height */
+    .donors-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    
+    .donor-col {
+      padding: 0 15px;
+      margin-bottom: 30px;
+      display: flex;
+    }
+    
+    .donor-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #eaeaea;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .donor-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(46, 139, 87, 0.15);
+    }
+    
+    .donor-header {
+      background: linear-gradient(135deg, #8B0000, #A52A2A);
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+    
+    .donor-header::before {
+      content: '🌱';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      opacity: 0.3;
+    }
+    
+    .donor-name {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    
+    .donor-year {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+    
+    .donor-body {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .donor-details {
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+    
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+    
+    .detail-label {
+      color: #666;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    .detail-value {
+      color: #2E8B57;
+      font-weight: 600;
+      text-align: right;
+      font-size: 1rem;
+    }
+    
+    .donor-message {
+      background: #F8F9FA;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: auto;
+      border-left: 4px solid #2E8B57;
+      flex: 1;
+    }
+    
+    .message-text {
+      color: #555;
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    
+    /* Land Map Visualization */
+    .land-visualization {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .visualization-title {
+      color: #8B0000;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #2E8B57;
+    }
+    
+    .land-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .land-plot {
+      background: #E8F5E9;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid #C8E6C9;
+      transition: all 0.3s ease;
+    }
+    
+    .land-plot:hover {
+      transform: scale(1.05);
+      background: #C8E6C9;
+    }
+    
+    .plot-size {
+      font-size: 1.8rem;
+      color: #2E8B57;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .plot-label {
+      color: #555;
+      font-size: 0.9rem;
+    }
+    
+    /* Donation Types */
+    .donation-types {
+      background: #FFF8DC;
+      padding: 40px;
+      border-radius: 15px;
+      border: 2px solid #FFD700;
       margin-top: 40px;
     }
-
-    .carousel-item img {
-      max-width: 100%;
-      height: auto;
+    
+    .types-title {
+      color: #8B4513;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      text-align: center;
     }
-
-    .head1 {
-      font-size: 1.5rem;
-      color: #000; /* Orange Red */
-      font-family: 'Times New Roman', serif;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    /* Styling for the donators' list */
-    .donator-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
+    
+    .type-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
       padding: 15px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 4px rgb(245, 169, 71);
-      transition: transform 0.2s;
-      background: #f9f9f9;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
-
-    .donator-card:hover {
-      transform: translateY(-5px);
+    
+    .type-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #2E8B57, #4CAF50);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: white;
+      font-size: 1.5rem;
+      flex-shrink: 0;
     }
-
-    .donator-card h5 {
-      font-size: 1.25rem;
-      color: #333;
-      font-weight: bold;
+    
+    .type-info h4 {
+      color: #2E8B57;
       margin-bottom: 5px;
+      font-weight: 600;
     }
-
-    .donator-card p {
-      font-size: 1rem;
+    
+    .type-info p {
       color: #666;
       margin: 0;
     }
-
-    .form-group {
-      max-width: 500px;
-      margin: 0 auto;
+    
+    /* Footer */
+    .temple-footer {
+      background: linear-gradient(135deg, #2F4F4F, #363636);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 40px;
     }
-    .text-center{
-      font-size: 1.5rem;
-      color: #f48a09;
-      font-family: 'Times New Roman', serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #fce808;
-      margin-bottom: 20px;
+    
+    .footer-section {
+      margin-bottom: 25px;
+    }
+    
+    .footer-title {
+      color: #FFD700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD700;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .donor-card {
+        min-height: 520px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .temple-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+      }
+      
+      .page-title h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .donor-name {
+        font-size: 1.8rem;
+      }
+      
+      .donor-card {
+        min-height: 500px;
+      }
+      
+      .donor-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .temple-title {
+        font-size: 1.6rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 1rem;
+      }
+      
+      .page-title h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .land-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+      
+      .type-item {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .type-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      
+      .donor-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      
+      .donor-card {
+        min-height: 480px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .temple-header {
+        padding: 20px 0;
+      }
+      
+      .temple-title {
+        font-size: 1.4rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .page-title h1 {
+        font-size: 1.5rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .donor-body {
+        padding: 20px;
+      }
+      
+      .donor-header {
+        padding: 20px 15px;
+      }
+      
+      .donor-name {
+        font-size: 1.6rem;
+      }
+      
+      .land-visualization,
+      .donation-types {
+        padding: 25px;
+      }
+      
+      .donor-card {
+        min-height: 460px;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .donor-card, .land-plot, .type-item {
+      animation: fadeIn 0.6s ease-out;
     }
   </style>
 </head>
 <body>
-  <!-- Include the common header -->
-  <header>
+  <!-- Header -->
+  <header class="temple-header">
     <div class="container">
-      <div class="head1">
-        காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)
+      <div class="text-center">
+        <h1 class="temple-title tamil">காணியாளய்யன் திருக்கோவில்</h1>
+        <p class="temple-subtitle tamil">பைரவர் கூட்டம் • ஸ்ரீ காணியாளய்யன் ஆலயம்</p>
       </div>
     </div>
   </header>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg temple-nav navbar-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTemple">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
-          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள்</a></li>
+      <div class="collapse navbar-collapse" id="navbarTemple">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link tamil" href="index.html">
+              <i class="fas fa-home me-2"></i>முகப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="history.html">
+              <i class="fas fa-history me-2"></i>கோவில் வரலாறு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="god_names.html">
+              <i class="fas fa-pray me-2"></i>கடவுள் பெயர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="புகைப்பட தொகுப்பு.html">
+              <i class="fas fa-images me-2"></i>புகைப்பட தொகுப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="நிர்வாகிகள்.html">
+              <i class="fas fa-users me-2"></i>நிர்வாகிகள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active tamil" href="நிலம் அன்பளிப்பாளர்கள்.html">
+              <i class="fas fa-hands-helping me-2"></i>நிலம் அன்பளிப்பாளர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="அமாவாசை கட்டளைதாரர்கள்.html">
+              <i class="fas fa-calendar me-2"></i>அமாவாசை கட்டளைதாரர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="விஷேசநாட்கள்.html">
+              <i class="fas fa-star me-2"></i>விஷேசநாட்கள்
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Donators' list -->
-  <div class="container mt-4">
-    <h2 class="text-center">நிலம் அன்பளிப்பாளர்கள்</h2>
-    <div id="donatorsContent" class="mt-4">
-      <!-- Example donator card -->
-      <div class="donator-card">
-        <h5>அன்பளிப்பாளர் பெயர் 1</h5>
-        <p>அன்பளிப்புப் பற்று: 2 ஏக்கர்</p>
-      </div>
-      <div class="donator-card">
-        <h5>அன்பளிப்பாளர் பெயர் 2</h5>
-        <p>அன்பளிப்புப் பற்று: 1.5 ஏக்கர்</p>
-      </div>
-      <div class="donator-card">
-        <h5>அன்பளிப்பாளர் பெயர் 3</h5>
-        <p>அன்பளிப்புப் பற்று: 3 ஏக்கர்</p>
-      </div>
-      <!-- Add more donator cards as needed -->
-    </div>
-  </div>
-
-  <footer>
+  <!-- Main Content -->
+  <main class="main-content">
     <div class="container">
-      <p>&copy; 2024 காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்). All rights reserved.</p>
+      <!-- Page Title -->
+      <div class="page-title">
+        <h1 class="tamil">நிலம் அன்பளிப்பாளர்கள்</h1>
+        <p class="page-subtitle tamil">கோவிலின் வளர்ச்சிக்கு நிலம் அன்பளித்த பெருமைமிக்க தானதருமர்கள்</p>
+      </div>
+      
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h2 class="hero-title tamil">நில தானம் - புண்ணியத்தின் உச்சம்</h2>
+        <p class="hero-text tamil">
+          "நிலம் தந்தோர் வானம் புகுவர்" என்ற தமிழ் மொழிப்பாடல் போல, 
+          காணியாளய்யன் திருக்கோவிலின் வளர்ச்சிக்கு நிலம் அன்பளித்த 
+          அனைவருக்கும் நமது இதய பூர்வமான நன்றிகள். அவர்களின் தியாகமும் 
+          தானமும் கோவிலின் தற்போதைய நிலைக்கு அடித்தளமாக அமைந்துள்ளன.
+        </p>
+      </div>
+      
+      <!-- Donors Stats -->
+      <div class="donors-stats">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label tamil">அன்பளிப்பாளர்கள்</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label tamil">ஏக்கர் நிலம்</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">25+</div>
+              <div class="stat-label tamil">சேவை ஆண்டுகள்</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">4</div>
+              <div class="stat-label tamil">தலைமுறைகள்</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Donor Cards - FIXED EQUAL HEIGHT -->
+      <div class="donors-row row">
+        <!-- Donor 1 -->
+        <div class="donor-col col-lg-6 col-md-12">
+          <div class="donor-card">
+            <div class="donor-header">
+              <h3 class="donor-name tamil">அ</h3>
+              <div class="donor-year tamil">1995 முதல்</div>
+            </div>
+            <div class="donor-body">
+              <div class="donor-details">
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளித்த நிலம்:</span>
+                  <span class="detail-value tamil">10 ஏக்கர்</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">நில இடம்:</span>
+                  <span class="detail-value tamil">கிழக்குப் பகுதி</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளிப்பு ஆண்டு:</span>
+                  <span class="detail-value tamil">1995</span>
+                </div>
+              </div>
+              <div class="donor-message">
+                <p class="message-text tamil">
+                  "கோவில் வளர்ச்சிக்கு நிலம் அன்பளிப்பது மிகப்பெரிய புண்ணியம். 
+                  எங்கள் குடும்பத்தின் முதல் தலைமுறையில் இருந்தே இந்த கோவிலுக்கு 
+                  சேவை செய்து வருகிறோம். இந்த நிலத்தில் கோவில் வளர்வதைக் காண்பது 
+                  எங்கள் பெருமகிழ்ச்சி."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Donor 2 -->
+        <div class="donor-col col-lg-6 col-md-12">
+          <div class="donor-card">
+            <div class="donor-header">
+              <h3 class="donor-name tamil">க</h3>
+              <div class="donor-year tamil">2000 முதல்</div>
+            </div>
+            <div class="donor-body">
+              <div class="donor-details">
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளித்த நிலம்:</span>
+                  <span class="detail-value tamil">8 ஏக்கர்</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">நில இடம்:</span>
+                  <span class="detail-value tamil">மேற்குப் பகுதி</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளிப்பு ஆண்டு:</span>
+                  <span class="detail-value tamil">2000</span>
+                </div>
+              </div>
+              <div class="donor-message">
+                <p class="message-text tamil">
+                  "காணியாளய்யன் பெருமான் அருளால் எங்களுக்கு கிடைத்த நிலத்தில் 
+                  சிறிது பகுதியை கோவிலுக்கு அன்பளிப்பது எங்கள் கடமை என்று கருதினோம். 
+                  இந்த கோவில் பலருக்கும் புண்ணியம் தரும் என்ற நம்பிக்கையில் அன்பளித்தோம்."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Donor 3 -->
+        <div class="donor-col col-lg-6 col-md-12">
+          <div class="donor-card">
+            <div class="donor-header">
+              <h3 class="donor-name tamil">தி</h3>
+              <div class="donor-year tamil">2005 முதல்</div>
+            </div>
+            <div class="donor-body">
+              <div class="donor-details">
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளித்த நிலம்:</span>
+                  <span class="detail-value tamil">12 ஏக்கர்</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">நில இடம்:</span>
+                  <span class="detail-value tamil">வடக்குப் பகுதி</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளிப்பு ஆண்டு:</span>
+                  <span class="detail-value tamil">2005</span>
+                </div>
+              </div>
+              <div class="donor-message">
+                <p class="message-text tamil">
+                  "எங்கள் தந்தையார் கனவு இந்த கோவில் வளர்ச்சி. அவர் நினைவாக 
+                  கோவிலின் வளர்ச்சிக்கு நிலம் அன்பளித்தோம். இது எங்கள் குடும்பத்தின் 
+                  பெருமை. கோவில் வளர்ச்சியைக் காணும் ஒவ்வொரு நாளும் எங்களுக்கு 
+                  மகிழ்ச்சி தருகிறது."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Donor 4 -->
+        <div class="donor-col col-lg-6 col-md-12">
+          <div class="donor-card">
+            <div class="donor-header">
+              <h3 class="donor-name tamil">த</h3>
+              <div class="donor-year tamil">2010 முதல்</div>
+            </div>
+            <div class="donor-body">
+              <div class="donor-details">
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளித்த நிலம்:</span>
+                  <span class="detail-value tamil">15 ஏக்கர்</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">நில இடம்:</span>
+                  <span class="detail-value tamil">தெற்குப் பகுதி</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label tamil">அன்பளிப்பு ஆண்டு:</span>
+                  <span class="detail-value tamil">2010</span>
+                </div>
+              </div>
+              <div class="donor-message">
+                <p class="message-text tamil">
+                  "இளம் தலைமுறையினராக கோவிலின் எதிர்காலத்திற்கு பங்களிக்க 
+                  முடிந்ததில் மிகவும் மகிழ்ச்சி. இந்த நிலம் கோவிலின் வளர்ச்சிக்கு 
+                  பயன்படும் என்ற நம்பிக்கையில் அன்பளித்தோம். கோவில் வளர்ச்சியில் 
+                  எங்கள் பங்கு இருக்கும் என்பது பெருமை."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Land Map Visualization -->
+      <div class="land-visualization">
+        <h3 class="visualization-title tamil">கோவில் நில வரைபடம்</h3>
+        <div class="land-grid">
+          <div class="land-plot">
+            <div class="plot-size">10 ஏக்கர்</div>
+            <div class="plot-label tamil">கிழக்குப் பகுதி</div>
+          </div>
+          <div class="land-plot">
+            <div class="plot-size">8 ஏக்கர்</div>
+            <div class="plot-label tamil">மேற்குப் பகுதி</div>
+          </div>
+          <div class="land-plot">
+            <div class="plot-size">12 ஏக்கர்</div>
+            <div class="plot-label tamil">வடக்குப் பகுதி</div>
+          </div>
+          <div class="land-plot">
+            <div class="plot-size">15 ஏக்கர்</div>
+            <div class="plot-label tamil">தெற்குப் பகுதி</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Donation Types -->
+      <div class="donation-types">
+        <h3 class="types-title tamil">நில தானத்தின் வகைகள்</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="type-item">
+              <div class="type-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <div class="type-info">
+                <h4 class="tamil">விவசாய நிலம்</h4>
+                <p class="tamil">கோவிலின் தினசரி தேவைகளுக்கான விவசாய நிலங்கள்</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="type-item">
+              <div class="type-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="type-info">
+                <h4 class="tamil">கட்டுமான நிலம்</h4>
+                <p class="tamil">கோவில் வளாகம் மற்றும் கட்டிடங்கள் கட்டுவதற்கான நிலம்</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="type-item">
+              <div class="type-icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <div class="type-info">
+                <h4 class="tamil">பூங்கா நிலம்</h4>
+                <p class="tamil">பக்தர்கள் ஓய்வெடுக்க பூங்கா மற்றும் தோட்ட நிலங்கள்</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="type-item">
+              <div class="type-icon">
+                <i class="fas fa-warehouse"></i>
+              </div>
+              <div class="type-info">
+                <h4 class="tamil">சேமிப்பு நிலம்</h4>
+                <p class="tamil">கோவில் பொருட்கள் மற்றும் வசதிகளுக்கான நிலம்</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="temple-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title tamil">காணியாளய்யன் திருக்கோவில்</h4>
+          <p class="tamil">பல நூற்றாண்டுகளாக பக்தர்களுக்கு சேவை செய்து வரும் புனிதத் தலம். காணியாளய்யன் பெருமாளின் கருணை பக்தர்களை காக்கிறது.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title tamil">விரைவு இணைப்புகள்</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="tamil"><i class="fas fa-home"></i> முகப்பு பக்கம்</a></li>
+            <li><a href="கோவில் வரலாறு.html" class="tamil"><i class="fas fa-history"></i> கோவில் வரலாறு</a></li>
+            <li><a href="புகைப்பட தொகுப்பு.html" class="tamil"><i class="fas fa-images"></i> புகைப்படங்கள்</a></li>
+            <li><a href="நிலம் அன்பளிப்பாளர்கள்.html" class="tamil"><i class="fas fa-hands-helping"></i> நில அன்பளிப்பாளர்கள்</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">திருக்கோவில் நேரங்கள்</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-sun"></i> <span class="tamil">காலை தரிசனம்: 6:30 - 12:30</span></li>
+            <li><i class="fas fa-moon"></i> <span class="tamil">மாலை தரிசனம்: 4:30 - 8:30</span></li>
+            <li><i class="fas fa-water"></i> <span class="tamil">அபிஷேகம்: காலை 8:00</span></li>
+            <li><i class="fas fa-praying-hands"></i> <span class="tamil">அர்ச்சனை: காலை 10:00</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">தொடர்புக்கு</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> <span class="tamil">பைரவர் கூட்டம், தமிழ்நாடு</span></li>
+            <li><i class="fas fa-phone"></i> <span>+91 45678 91234</span></li>
+            <li><i class="fas fa-envelope"></i> <span>kaaniyalaiyan.kovil@gmail.com</span></li>
+            <li><i class="fas fa-user-tie"></i> <span class="tamil">தலைமை பூசாரி: ஸ்ரீ முருகன்</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="tamil">© 2024 காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்). அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        <p class="mt-2 tamil" style="font-size: 0.8rem; color: #FFD700;">
+          "நிலம் தந்தோர் வானம் புகுவர்" - இந்தப் புண்ணியத்தை நினைவுகூரும் அனைத்து அன்பளிப்பாளர்களுக்கும் நன்றி.
+        </p>
+      </div>
     </div>
   </footer>
 
-  <!-- Bootstrap Scripts -->
+  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      // Add hover effect to donor cards
+      $('.donor-card').hover(
+        function() {
+          $(this).css('transform', 'translateY(-10px)');
+          $(this).css('box-shadow', '0 15px 35px rgba(46, 139, 87, 0.2)');
+        },
+        function() {
+          $(this).css('transform', 'translateY(0)');
+          $(this).css('box-shadow', '0 8px 25px rgba(0, 0, 0, 0.1)');
+        }
+      );
+      
+      // Add hover effect to land plots
+      $('.land-plot').hover(
+        function() {
+          $(this).css('transform', 'scale(1.05)');
+          $(this).css('background', '#C8E6C9');
+        },
+        function() {
+          $(this).css('transform', 'scale(1)');
+          $(this).css('background', '#E8F5E9');
+        }
+      );
+      
+      // Add active class to navigation
+      $('.nav-link').on('click', function() {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+      });
+      
+      // Equalize card heights
+      function equalizeDonorCardHeights() {
+        const donorCards = $('.donor-card');
+        let maxHeight = 0;
+        
+        // Reset heights
+        donorCards.css('height', '');
+        
+        // Get the maximum height
+        donorCards.each(function() {
+          const cardHeight = $(this).outerHeight();
+          if (cardHeight > maxHeight) {
+            maxHeight = cardHeight;
+          }
+        });
+        
+        // Set all cards to the maximum height (only if they're in the same row)
+        if ($(window).width() >= 992) {
+          // For large screens, equalize cards in each row separately
+          $('.donors-row').each(function() {
+            const rowCards = $(this).find('.donor-card');
+            let rowMaxHeight = 0;
+            
+            rowCards.each(function() {
+              const h = $(this).outerHeight();
+              if (h > rowMaxHeight) rowMaxHeight = h;
+            });
+            
+            rowCards.css('min-height', rowMaxHeight + 'px');
+          });
+        }
+      }
+      
+      // Run on load and resize
+      $(window).on('load resize', function() {
+        setTimeout(equalizeDonorCardHeights, 100);
+      });
+    });
+  </script>
 </body>
 </html>
