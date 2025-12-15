@@ -3,233 +3,886 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்) - நிர்வாகிகள் பெயர்கள்</title>
+  <title>காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்) - நிர்வாகிகள்</title>
+  
+  <!-- Bootstrap 4 -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Tamil -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lightbox -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+  
   <style>
-    /* Custom styles */
-    header {
-      background-color: #ffc107;
-      text-align: center;
-      padding: 20px 0;
+    /* Custom Tamil Font */
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    
+    /* Header Styles */
+    .temple-header {
+      background: linear-gradient(135deg, #ff9933, #ffcc66);
+      padding: 25px 0;
       position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    header img {
-      max-width: 60%;
-      height: auto;
-    }
-
-    .circle-image {
+    
+    .temple-header::before {
+      content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.1)">ॐ</text></svg>');
+      background-size: 150px;
+      opacity: 0.3;
     }
-
-    .top-left {
-      top: 10px;
-      left: 10px;
+    
+    .temple-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8B0000;
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
     }
-
-    .top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    h1 {
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
+    
+    .temple-subtitle {
+      font-size: 1.1rem;
       color: #333;
-      margin-top: 30px;
-      word-wrap: break-word; /* Ensure long words break and wrap */
-    }
-
-    @media (min-width: 576px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .circle-image {
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    footer {
-      background-color: #343a40;
-      color: #fff;
       text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
     }
-
-    .admin-section {
-      background-color: #f8f9fa;
-      padding: 30px 20px;
+    
+    /* Navigation */
+    .temple-nav {
+      background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      padding: 15px 20px !important;
+      position: relative;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFD700 !important;
+    }
+    
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFD700 !important;
+    }
+    
+    /* Main Content */
+    .main-content {
+      padding: 40px 0;
+      background: #FFF8E7;
+      min-height: 70vh;
+    }
+    
+    /* Page Title */
+    .page-title {
       text-align: center;
-    }
-
-    .admin-section h2 {
-      font-family: 'Georgia', serif;
-      font-size: 2.5rem;
       margin-bottom: 40px;
-      color: #333;
+      position: relative;
+      padding-bottom: 20px;
     }
-
-    .admin-card {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
+    
+    .page-title h1 {
+      font-size: 2.5rem;
+      color: #8B0000;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff9933, #ffcc66);
+      border-radius: 2px;
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Admin Stats */
+    .admin-stats {
+      background: linear-gradient(135deg, #8B0000, #A52A2A);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(139, 0, 0, 0.2);
+    }
+    
+    .stat-item {
+      text-align: center;
       padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgb(245, 169, 71);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #fff;
+      opacity: 0.9;
+    }
+    
+    /* FIXED CARD SIZE - All cards will be equal height */
+    .admin-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      border: 1px solid #eaeaea;
+      height: 580px; /* Fixed height for all cards */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .admin-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
+    }
+    
+    /* Fixed photo height */
+    .admin-photo {
+      height: 280px; /* Fixed height */
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0; /* Prevent photo from shrinking */
+    }
+    
+    .admin-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .admin-card:hover .admin-photo img {
+      transform: scale(1.05);
+    }
+    
+    .admin-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(139, 0, 0, 0.2), rgba(139, 0, 0, 0.6));
       display: flex;
       align-items: center;
-      text-align: left;
-      cursor: pointer; /* Add cursor pointer for interaction */
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-
-    .admin-card img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      margin-right: 20px;
+    
+    .admin-card:hover .admin-overlay {
+      opacity: 1;
     }
-
-    .admin-card h3 {
-  font-size: 1.7rem;
-  color: #ffd700; /* Gold */
-  margin: 0;
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-}
-
-.admin-card p {
-  font-size: 1.3rem;
-  color: #ff4500; /* Orange Red */
-  margin: 0;
-  font-family: 'Verdana', sans-serif;
-  font-style: italic;
-  text-shadow: 1px 1px 2px #000;
-}
-.head{
-  font-size: 1.5rem;
-  color: #f48a09;
-      font-family: 'Times New Roman', serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #fce808;
-      margin-bottom: 20px;
-}
-.head1{
-  font-size: 1.5rem;
-  color: #000; /* Orange Red */
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-}
-    .ekko-lightbox .ekko-lightbox-nav-overlay {
-      display: none; /* Hide navigation arrows */
+    
+    .view-btn {
+      background: rgba(255, 255, 255, 0.9);
+      color: #8B0000;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .view-btn:hover {
+      background: white;
+      transform: scale(1.05);
+    }
+    
+    /* Fixed info section - will take remaining space */
+    .admin-info {
+      padding: 25px;
+      text-align: center;
+      flex: 1; /* Take remaining space */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .admin-name {
+      font-size: 1.8rem;
+      color: #8B0000;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .admin-role {
+      font-size: 1.2rem;
+      color: #ff9933;
+      margin-bottom: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .admin-tenure {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .admin-contribution {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      flex: 1; /* Allow contribution text to take available space */
+      overflow: hidden; /* Hide overflow */
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* Limit to 4 lines */
+      -webkit-box-orient: vertical;
+    }
+    
+    /* Committee Structure */
+    .committee-section {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .committee-title {
+      color: #8B0000;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #ff9933;
+    }
+    
+    .committee-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .committee-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .committee-item:last-child {
+      border-bottom: none;
+    }
+    
+    .committee-item i {
+      color: #ff9933;
+      font-size: 1.2rem;
+      width: 30px;
+    }
+    
+    /* Footer */
+    .temple-footer {
+      background: linear-gradient(135deg, #2F4F4F, #363636);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+    }
+    
+    .footer-section {
+      margin-bottom: 25px;
+    }
+    
+    .footer-title {
+      color: #FFD700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD700;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .admin-card {
+        height: 560px; /* Slightly smaller for medium screens */
+      }
+      
+      .admin-photo {
+        height: 260px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .temple-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+      }
+      
+      .page-title h1 {
+        font-size: 2rem;
+      }
+      
+      .admin-name {
+        font-size: 1.5rem;
+      }
+      
+      .admin-card {
+        height: 540px;
+      }
+      
+      .admin-photo {
+        height: 240px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .temple-title {
+        font-size: 1.6rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 1rem;
+      }
+      
+      .page-title h1 {
+        font-size: 1.8rem;
+      }
+      
+      .admin-card {
+        height: 520px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .admin-photo {
+        height: 220px;
+      }
+      
+      .admin-info {
+        padding: 20px;
+      }
+      
+      .committee-section {
+        padding: 25px;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .temple-header {
+        padding: 20px 0;
+      }
+      
+      .temple-title {
+        font-size: 1.4rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .page-title h1 {
+        font-size: 1.5rem;
+      }
+      
+      .admin-card {
+        height: 500px;
+      }
+      
+      .admin-photo {
+        height: 200px;
+      }
+      
+      .admin-name {
+        font-size: 1.3rem;
+      }
+      
+      .admin-role {
+        font-size: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .committee-title {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .admin-card, .admin-stats, .committee-section {
+      animation: fadeIn 0.6s ease-out;
     }
   </style>
 </head>
 <body>
-  <!-- Include the common header -->
-  <header>
+  <!-- Header -->
+  <header class="temple-header">
     <div class="container">
-      <div class="head1">
-      காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)</div>
+      <div class="text-center">
+        <h1 class="temple-title tamil">காணியாளய்யன் திருக்கோவில்</h1>
+        <p class="temple-subtitle tamil">பைரவர் கூட்டம் • ஸ்ரீ காணியாளய்யன் ஆலயம்</p>
+      </div>
     </div>
   </header>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg temple-nav navbar-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTemple">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
-          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள்</a></li>
+      <div class="collapse navbar-collapse" id="navbarTemple">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link tamil" href="index.html">
+              <i class="fas fa-home me-2"></i>முகப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="history.html">
+              <i class="fas fa-history me-2"></i>கோவில் வரலாறு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="god_names.html">
+              <i class="fas fa-pray me-2"></i>கடவுள் பெயர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="புகைப்பட தொகுப்பு.html">
+              <i class="fas fa-images me-2"></i>புகைப்பட தொகுப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active tamil" href="நிர்வாகிகள்.html">
+              <i class="fas fa-users me-2"></i>நிர்வாகிகள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="நிலம் அன்பளிப்பாளர்கள்.html">
+              <i class="fas fa-hands-helping me-2"></i>நிலம் அன்பளிப்பாளர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="அமாவாசை கட்டளைதாரர்கள்.html">
+              <i class="fas fa-calendar me-2"></i>அமாவாசை கட்டளைதாரர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="விஷேசநாட்கள்.html">
+              <i class="fas fa-star me-2"></i>விஷேசநாட்கள்
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Admin Names Section -->
-  <section class="admin-section">
+  <!-- Main Content -->
+  <main class="main-content">
     <div class="container">
-      <div class="head">
-      நிர்வாகிகள் பெயர்கள்
+      <!-- Page Title -->
+      <div class="page-title">
+        <h1 class="tamil">நிர்வாகிகள் பெயர்கள்</h1>
+        <p class="page-subtitle tamil">காணியாளய்யன் திருக்கோவிலின் தலைவர்கள் மற்றும் நிர்வாகக் குழு உறுப்பினர்கள்</p>
       </div>
-      <div class="admin-card">
-        <a href="24k9.jpg" data-toggle="lightbox" data-gallery="admin" >
-          <img src="24k9.jpg" alt="Admin Photo">
-        </a>
-        <div>
-          <h3>அ</h3>
-          <p>தலைவர்</p>
-        </div>
-      </div>
-      <div class="admin-card">
-        <a href="24k1.jpg" data-toggle="lightbox" data-gallery="admin" >
-          <img src="24k1.jpg" alt="Admin Photo">
-        </a>
-        <div>
-          <h3>க</h3>
-          <p>தலைவர்</p>
-        </div>
-      </div>
-      <div class="admin-card">
-        <a href="24k1.jpg" data-toggle="lightbox" data-gallery="admin" >
-          <img src="24k1.jpg" alt="Admin Photo">
-        </a>
-        <div>
-          <h3>தி</h3>
-          <p>தலைவர்</p>
-        </div>
-      </div>
-      <div class="admin-card">
-        <a href="24k1.jpg" data-toggle="lightbox" data-gallery="admin">
-          <img src="24k1.jpg" alt="Admin Photo">
-        </a>
-        <div>
-          <h3>த</h3>
-          <p>தலைவர்</p>
+      
+      <!-- Admin Stats -->
+      <div class="admin-stats">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">4</div>
+              <div class="stat-label tamil">தலைவர்கள்</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label tamil">சேவை ஆண்டுகள்</div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label tamil">சேவைக் கிடைக்கும்தன்மை</div>
+            </div>
+          </div>
         </div>
       </div>
       
-      <!-- Add more admin cards here -->
+      <!-- Admin Cards - FIXED EQUAL SIZE -->
+      <div class="row">
+        <!-- Admin 1 -->
+        <div class="col-lg-6 mb-4">
+          <div class="admin-card">
+            <div class="admin-photo">
+              <a href="24k9.jpg" data-toggle="lightbox" data-gallery="admin-gallery">
+                <img src="24k9.jpg" alt="அ தலைவர்" class="img-fluid">
+              </a>
+              <div class="admin-overlay">
+                <button class="view-btn tamil" onclick="$(this).closest('.admin-card').find('a').click()">
+                  <i class="fas fa-expand"></i>படத்தைக் காண்க
+                </button>
+              </div>
+            </div>
+            <div class="admin-info">
+              <h3 class="admin-name tamil">அ</h3>
+              <div class="admin-role tamil">
+                <i class="fas fa-crown"></i>
+                தலைவர்
+              </div>
+              <div class="admin-tenure tamil">
+                <i class="fas fa-calendar-alt"></i>
+                சேவை: 2010 முதல் இன்று வரை
+              </div>
+              <p class="admin-contribution tamil">
+                கோவிலின் முக்கிய தலைவராக 15 ஆண்டுகளாக சேவை செய்து வருகிறார். கோவில் வளர்ச்சி மற்றும் பண்பாட்டு நிகழ்வுகளை நிர்வகிப்பதில் முக்கிய பங்கு வகிக்கிறார். கோவில் பராமரிப்பு மற்றும் மேம்பாட்டுப் பணிகளுக்கு அர்ப்பணித்துள்ளார்.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Admin 2 -->
+        <div class="col-lg-6 mb-4">
+          <div class="admin-card">
+            <div class="admin-photo">
+              <a href="24k1.jpg" data-toggle="lightbox" data-gallery="admin-gallery">
+                <img src="24k1.jpg" alt="க தலைவர்" class="img-fluid">
+              </a>
+              <div class="admin-overlay">
+                <button class="view-btn tamil" onclick="$(this).closest('.admin-card').find('a').click()">
+                  <i class="fas fa-expand"></i>படத்தைக் காண்க
+                </button>
+              </div>
+            </div>
+            <div class="admin-info">
+              <h3 class="admin-name tamil">க</h3>
+              <div class="admin-role tamil">
+                <i class="fas fa-user-tie"></i>
+                தலைவர்
+              </div>
+              <div class="admin-tenure tamil">
+                <i class="fas fa-calendar-alt"></i>
+                சேவை: 2012 முதல் இன்று வரை
+              </div>
+              <p class="admin-contribution tamil">
+                கோவில் நிதி மற்றும் கட்டுமானப் பணிகளை நிர்வகிப்பதில் பயனுள்ள பங்களிப்பு செய்து வருகிறார். கோவில் பராமரிப்புக்கு அர்ப்பணித்துள்ளார். நிதி விவரங்களைக் கண்காணிப்பதில் நிபுணத்துவம் பெற்றவர்.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Admin 3 -->
+        <div class="col-lg-6 mb-4">
+          <div class="admin-card">
+            <div class="admin-photo">
+              <a href="24k1.jpg" data-toggle="lightbox" data-gallery="admin-gallery">
+                <img src="24k1.jpg" alt="தி தலைவர்" class="img-fluid">
+              </a>
+              <div class="admin-overlay">
+                <button class="view-btn tamil" onclick="$(this).closest('.admin-card').find('a').click()">
+                  <i class="fas fa-expand"></i>படத்தைக் காண்க
+                </button>
+              </div>
+            </div>
+            <div class="admin-info">
+              <h3 class="admin-name tamil">தி</h3>
+              <div class="admin-role tamil">
+                <i class="fas fa-hands-helping"></i>
+                தலைவர்
+              </div>
+              <div class="admin-tenure tamil">
+                <i class="fas fa-calendar-alt"></i>
+                சேவை: 2015 முதல் இன்று வரை
+              </div>
+              <p class="admin-contribution tamil">
+                பக்தர்கள் தொடர்பு மற்றும் சமூக சேவை நடவடிக்கைகளை ஒருங்கிணைப்பதில் சிறப்பான பணியாற்றி வருகிறார். அன்னதானம் மற்றும் சமூக நிகழ்வுகளை நடத்துகிறார். சமூக தொடர்புகளில் வல்லுநராக உள்ளார்.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Admin 4 -->
+        <div class="col-lg-6 mb-4">
+          <div class="admin-card">
+            <div class="admin-photo">
+              <a href="24k1.jpg" data-toggle="lightbox" data-gallery="admin-gallery">
+                <img src="24k1.jpg" alt="த தலைவர்" class="img-fluid">
+              </a>
+              <div class="admin-overlay">
+                <button class="view-btn tamil" onclick="$(this).closest('.admin-card').find('a').click()">
+                  <i class="fas fa-expand"></i>படத்தைக் காண்க
+                </button>
+              </div>
+            </div>
+            <div class="admin-info">
+              <h3 class="admin-name tamil">த</h3>
+              <div class="admin-role tamil">
+                <i class="fas fa-tasks"></i>
+                தலைவர்
+              </div>
+              <div class="admin-tenure tamil">
+                <i class="fas fa-calendar-alt"></i>
+                சேவை: 2018 முதல் இன்று வரை
+              </div>
+              <p class="admin-contribution tamil">
+                கோவில் தினசரி நடவடிக்கைகள் மற்றும் பூஜை நிகழ்வுகளை நிர்வகிப்பதில் பணியாற்றி வருகிறார். கோவில் நிர்வாகத்தின் இளைய தலைவராக உள்ளார். இளைஞர்களுக்கு வழிகாட்டியாக உள்ளார்.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Committee Structure -->
+      <div class="committee-section">
+        <h3 class="committee-title tamil">நிர்வாகக் குழு அமைப்பு</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="committee-list">
+              <li class="committee-item tamil">
+                <i class="fas fa-crown"></i>
+                <span>தலைவர் - மொத்த நிர்வாக பொறுப்பு</span>
+              </li>
+              <li class="committee-item tamil">
+                <i class="fas fa-user-tie"></i>
+                <span>கோவிற் பராமரிப்பு - கட்டுமானம் மற்றும் பராமரிப்பு</span>
+              </li>
+              <li class="committee-item tamil">
+                <i class="fas fa-hands-helping"></i>
+                <span>சமூக சேவை - அன்னதானம் மற்றும் சமூக நிகழ்வுகள்</span>
+              </li>
+              <li class="committee-item tamil">
+                <i class="fas fa-tasks"></i>
+                <span>தினசரி நடவடிக்கைகள் - பூஜை மற்றும் வழிபாடு</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="committee-list">
+              <li class="committee-item tamil">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>நிதி மேலாண்மை - நிதி கணக்குகள் மற்றும் நன்கொடைகள்</span>
+              </li>
+              <li class="committee-item tamil">
+                <i class="fas fa-calendar-alt"></i>
+                <span>விழா மேலாண்மை - திருவிழா மற்றும் சிறப்பு நிகழ்வுகள்</span>
+              </li>
+              <li class="committee-item tamil">
+                <i class="fas fa-users"></i>
+                <span>பக்தர்கள் தொடர்பு - பக்தர்கள் சேவைகள் மற்றும் வழிகாட்டுதல்</span>
+              </li>
+              <li class="committee-item tamil">
+                <i class="fas fa-landmark"></i>
+                <span>சொத்து மேலாண்மை - கோவில் சொத்துகள் மற்றும் நிலங்கள்</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="temple-footer">
     <div class="container">
-      <p>&copy; 2024 காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்). All rights reserved.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title tamil">காணியாளய்யன் திருக்கோவில்</h4>
+          <p class="tamil">பல நூற்றாண்டுகளாக பக்தர்களுக்கு சேவை செய்து வரும் புனிதத் தலம். காணியாளய்யன் பெருமாளின் கருணை பக்தர்களை காக்கிறது.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title tamil">விரைவு இணைப்புகள்</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="tamil"><i class="fas fa-home"></i> முகப்பு பக்கம்</a></li>
+            <li><a href="கோவில் வரலாறு.html" class="tamil"><i class="fas fa-history"></i> கோவில் வரலாறு</a></li>
+            <li><a href="புகைப்பட தொகுப்பு.html" class="tamil"><i class="fas fa-images"></i> புகைப்படங்கள்</a></li>
+            <li><a href="நிர்வாகிகள்.html" class="tamil"><i class="fas fa-users"></i> நிர்வாகிகள்</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">திருக்கோவில் நேரங்கள்</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-sun"></i> <span class="tamil">காலை தரிசனம்: 6:30 - 12:30</span></li>
+            <li><i class="fas fa-moon"></i> <span class="tamil">மாலை தரிசனம்: 4:30 - 8:30</span></li>
+            <li><i class="fas fa-water"></i> <span class="tamil">அபிஷேகம்: காலை 8:00</span></li>
+            <li><i class="fas fa-praying-hands"></i> <span class="tamil">அர்ச்சனை: காலை 10:00</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">தொடர்புக்கு</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> <span class="tamil">பைரவர் கூட்டம், தமிழ்நாடு</span></li>
+            <li><i class="fas fa-phone"></i> <span>+91 45678 91234</span></li>
+            <li><i class="fas fa-envelope"></i> <span>kaaniyalaiyan.kovil@gmail.com</span></li>
+            <li><i class="fas fa-user-tie"></i> <span class="tamil">தலைமை பூசாரி: ஸ்ரீ முருகன்</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="tamil">© 2024 காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்). அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Lightbox JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
-
-  <!-- JavaScript for Lightbox Initialization -->
+  
   <script>
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox({
-        alwaysShowClose: true, // Ensure close button is always shown
-        showArrows: false, // Hide navigation arrows
+    $(document).ready(function() {
+      // Initialize lightbox
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox({
+          alwaysShowClose: true,
+          showArrows: false,
+        });
+      });
+      
+      // Add active class to navigation
+      $('.nav-link').on('click', function() {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+      });
+      
+      // Admin card hover effect
+      $('.admin-card').hover(
+        function() {
+          $(this).css('transform', 'translateY(-10px)');
+          $(this).css('box-shadow', '0 15px 35px rgba(139, 0, 0, 0.2)');
+        },
+        function() {
+          $(this).css('transform', 'translateY(0)');
+          $(this).css('box-shadow', '0 8px 25px rgba(0, 0, 0, 0.1)');
+        }
+      );
+      
+      // Equalize card heights on load
+      function equalizeCardHeights() {
+        const cards = $('.admin-card');
+        let maxHeight = 0;
+        
+        // Reset heights
+        cards.css('height', '');
+        
+        // Get maximum height
+        cards.each(function() {
+          const cardHeight = $(this).outerHeight();
+          if (cardHeight > maxHeight) {
+            maxHeight = cardHeight;
+          }
+        });
+        
+        // Set all cards to maximum height
+        cards.css('height', maxHeight + 'px');
+      }
+      
+      // Run on load and resize
+      $(window).on('load resize', function() {
+        equalizeCardHeights();
       });
     });
   </script>
 </body>
 </html>
-s
