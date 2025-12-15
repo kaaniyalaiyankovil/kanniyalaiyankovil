@@ -3,177 +3,1049 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)- Home</title>
+  <title>காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்) - முகப்பு</title>
+  
+  <!-- Bootstrap 4 -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Tamil -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* Custom styles */
-    header {
-      background-color: #ffc107;
-      text-align: center;
-      padding: 20px 0;
+    /* Custom Tamil Font */
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    
+    /* Header Styles */
+    .temple-header {
+      background: linear-gradient(135deg, #ff9933, #ffcc66);
+      padding: 25px 0;
       position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     
-    header img {
-      max-width: 60%;
-      height: auto;
-    }
-    
-    .circle-image {
+    .temple-header::before {
+      content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
-    }
-
-    .top-left {
-      top: 10px;
-      left: 10px;
-    }
-
-    .top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    h1 {
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-      color: #333;
-      margin-top: 30px;
-      word-wrap: break-word; /* Ensure long words break and wrap */
-    }
-
-    @media (min-width: 576px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      .circle-image {
-        width: 100px;
-        height: 100px;
-      }
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,255,255,0.1)">ॐ</text></svg>');
+      background-size: 150px;
+      opacity: 0.3;
     }
     
-    footer {
-      background-color: #343a40;
-      color: #fff;
+    .temple-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8B0000;
       text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .temple-subtitle {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Navigation */
+    .temple-nav {
+      background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      padding: 15px 20px !important;
+      position: relative;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFD700 !important;
+    }
+    
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFD700 !important;
+    }
+    
+    /* Main Content */
+    .main-content {
+      padding: 30px 0;
+      background: #FFF8E7;
+      min-height: 70vh;
+    }
+    
+    /* Carousel */
+    .temple-carousel {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .carousel-item {
+      height: 400px;
     }
     
     .carousel-item img {
-      max-width: 100%;
-      height: auto;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
-    .head1{
-  font-size: 1.5rem;
-  color: #000; /* Orange Red */
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-}
+    
+    .carousel-caption {
+      background: rgba(139, 0, 0, 0.85);
+      padding: 15px;
+      border-radius: 5px;
+      bottom: 20px;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    
+    .carousel-caption h5 {
+      color: #FFD700;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    
+    /* Temple Info Section - FIXED */
+    .temple-info-section {
+      margin-top: 30px;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #8B0000;
+    }
+    
+    .temple-info-title {
+      color: #8B0000;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .temple-info-content {
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 25px;
+    }
+    
+    .info-highlights {
+      background: #FFF8DC;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 25px;
+      border: 1px solid #FFD700;
+    }
+    
+    .highlight-title {
+      color: #8B4513;
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 8px 0;
+    }
+    
+    .highlight-item i {
+      color: #8B0000;
+      margin-right: 10px;
+      width: 25px;
+      text-align: center;
+    }
+    
+    /* Cards Container */
+    .cards-container {
+      position: sticky;
+      top: 20px;
+    }
+    
+    /* Fixed Cards */
+    .temple-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      border: none;
+      background: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .temple-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Contact Card */
+    .contact-card .card-header {
+      background: linear-gradient(135deg, #DC143C, #B22222);
+      color: white;
+      padding: 18px 25px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: none;
+    }
+    
+    .contact-card .card-header i {
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contact-card .card-body {
+      padding: 25px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(220, 20, 60, 0.1);
+    }
+    
+    .contact-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .contact-item:first-child {
+      padding-top: 0;
+    }
+    
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(178, 34, 34, 0.1));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 15px;
+      color: #DC143C;
+      font-size: 1.2rem;
+      border: 1px solid rgba(220, 20, 60, 0.2);
+    }
+    
+    .contact-details {
+      flex: 1;
+    }
+    
+    .contact-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    
+    .contact-value {
+      font-size: 1.05rem;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    
+    /* Location Card */
+    .location-card .card-header {
+      background: linear-gradient(135deg, #1E90FF, #4169E1);
+      color: white;
+      padding: 18px 25px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: none;
+    }
+    
+    .location-card .card-header i {
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .location-card .card-body {
+      padding: 25px;
+    }
+    
+    .address-box {
+      background: #F0F8FF;
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #1E90FF;
+    }
+    
+    .address-title {
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .address-text {
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 1rem;
+    }
+    
+    .map-container {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    
+    .location-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .location-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    
+    .btn-directions {
+      background: linear-gradient(135deg, #4169E1, #6495ED);
+      color: white;
+    }
+    
+    .btn-directions:hover {
+      background: linear-gradient(135deg, #3159D1, #5485DD);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(65, 105, 225, 0.3);
+    }
+    
+    .btn-call {
+      background: linear-gradient(135deg, #32CD32, #3CB371);
+      color: white;
+    }
+    
+    .btn-call:hover {
+      background: linear-gradient(135deg, #22BD22, #2CA361);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(50, 205, 50, 0.3);
+    }
+    
+    .timing-section {
+      background: #FFF8DC;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #FFD700;
+    }
+    
+    .timing-title {
+      color: #8B4513;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .timing-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .timing-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .timing-item i {
+      margin-right: 10px;
+      color: #8B4513;
+      width: 20px;
+      text-align: center;
+    }
+    
+    /* Quick Links Section */
+    .quick-links-section {
+      margin-top: 30px;
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .links-title {
+      color: #8B0000;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .quick-link-item {
+      background: #F8F9FA;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #E9ECEF;
+    }
+    
+    .quick-link-item:hover {
+      background: #E9ECEF;
+      transform: translateY(-3px);
+      border-color: #8B0000;
+    }
+    
+    .quick-link-item i {
+      color: #8B0000;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    /* Footer */
+    .temple-footer {
+      background: linear-gradient(135deg, #2F4F4F, #363636);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+    }
+    
+    .footer-section {
+      margin-bottom: 25px;
+    }
+    
+    .footer-title {
+      color: #FFD700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFD700;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD700;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .temple-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        padding: 12px 15px !important;
+      }
+      
+      .carousel-item {
+        height: 350px;
+      }
+      
+      .temple-info-title {
+        font-size: 1.6rem;
+      }
+      
+      .quick-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .temple-title {
+        font-size: 1.6rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 1rem;
+      }
+      
+      .carousel-item {
+        height: 300px;
+      }
+      
+      .contact-item {
+        padding: 12px 0;
+      }
+      
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+      
+      .location-buttons {
+        flex-direction: column;
+      }
+      
+      .cards-container {
+        position: static;
+        margin-top: 30px;
+      }
+      
+      .quick-links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .temple-header {
+        padding: 20px 0;
+      }
+      
+      .temple-title {
+        font-size: 1.4rem;
+      }
+      
+      .temple-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .contact-card .card-header,
+      .location-card .card-header {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+      }
+      
+      .contact-card .card-body,
+      .location-card .card-body {
+        padding: 20px;
+      }
+      
+      .contact-card .card-header i,
+      .location-card .card-header i {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+      
+      .carousel-item {
+        height: 250px;
+      }
+      
+      .temple-info-section,
+      .quick-links-section {
+        padding: 20px;
+      }
+      
+      .temple-info-title {
+        font-size: 1.4rem;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .temple-card, .temple-info-section, .quick-links-section {
+      animation: fadeIn 0.6s ease-out;
+    }
   </style>
 </head>
 <body>
-  <!-- Include the common header -->
-  <header>
+  <!-- Header -->
+  <header class="temple-header">
     <div class="container">
-       <div class="head1" >காணியாளய்யன் திருக்கோவில்(பைரவர் கூட்டம்)</div>
-     
+      <div class="text-center">
+        <h1 class="temple-title tamil">காணியாளய்யன் திருக்கோவில்</h1>
+        <p class="temple-subtitle tamil">பைரவர் கூட்டம் • ஸ்ரீ காணியாளய்யன் ஆலயம்</p>
+      </div>
     </div>
   </header>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg temple-nav navbar-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTemple">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="கோவில் வரலாறு.html">கோவில் வரலாறு</a></li>
-          <li class="nav-item"><a class="nav-link" href="கடவுள் பெயர்கள்.html">கடவுள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="புகைப்பட தொகுப்பு.html">புகைப்பட தொகுப்பு</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிர்வாகிகள்.html">நிர்வாகிகள் பெயர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="நிலம் அன்பளிப்பாளர்கள்.html">நிலம் அன்பளிப்பாளர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="அமாவாசை கட்டளைதாரர்கள்.html">அமாவாசை கட்டளைதாரர்கள்</a></li>
-          <li class="nav-item"><a class="nav-link" href="விஷேசநாட்கள்.html">விஷேசநாட்கள் </a></li>
+      <div class="collapse navbar-collapse" id="navbarTemple">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active tamil" href="index.html">
+              <i class="fas fa-home me-2"></i>முகப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="history.html">
+              <i class="fas fa-history me-2"></i>கோவில் வரலாறு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="god_names.html">
+              <i class="fas fa-pray me-2"></i>கடவுள் பெயர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="புகைப்பட தொகுப்பு.html">
+              <i class="fas fa-images me-2"></i>புகைப்பட தொகுப்பு
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="நிர்வாகிகள்.html">
+              <i class="fas fa-users me-2"></i>நிர்வாகிகள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="நிலம் அன்பளிப்பாளர்கள்.html">
+              <i class="fas fa-hands-helping me-2"></i>நிலம் அன்பளிப்பாளர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="அமாவாசை கட்டளைதாரர்கள்.html">
+              <i class="fas fa-calendar me-2"></i>அமாவாசை கட்டளைதாரர்கள்
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tamil" href="விஷேசநாட்கள்.html">
+              <i class="fas fa-star me-2"></i>விஷேசநாட்கள்
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Content specific to the home page -->
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-8">
-        <div id="imageCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#imageCarousel" data-slide-to="1"></li>
-            <li data-target="#imageCarousel" data-slide-to="2"></li>
-            <li data-target="#imageCarousel" data-slide-to="3"></li>
-            <li data-target="#imageCarousel" data-slide-to="4"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="24k1.jpg" alt="First slide" class="d-block w-100">
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div class="row">
+        <!-- Left Column - Main Content -->
+        <div class="col-lg-8">
+          <!-- Carousel -->
+          <div id="templeCarousel" class="carousel slide temple-carousel" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#templeCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#templeCarousel" data-slide-to="1"></li>
+              <li data-target="#templeCarousel" data-slide-to="2"></li>
+              <li data-target="#templeCarousel" data-slide-to="3"></li>
+              <li data-target="#templeCarousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="24k1.jpg" class="d-block w-100" alt="காணியாளய்யன் திருக்கோவில் - முதல் படம்">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="tamil">மூலவர் காணியாளய்யன்</h5>
+                  <p>திருக்கோவிலின் முக்கிய விநாயகர் சிலை</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="24k2.jpg" class="d-block w-100" alt="கோவில் கட்டிடக்கலை">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="tamil">விமானம் & கோபுரம்</h5>
+                  <p>தொன்மையான திராவிட கட்டிடக்கலை</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="24k3.jpg" class="d-block w-100" alt="உற்சவ மூர்த்தி">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="tamil">உற்சவ மூர்த்தி</h5>
+                  <p>பண்டிகை நாட்களில் சப்பரம் ஊர்வலம்</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="24k4.jpg" class="d-block w-100" alt="சன்னதி உட்புறம்">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="tamil">சன்னதி உட்புறம்</h5>
+                  <p>பக்தர்கள் தரிசனம் செய்யும் இடம்</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="24k5.jpg" class="d-block w-100" alt="சிறப்பு பூஜைகள்">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="tamil">சிறப்பு பூஜைகள்</h5>
+                  <p>அமாவாசை, பௌர்ணமி கால பூஜைகள்</p>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="24k2.jpg" alt="Second slide" class="d-block w-100">
+            <a class="carousel-control-prev" href="#templeCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">முந்தையது</span>
+            </a>
+            <a class="carousel-control-next" href="#templeCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">அடுத்தது</span>
+            </a>
+          </div>
+          
+          <!-- கோவில் பற்றி Section - FIXED with no empty space -->
+          <div class="temple-info-section">
+            <h2 class="temple-info-title tamil">
+              <i class="fas fa-temple"></i>
+              கோவில் பற்றி
+            </h2>
+            
+            <div class="temple-info-content tamil">
+              <p>காணியாளய்யன் திருக்கோவில் பல நூற்றாண்டுகளுக்கு முன்னர் நிறுவப்பட்ட பழமையான ஆலயமாகும். 
+              பைரவர் கூட்டம் பகுதியில் அமைந்துள்ள இந்த ஆலயம் காணியாளய்யன் பெருமானுக்கு அர்ப்பணிக்கப்பட்டது. 
+              இங்கு பக்தர்கள் தினமும் வந்து தரிசனம் செய்து பிரார்த்தனைகளை நிறைவேற்றிக்கொள்கிறார்கள்.</p>
+              
+              <p>கோவிலின் கட்டிடக்கலை திராவிட பாணியில் அமைந்துள்ளது. மூலவர் காணியாளய்யன் சிலை 
+              கருங்கல்லில் செதுக்கப்பட்டு, பக்தர்களின் வணக்கத்திற்காக சன்னதியில் அமைக்கப்பட்டுள்ளது. 
+              மாதாந்திர அமாவாசை, பௌர்ணமி நாட்களில் சிறப்பு பூஜைகள் நடைபெறுகின்றன.</p>
             </div>
-            <div class="carousel-item">
-              <img src="24k3.jpg" alt="Third slide" class="d-block w-100">
+            
+            <div class="info-highlights">
+              <h4 class="highlight-title tamil">கோவில் சிறப்புகள்</h4>
+              
+              <div class="highlight-item">
+                <i class="fas fa-bell"></i>
+                <span class="tamil">தினசரி பூஜைகள்: காலை, மதியம், மாலை</span>
+              </div>
+              
+              <div class="highlight-item">
+                <i class="fas fa-calendar-check"></i>
+                <span class="tamil">மாதாந்திர அமாவாசை & பௌர்ணமி சிறப்பு பூஜைகள்</span>
+              </div>
+              
+              <div class="highlight-item">
+                <i class="fas fa-hands"></i>
+                <span class="tamil">சிறப்பு நாட்களில் அன்னதானம்</span>
+              </div>
+              
+              <div class="highlight-item">
+                <i class="fas fa-music"></i>
+                <span class="tamil">பண்டிகை நாட்களில் கர்ணாடக இசை நிகழ்ச்சிகள்</span>
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="24k4.jpg" alt="Fourth slide" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="24k5.jpg" alt="Fifth slide" class="d-block w-100">
+            
+            <div class="text-center mt-4">
+              <a href="கோவில் வரலாறு.html" class="btn btn-lg" style="background: linear-gradient(135deg, #8B0000, #A52A2A); color: white; padding: 12px 40px; font-weight: 600;">
+                <i class="fas fa-book-open me-2"></i>முழு வரலாறு படிக்க
+              </a>
             </div>
           </div>
-          <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <div class="card-header bg-danger text-white">Contact</div>
-          <div class="card-body">
-            <ul>
-              <li>phone number: </li>
-              <li>e-mail id:</li>
-            </ul>
+          
+          <!-- Quick Links Section - Fills the empty space -->
+          <div class="quick-links-section">
+            <h3 class="links-title tamil">விரைவு இணைப்புகள்</h3>
+            
+            <div class="quick-links-grid">
+              <a href="கடவுள் பெயர்கள்.html" class="quick-link-item">
+                <i class="fas fa-pray"></i>
+                <div class="tamil">கடவுள் பெயர்கள்</div>
+              </a>
+              
+              <a href="புகைப்பட தொகுப்பு.html" class="quick-link-item">
+                <i class="fas fa-images"></i>
+                <div class="tamil">புகைப்பட தொகுப்பு</div>
+              </a>
+              
+              <a href="நிர்வாகிகள்.html" class="quick-link-item">
+                <i class="fas fa-users"></i>
+                <div class="tamil">நிர்வாகிகள்</div>
+              </a>
+              
+              <a href="விஷேசநாட்கள்.html" class="quick-link-item">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="tamil">விஷேச நாட்கள்</div>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="card mb-3">
-          <div class="card-header bg-info text-white">Location</div>
-          <div class="card-body">
-            <!-- Replace this with your Google Maps iframe code -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3776985886154!2d77.4027393!3d11.209172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba90f0abe2216f9%3A0x12d34b405c7a9276!2skhaniyalaiyan%20kovil!5e0!3m2!1sen!2sin!4v1627531178472!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <!-- Right Column - Contact and Location Cards -->
+        <div class="col-lg-4">
+          <div class="cards-container">
+            <!-- Contact Card -->
+            <div class="temple-card contact-card">
+              <div class="card-header">
+                <i class="fas fa-phone-alt"></i>
+                <span class="tamil">தொடர்பு கொள்ள</span>
+              </div>
+              <div class="card-body">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-details">
+                    <div class="contact-label tamil">அலுவலக தொலைபேசி</div>
+                    <div class="contact-value">+91 82209 39880</div>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <div class="contact-details">
+                    <div class="contact-label tamil">தலைமை பூசாரி</div>
+                    <div class="contact-value">+91 82209 39880</div>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-user-tie"></i>
+                  </div>
+                  <div class="contact-details">
+                    <div class="contact-label tamil">நிர்வாகி</div>
+                    <div class="contact-value">+91 82209 39880</div>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-details">
+                    <div class="contact-label tamil">மின்னஞ்சல்</div>
+                    <div class="contact-value">kaaniyalaiyan.kovil@gmail.com</div>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-details">
+                    <div class="contact-label tamil">அலுவலக நேரம்</div>
+                    <div class="contact-value tamil">காலை 8:00 - மாலை 7:00</div>
+                    <div class="contact-subtext tamil">திங்கள் - சனிக்கிழமை</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="temple-card location-card">
+              <div class="card-header">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="tamil">இடம்</span>
+              </div>
+              <div class="card-body">
+                <div class="address-box">
+                  <div class="address-title tamil">
+                    <i class="fas fa-landmark"></i>
+                    முகவரி
+                  </div>
+                  <p class="address-text tamil">
+                    காணியாளய்யன் திருக்கோவில்,<br>
+                    பைரவர் கூட்டம்,<br>
+                    அருள்மிகு காணியாளய்யன் நகர்,<br>
+                    தமிழ்நாடு - 642 001
+                  </p>
+                </div>
+                
+                <div class="map-container">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3776985886154!2d77.4027393!3d11.209172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba90f0abe2216f9%3A0x12d34b405c7a9276!2skhaniyalaiyan%20kovil!5e0!3m2!1sen!2sin!4v1627531178472!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    title="காணியாளய்யன் திருக்கோவில் இடம்">
+                  </iframe>
+                </div>
+                
+                <div class="location-buttons">
+                  <a href="https://goo.gl/maps/9XJjLv9Hn8j5YxrV9" target="_blank" class="location-btn btn-directions tamil">
+                    <i class="fas fa-directions"></i>
+                    வழிகாட்டு
+                  </a>
+                  <a href="tel:+918220939880" class="location-btn btn-call tamil">
+                    <i class="fas fa-phone-alt"></i>
+                    அழைக்க
+                  </a>
+                </div>
+                
+                <div class="timing-section">
+                  <div class="timing-title tamil">
+                    <i class="fas fa-pray"></i>
+                    தரிசன நேரங்கள்
+                  </div>
+                  <div class="timing-item">
+                    <i class="fas fa-sun"></i>
+                    <span class="tamil">காலை: 6:30 AM - 12:30 PM</span>
+                  </div>
+                  <div class="timing-item">
+                    <i class="fas fa-moon"></i>
+                    <span class="tamil">மாலை: 4:30 PM - 8:30 PM</span>
+                  </div>
+                  <div class="timing-item">
+                    <i class="fas fa-bus"></i>
+                    <span class="tamil">பேருந்து நிலையத்திலிருந்து: 2 கி.மீ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Include the common footer -->
-  <footer>
+  <!-- Footer -->
+  <footer class="temple-footer">
     <div class="container">
-      <p>&copy; 2024 </p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-section">
+          <h4 class="footer-title tamil">காணியாளய்யன் திருக்கோவில்</h4>
+          <p class="tamil">பல நூற்றாண்டுகளாக பக்தர்களுக்கு சேவை செய்து வரும் புனிதத் தலம். காணியாளய்யன் பெருமாளின் கருணை பக்தர்களை காக்கிறது.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-section">
+          <h4 class="footer-title tamil">விரைவு இணைப்புகள்</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="tamil"><i class="fas fa-home"></i> முகப்பு பக்கம்</a></li>
+            <li><a href="கோவில் வரலாறு.html" class="tamil"><i class="fas fa-history"></i> கோவில் வரலாறு</a></li>
+            <li><a href="புகைப்பட தொகுப்பு.html" class="tamil"><i class="fas fa-images"></i> புகைப்படங்கள்</a></li>
+            <li><a href="விஷேசநாட்கள்.html" class="tamil"><i class="fas fa-calendar-alt"></i> சிறப்பு நாட்கள்</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">திருக்கோவில் நேரங்கள்</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-sun"></i> <span class="tamil">காலை தரிசனம்: 6:30 - 12:30</span></li>
+            <li><i class="fas fa-moon"></i> <span class="tamil">மாலை தரிசனம்: 4:30 - 8:30</span></li>
+            <li><i class="fas fa-water"></i> <span class="tamil">அபிஷேகம்: காலை 8:00</span></li>
+            <li><i class="fas fa-praying-hands"></i> <span class="tamil">அர்ச்சனை: காலை 10:00</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-section">
+          <h4 class="footer-title tamil">தொடர்புக்கு</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> <span class="tamil">பைரவர் கூட்டம், தமிழ்நாடு</span></li>
+            <li><i class="fas fa-phone"></i> <span>+91 45678 91234</span></li>
+            <li><i class="fas fa-envelope"></i> <span>kaaniyalaiyan.kovil@gmail.com</span></li>
+            <li><i class="fas fa-user-tie"></i> <span class="tamil">தலைமை பூசாரி: ஸ்ரீ முருகன்</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="tamil">© 2024 காணியாளய்யன் திருக்கோவில் (பைரவர் கூட்டம்). அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Bootstrap and jQuery Scripts -->
+  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      // Initialize carousel
+      $('#templeCarousel').carousel({
+        interval: 4000
+      });
+      
+      // Add hover effect to cards and quick links
+      $('.temple-card, .quick-link-item').hover(
+        function() {
+          $(this).css('transform', 'translateY(-5px)');
+          $(this).css('box-shadow', '0 10px 30px rgba(0, 0, 0, 0.2)');
+        },
+        function() {
+          $(this).css('transform', 'translateY(0)');
+          $(this).css('box-shadow', '0 5px 15px rgba(0, 0, 0, 0.1)');
+        }
+      );
+      
+      // Add active class to navigation
+      $('.nav-link').on('click', function() {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>
 </body>
 </html>
